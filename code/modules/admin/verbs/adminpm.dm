@@ -53,7 +53,7 @@
 	var/datum/admin_help/AH = C.current_ticket
 
 	if(AH)
-		message_admins("[key_name_admin(src)] has started replying to [key_name_admin(C, 0, 0)]'s admin help.")
+		message_admins("[key_name_admin(src)] начал отвечать на тикет [key_name_admin(C, 0, 0)]")
 	var/msg = input(src,"Message:", "Private message to [C.holder?.fakekey ? "an Administrator" : key_name(C, 0, 0)].") as message|null
 	if (!msg)
 		message_admins("[key_name_admin(src)] has cancelled their reply to [key_name_admin(C, 0, 0)]'s admin help.")
@@ -162,8 +162,8 @@
 	var/keywordparsedmsg = keywords_lookup(msg)
 
 	if(external)
-		to_chat(src, "<span class='notice'>PM to-<b>Admins</b>: <span class='linkify'>[rawmsg]</span></span>", confidential = TRUE)
-		var/datum/admin_help/AH = admin_ticket_log(src, "<font color='red'>Reply PM from-<b>[key_name(src, TRUE, TRUE)]</b> to <i>External</i>: [keywordparsedmsg]</font>")
+		to_chat(src, "<span class='notice'>Сообщение-<b>администратору</b>: <span class='linkify'>[rawmsg]</span></span>", confidential = TRUE)
+		var/datum/admin_help/AH = admin_ticket_log(src, "<font color='red'>Ответ от игрока-<b>[key_name(src, TRUE, TRUE)]</b> to <i>External</i>: [keywordparsedmsg]</font>")
 		ircreplyamount--
 		send2adminchat("[AH ? "#[AH.id] " : ""]Reply: [ckey]", rawmsg)
 
@@ -175,10 +175,10 @@
 			SEND_SIGNAL(current_ticket, COMSIG_ADMIN_HELP_REPLIED)
 			if(holder)
 				to_chat(recipient, "<span class='danger'>Admin PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span></span>", confidential = TRUE)
-				to_chat(src, "<span class='notice'>Admin PM to-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span></span>", confidential = TRUE)
+				to_chat(src, "<span class='notice'>Сообщение от администратора-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span></span>", confidential = TRUE)
 
 				//omg this is dumb, just fill in both their tickets
-				var/interaction_message = "<font color='purple'>PM from-<b>[key_name(src, recipient, 1)]</b> to-<b>[key_name(recipient, src, 1)]</b>: [keywordparsedmsg]</font>"
+				var/interaction_message = "<font color='purple'>Сообщение от-<b>[key_name(src, recipient, 1)]</b> адресованный-<b>[key_name(recipient, src, 1)]</b>: [keywordparsedmsg]</font>"
 				admin_ticket_log(src, interaction_message)
 				if(recipient != src)	//reeee
 					admin_ticket_log(recipient, interaction_message)
@@ -187,7 +187,7 @@
 				var/replymsg = "Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>"
 				admin_ticket_log(src, "<font color='red'>[replymsg]</font>")
 				to_chat(recipient, "<span class='danger'>[replymsg]</span>", confidential = TRUE)
-				to_chat(src, "<span class='notice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
+				to_chat(src, "<span class='notice'>сообщение от-<b>Admins</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
 				SSblackbox.LogAhelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 
 			//play the receiving admin the adminhelp sound (if they have them enabled)
@@ -203,9 +203,9 @@
 					SSblackbox.LogAhelp(recipient.current_ticket.id, "Ticket Opened", msg, recipient.ckey, src.ckey)
 
 				to_chat(recipient, "<font color='red' size='4'><b>-- Administrator private message --</b></font>", confidential = TRUE)
-				to_chat(recipient, "<span class='adminsay'>Admin PM from-<b>[key_name(src, recipient, 0)]</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
-				to_chat(recipient, "<span class='adminsay'><i>Click on the administrator's name to reply.</i></span>", confidential = TRUE)
-				to_chat(src, "<span class='notice'>Admin PM to-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
+				to_chat(recipient, "<span class='adminsay'>Сообщение от администратора-<b>[key_name(src, recipient, 0)]</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
+				to_chat(recipient, "<span class='adminsay'><i>Нажмите на никнейм администратора, чтоб ответить ему.</i></span>", confidential = TRUE)
+				to_chat(src, "<span class='notice'>Сообщение игроку-<b>[key_name(recipient, src, 1)]</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
 
 				admin_ticket_log(recipient, "<font color='purple'>PM From [key_name_admin(src)]: [keywordparsedmsg]</font>")
 
@@ -319,8 +319,8 @@
 	msg = emoji_parse(msg)
 
 	to_chat(C, "<font color='red' size='4'><b>-- Administrator private message --</b></font>", confidential = TRUE)
-	to_chat(C, "<span class='adminsay'>Admin PM from-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]</span>", confidential = TRUE)
-	to_chat(C, "<span class='adminsay'><i>Click on the administrator's name to reply.</i></span>", confidential = TRUE)
+	to_chat(C, "<span class='adminsay'>Сообщение от администратора-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]</span>", confidential = TRUE)
+	to_chat(C, "<span class='adminsay'><i>Нажмите на никнейм администратора, чтоб ответить ему.</i></span>", confidential = TRUE)
 
 	admin_ticket_log(C, "<font color='purple'>PM From [tgs_tagged]: [msg]</font>")
 

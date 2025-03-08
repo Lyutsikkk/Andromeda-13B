@@ -5,8 +5,8 @@
 		return
 
 	if (!sender)
-		var/list/subtle_message_options = list("Voice in head", RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE)
-		sender = tgui_input_list(usr, "Choose the method of subtle messaging", "Subtle Message", subtle_message_options)
+		var/list/subtle_message_options = list("Голос в голове", RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE)
+		sender = tgui_input_list(usr, "Выберите скрытый тип сообщения", "Subtle Message", subtle_message_options)
 		if (!sender)
 			return
 
@@ -16,7 +16,7 @@
 		message_admins("[key_name_admin(src)] decided not to answer [ADMIN_LOOKUPFLW(M)]'s prayer / faction PM.")
 		return
 
-	if (sender == "Voice in head")
+	if (sender == "Голос в голове")
 		to_chat(M, "<i>Вы слышите голос в голове... <b>[msg]</i></b>")
 	else
 		var/mob/living/carbon/human/H = M
