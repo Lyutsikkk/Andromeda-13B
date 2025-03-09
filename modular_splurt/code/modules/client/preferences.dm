@@ -219,8 +219,8 @@
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<BR>"
 			//SPLURT EDIT
-			dat += "<h2>Headshot Image</h2>"
-			dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot Image</b></a><br>"
+			dat += "<h2>Изображение персонажа</h2>"
+			dat += "<a href='?_src_=prefs;preference=headshot'><b>Изменить изображение персонажа</b></a><br>"
 			if(features["headshot_link"])
 				dat += "<img src='[features["headshot_link"]]' width='160px' height='120px'>"
 			dat += "<br><br>"
