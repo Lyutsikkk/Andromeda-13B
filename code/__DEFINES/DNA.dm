@@ -205,7 +205,7 @@
 #define G_PLURAL 3
 #define G_NEUTER 4
 
-#define PREVIEW_PREF_JOB "Job"
-#define PREVIEW_PREF_LOADOUT "Loadout"
-#define PREVIEW_PREF_NAKED "Naked"
-#define PREVIEW_PREF_NAKED_AROUSED "Naked - Aroused"
+#define PREVIEW_PREF_JOB "В форме должности"
+#define PREVIEW_PREF_LOADOUT "Раундстарт вещи"
+#define PREVIEW_PREF_NAKED "Голый"
+#define PREVIEW_PREF_NAKED_AROUSED "Голый - Возбуждённый"

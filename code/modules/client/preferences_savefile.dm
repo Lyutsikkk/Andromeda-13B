@@ -723,7 +723,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		WRITE_FILE(S["unlockable_loadout"], safe_json_encode(list()))
 
 	if(parent && !silent)
-		to_chat(parent, span_notice("Saved preferences!"))
+		to_chat(parent, span_notice("Сохранение предпочтений!"))
 
 	return S
 
@@ -1711,7 +1711,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	bluemoon_character_pref_save(S)
 
 	if(parent && !silent)
-		to_chat(parent, span_notice("Saved character slot!"))
+		to_chat(parent, span_notice("Слот персонажа сохранён!"))
 
 	return S
 

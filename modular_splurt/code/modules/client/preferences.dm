@@ -82,32 +82,32 @@
 						S.cd = "/character[i]"
 						S["real_name"] >> name
 						if(!name)
-							name = "Character[i]"
+							name = "Слот[i]"
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 
-			dat += "<center><h2>Occupation Choices</h2>"
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
+			dat += "<center><h2>Выбор профессии</h2>"
+			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Установить желаемую должность</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Quirk Setup ([GetQuirkBalance(user)] points left)</h2>"
-				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+				dat += "<center><h2>Навыки персонажа ([GetQuirkBalance(user)] points left)</h2>"
+				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Настройка навыков</a><br></center>"
+				dat += "<center><b>Очки для навыков:</b> [all_quirks.len ? all_quirks.Join(", ") : "Нету"]</center>"
 			dat += "<table width='100%'><tr><td valign='top'>"
-			dat += "<h2>Identity</h2>"
+			dat += "<h2>Идентификация</h2>"
 			if(jobban_isbanned(user, "appearance"))
-				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
-			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
-			dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
-			dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
+				dat += "<b>Вам запрещено использовать пользовательские имена и внешность. Вы можете продолжать настраивать своих персонажей, но как только вы присоединитесь к игре, вы будете выбраны случайным образом.</b><br>"
+			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Рандомный ник</A> "
+			dat += "<b>Всегда случайное имя:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Да" : "Нет"]</a><BR>"
+			dat += "<b>Жесткий костюм с Хвостом:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Да" : "Нет"]</a><BR>"
 
-			dat += "<b>[nameless ? "Default designation" : "Name"]:</b>"
+			dat += "<b>[nameless ? "Обозначение по умолчанию" : "Никнейм"]:</b>"
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
-			dat += "<a href='?_src_=prefs;preference=nameless'>Be nameless: [nameless ? "Yes" : "No"]</a><BR>"
+			dat += "<a href='?_src_=prefs;preference=nameless'>Be nameless: [nameless ? "Да" : "Нет"]</a><BR>"
 
-			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
-			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Гендер:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Мужчина" : (gender == FEMALE ? "Женщина" : (gender == PLURAL ? "Бесполый" : "Объект"))]</a><BR>"
+			dat += "<b>Сколько лет:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
-			dat += "<b>Special Names:</b><BR>"
+			dat += "<b>Специальные ники:</b><BR>"
 			var/old_group
 			for(var/custom_name_id in GLOB.preferences_custom_names)
 				var/namedata = GLOB.preferences_custom_names[custom_name_id]
@@ -119,24 +119,24 @@
 				dat += "<a href ='?_src_=prefs;preference=[custom_name_id];task=input'><b>[namedata["pref_name"]]:</b> [custom_names[custom_name_id]]</a> "
 			dat += "<br><br>"
 
-			dat += "<b>Custom job preferences:</b><BR>"
-			dat += "<a href='?_src_=prefs;preference=ai_core_icon;task=input'><b>Preferred AI Core Display:</b> [preferred_ai_core_display]</a><br>"
-			dat += "<a href='?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
-			dat += "<br><a href='?_src_=prefs;preference=hide_ckey;task=input'><b>Hide ckey: [hide_ckey ? "Enabled" : "Disabled"]</b></a><br>"
+			dat += "<b>Кастомные предпочтения профессии:</b><BR>"
+			dat += "<a href='?_src_=prefs;preference=ai_core_icon;task=input'><b>Предпочтительный дисплей ядра ИИ:</b> [preferred_ai_core_display]</a><br>"
+			dat += "<a href='?_src_=prefs;preference=sec_dept;task=input'><b>Предпочитаемый отдел безопасности:</b> [prefered_security_department]</a><BR></td>"
+			dat += "<br><a href='?_src_=prefs;preference=hide_ckey;task=input'><b>Скрыть сикей: [hide_ckey ? "Включено" : "Отключено"]</b></a><br>"
 			dat += "</td>"
 
 			dat += "<td valign='top'>"
-			dat += "<h2>PDA preferences</h2>"
-			dat += "<b>PDA Color:</b> <span style='border:1px solid #161616; background-color: [pda_color];'><font color='[color_hex2num(pda_color) < 200 ? "FFFFFF" : "000000"]'>[pda_color]</font></span> <a href='?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
-			dat += "<b>PDA Style:</b> <a href='?_src_=prefs;task=input;preference=pda_style'>[pda_style]</a><br>"
-			dat += "<b>PDA Reskin:</b> <a href='?_src_=prefs;task=input;preference=pda_skin'>[pda_skin]</a><br>"
-			dat += "<b>PDA Ringtone:</b> <a href='?_src_=prefs;task=input;preference=pda_ringtone'>[pda_ringtone]</a><br>"
+			dat += "<h2>Предпочтения ПДА</h2>"
+			dat += "<b>PDA Цвет:</b> <span style='border:1px solid #161616; background-color: [pda_color];'><font color='[color_hex2num(pda_color) < 200 ? "FFFFFF" : "000000"]'>[pda_color]</font></span> <a href='?_src_=prefs;preference=pda_color;task=input'>Change</a><BR>"
+			dat += "<b>PDA Стиль:</b> <a href='?_src_=prefs;task=input;preference=pda_style'>[pda_style]</a><br>"
+			dat += "<b>PDA Скин:</b> <a href='?_src_=prefs;task=input;preference=pda_skin'>[pda_skin]</a><br>"
+			dat += "<b>PDA Рингтон:</b> <a href='?_src_=prefs;task=input;preference=pda_ringtone'>[pda_ringtone]</a><br>"
 			dat += "</td>"
 
-			dat += "<h2>Silicon preferences</h2>"
+			dat += "<h2>Предпочтения законов у юнитов</h2>"
 			if(!CONFIG_GET(flag/allow_silicon_choosing_laws))
-				dat += "<i>The server has disabled choosing your own laws, you can still choose and save, but it won't do anything in-game.</i><br>"
-			dat += "<b>Starting lawset:</b> <a href='?_src_=prefs;task=input;preference=silicon_lawset'>[silicon_lawset ? silicon_lawset : "No custom"]</a><br>"
+				dat += "<i>Сервер отключил выбор ваших собственных законов, вы все еще можете выбирать и сохранять их, но это ничего не изменит в игре.</i><br>"
+			dat += "<b>Начальный набор законов:</b> <a href='?_src_=prefs;task=input;preference=silicon_lawset'>[silicon_lawset ? silicon_lawset : "No custom"]</a><br>"
 
 			if(silicon_lawset)
 				var/list/config_laws = CONFIG_GET(keyed_list/choosable_laws)
@@ -165,7 +165,7 @@
 						S.cd = "/character[i]"
 						S["real_name"] >> name
 						if(!name)
-							name = "Character[i]"
+							name = "Слот[i]"
 						dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];' [i == default_slot ? "class='linkOn'" : ""]>[name]</a> "
 					dat += "</center>"
 
@@ -711,27 +711,27 @@
 					dat += "</center>"
 
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += "<h2>Speech preferences</h2>"
-			dat += "<b>Custom Speech Verb:</b><BR>"
+			dat += "<h2>Речевые предпочтения</h2>"
+			dat += "<b>Кастомный речевой глагол:</b><BR>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=speech_verb;task=input'>[custom_speech_verb]</a><BR>"
-			dat += "<b>Custom Tongue:</b><BR>"
+			dat += "<b>Кастомный язык:</b><BR>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 			//SANDSTORM EDIT - additional language + runechat color
-			dat += "<b>Additional Language</b><br>"
+			dat += "<b>Дополнительный язык</b><br>"
 			var/list/languages_sorted = sort_list(language)
 			dat += "<a href='?_src_=prefs;preference=language;task=menu'>[language.len ? languages_sorted.Join(", ") : "None"]</a></center><br>"
-			dat += "<b>Custom runechat color:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
+			dat += "<b>Кастомный цвет рунного чата:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
 			dat += "</td>"
 			//END OF SANDSTORM EDIT
 			dat += "<td width='340px' height='300px' valign='top'>"
-			dat += "<h2>Vocal Bark preferences</h2>"
+			dat += "<h2>Настройка интонации</h2>"
 			var/datum/bark/B = GLOB.bark_list[bark_id]
-			dat += "<b>Vocal Bark Sound:</b><BR>"
+			dat += "<b>Тип голоса:</b><BR>"
 			dat += "<a style='display:block;width:200px' href='?_src_=prefs;preference=barksound;task=input'>[B ? initial(B.name) : "INVALID"]</a><BR>"
-			dat += "<b>Vocal Bark Speed:</b> <a href='?_src_=prefs;preference=barkspeed;task=input'>[bark_speed]</a><BR>"
-			dat += "<b>Vocal Bark Pitch:</b> <a href='?_src_=prefs;preference=barkpitch;task=input'>[bark_pitch]</a><BR>"
+			dat += "<b>Скорость голоса:</b> <a href='?_src_=prefs;preference=barkspeed;task=input'>[bark_speed]</a><BR>"
+			dat += "<b>Низкий / Высокий голос:</b> <a href='?_src_=prefs;preference=barkpitch;task=input'>[bark_pitch]</a><BR>"
 			dat += "<b>Vocal Bark Variance:</b> <a href='?_src_=prefs;preference=barkvary;task=input'>[bark_variance]</a><BR>"
-			dat += "<BR><a href='?_src_=prefs;preference=barkpreview'>Preview Bark</a><BR>"
+			dat += "<BR><a href='?_src_=prefs;preference=barkpreview'>Проверить звучание голоса</a><BR>"
 			dat += "</td>"
 			dat += "</tr></table>"
 
@@ -978,8 +978,8 @@
 				chosen_gear = list()
 
 			dat += "<table align='center' width='100%'>"
-			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> loadout points remaining.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
-			dat += "<tr><td colspan=4><center>You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
+			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для стартовых вещей</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
+			dat += "<tr><td colspan=4><center>Вы можете выбрать только один предмет в каждой категории, если только это не тот предмет, который появляется у вас в рюкзаке или в руках.</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
 
 			if(!length(GLOB.loadout_items))
@@ -1211,14 +1211,14 @@
 	dat += "<hr><center>"
 
 	if(!IsGuestKey(user.key))
-		dat += "<a href='?_src_=prefs;preference=load'>Undo</a> "
-		dat += "<a href='?_src_=prefs;preference=save'>Save Setup</a> "
+		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a> "
+		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изминения</a> "
 
-	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
+	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изминения</a>"
 	dat += "</center>"
 
 	winshow(user, "preferences_window", TRUE)
-	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>Character Setup</div>", 640, 770)
+	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>Настройка персонажа</div>", 640, 770)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	onclose(user, "preferences_window", src)
