@@ -669,8 +669,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(BACKGROUND_CHAR_TAB)
 					dat += "<table width='100%'><tr><td width='30%' valign='top'>"
 
-					dat += "<h2>Flavor Text</h2>"
-					dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
+					dat += "<h2>Описание персонажа</h2>"
+					dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Изменить описание персонажаt</b></a><br>"
 					if(length(features["flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!length(features["flavor_text"]))
 							dat += "\[...\]"
@@ -679,8 +679,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(features["flavor_text"])]..."
 					//SPLURT edit - naked flavor text
-					dat += "<h2>Naked Flavor Text</h2>"
-					dat += "<a href='?_src_=prefs;preference=naked_flavor_text;task=input'><b>Set Naked Examine Text</b></a><br>"
+					dat += "<h2>Описание голого персонажа</h2>"
+					dat += "<a href='?_src_=prefs;preference=naked_flavor_text;task=input'><b>Изменить описание голого персонажа</b></a><br>"
 					if(length(features["naked_flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!length(features["naked_flavor_text"]))
 							dat += "\[...\]<BR>"
@@ -690,8 +690,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "[TextPreview(html_encode(features["naked_flavor_text"]))]...<BR>"
 					//SPLURT edit end
 					// BLUEMOON ADD START - пользовательский эмоут смерти
-					dat += "<h2>Custom Deathgasp</h2>"
-					dat += "<a href='?_src_=prefs;preference=custom_deathgasp;task=input'><b>Set Custom Deathgasp</b></a><br>"
+					dat += "<h2>Сообщение о смерти</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathgasp;task=input'><b>Изменить сообщение о смерти</b></a><br>"
 					if(length(features["custom_deathgasp"]) <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!length(features["custom_deathgasp"]))
 							dat += "\[...\]<BR>"
@@ -699,13 +699,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[html_encode(features["custom_deathgasp"])]<BR>"
 					else
 						dat += "[TextPreview(html_encode(features["custom_deathgasp"]))]...<BR>"
-					dat += "<h2>Custom Deathgasp Sound</h2>"
-					dat += "<a href='?_src_=prefs;preference=custom_deathsound;task=input'><b>Set Custom Deathsound</b></a><br>"
+					dat += "<h2>Звук смерти</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathsound;task=input'><b>Изменить звук смерти</b></a><br>"
 					dat += "[features["custom_deathsound"]]<BR>"
-					dat += "<BR><a href='?_src_=prefs;preference=deathsoundpreview;task=input''>Preview Deathsound</a><BR>"
+					dat += "<BR><a href='?_src_=prefs;preference=deathsoundpreview;task=input''>Проиграть звук смерти</a><BR>"
 					// BLUEMOON ADD END
-					dat += "<h2>Silicon Flavor Text</h2>"
-					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
+					dat += "<h2>Описание синтетика</h2>"
+					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Изменить описание синтетика</b></a><br>"
 					if(length(features["silicon_flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!length(features["silicon_flavor_text"]))
 							dat += "\[...\]"
@@ -713,8 +713,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[features["silicon_flavor_text"]]"
 					else
 						dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
-					dat += "<h2>Custom Species Lore</h2>"
-					dat += "<a href='?_src_=prefs;preference=custom_species_lore;task=input'><b>Set Custom Species Lore Text</b></a><br>"
+					dat += "<h2>Описание лора</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_species_lore;task=input'><b>Изменить описание лора</b></a><br>"
 					if(length(features["custom_species_lore"]) <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!length(features["custom_species_lore"]))
 							dat += "\[...\]<BR>"
@@ -722,8 +722,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[features["custom_species_lore"]]<BR>"
 					else
 						dat += "[TextPreview(features["custom_species_lore"])]...<BR>"
-					dat += "<h2>OOC notes</h2>"
-					dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
+					dat += "<h2>OOC заметки</h2>"
+					dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Изменить OOC заметки</b></a><br>"
 					var/ooc_notes_len = length(features["ooc_notes"])
 					if(ooc_notes_len <= MAX_FLAVOR_PREVIEW_LEN)
 						if(!ooc_notes_len)
@@ -746,8 +746,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 
 					dat += "<td valign='top'>"
-					dat += "<h2>Records</h2>"
-					dat += "<a href='?_src_=prefs;preference=security_records;task=input'><b>Security Records</b></a><br>"
+					dat += "<h2>Заметки</h2>"
+					dat += "<a href='?_src_=prefs;preference=security_records;task=input'><b>Служебные заметки</b></a><br>"
 					if(length_char(security_records) <= 40)
 						if(!length(security_records))
 							dat += "\[...\]"
@@ -756,7 +756,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(security_records)]..."
 
-					dat += "<br><a href='?_src_=prefs;preference=medical_records;task=input'><b>Medical Records</b></a><br>"
+					dat += "<br><a href='?_src_=prefs;preference=medical_records;task=input'><b>Медицинские заметки</b></a><br>"
 					if(length_char(medical_records) <= 40)
 						if(!length(medical_records))
 							dat += "\[...\]"
@@ -766,20 +766,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "[TextPreview(medical_records)]..."
 
 					// BLUEMOON ADD
-					dat += "<h2>Headshot 1 Image</h2>"
-					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot 1 Image</b></a><br>"
+					dat += "<h2>Изображение персонажа 1</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot'><b>Изменить изображение персонажа 1</b></a><br>"
 					if(features["headshot_link"])
 						dat += "<img src='[features["headshot_link"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 2 Image</h2>"
-					dat += "<a href='?_src_=prefs;preference=headshot1'><b>Set Headshot 2 Image</b></a><br>"
+					dat += "<h2>Изображение персонажа 2</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot1'><b>Изменить изображение персонажа 2</b></a><br>"
 					if(features["headshot_link1"])
 						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 3 Image</h2>"
-					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
+					dat += "<h2>Изображение персонажа 3</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Изменить изображение персонажа 3</b></a><br>"
 					if(features["headshot_link2"])
 						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
@@ -2430,12 +2430,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						age = max(min( round(text2num(new_age)), AGE_MAX_INPUT),AGE_MIN)
 
 				if("security_records")
-					var/rec = stripped_multiline_input(usr, "Напишите заметки службы безопасности о вашем персонаже.", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите заметки службы безопасности о вашем персонаже.", "Служебные заметки", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						security_records = rec
 
 				if("medical_records")
-					var/rec = stripped_multiline_input(usr, "Напишите медицинские заметки о вашем персонаже.", "Medical Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
+					var/rec = stripped_multiline_input(usr, "Напишите медицинские заметки о вашем персонаже.", "Медицинские заметки", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(rec))
 						medical_records = rec
 

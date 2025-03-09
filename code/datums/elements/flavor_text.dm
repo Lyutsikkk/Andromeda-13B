@@ -201,7 +201,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			if(chosen_headshot_id >= our_mob.dna.headshot_links.len)
 				chosen_headshot_id = our_mob.dna.headshot_links.len || 1
 			var/old_link = our_mob.dna.headshot_links[chosen_headshot_id]
-			var/usr_input = tgui_input_text(our_mob, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", old_link, 100, FALSE, FALSE)
+			var/usr_input = tgui_input_text(our_mob, "Введите ссылку на изображение: (Для ссылок Discord попробуйте указать тип файла в конце ссылки, после ''. например, ''.jpg/.png/.jpeg')", "Изображение персонажа", old_link, 100, FALSE, FALSE)
 			if(isnull(usr_input))
 				return
 

@@ -35,7 +35,7 @@
 
 
 /datum/preferences/proc/get_headshot_link(mob/user, old_link)
-	var/usr_input = input(user, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", old_link) as text|null
+	var/usr_input = input(user, "Введите ссылку на изображение: (Для ссылок Discord попробуйте указать тип файла в конце ссылки, после '&'. например '&.jpg/.png/.jpeg')", "Изображение персонажа", old_link) as text|null
 	if(isnull(usr_input))
 		return ACTION_HEADSHOT_LINK_NOOP
 
