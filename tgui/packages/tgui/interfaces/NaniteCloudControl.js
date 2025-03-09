@@ -221,7 +221,7 @@ export const NaniteCloudBackupDetails = (props, context) => {
               {(!!can_rule || !!program.has_rules) && (
                 <Section
                   mt={-2}
-                  title="Rules"
+                  title="Правила"
                   level={2}
                   buttons={(
                     <>

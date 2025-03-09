@@ -443,7 +443,7 @@ const VoreUserPreferences = (props, context) => {
   } = data;
 
   return (
-    <Section title="Preferences" buttons={
+    <Section title="Предпочтения" buttons={
       <Button icon="eye" selected={show_pictures} onClick={() => act("show_pictures")}>
         Contents Preference: {show_pictures ? "Show Pictures" : "Show List"}
       </Button>

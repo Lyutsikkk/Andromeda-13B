@@ -146,7 +146,7 @@ window "infowindow"
 		anchor1 = 3,0
 		anchor2 = 19,0
 		saved-params = "is-checked"
-		text = "Changelog"
+		text = "Изменения"
 		command = "changelog"
 	elem "rules"
 		type = BUTTON
@@ -155,7 +155,7 @@ window "infowindow"
 		anchor1 = 19,0
 		anchor2 = 34,0
 		saved-params = "is-checked"
-		text = "Rules"
+		text = "Правила"
 		command = "rules"
 	elem "wiki"
 		type = BUTTON
@@ -164,7 +164,7 @@ window "infowindow"
 		anchor1 = 34,0
 		anchor2 = 50,0
 		saved-params = "is-checked"
-		text = "Wiki"
+		text = "Вики"
 		command = "wiki"
 	elem "discord"
 		type = BUTTON
@@ -173,7 +173,7 @@ window "infowindow"
 		anchor1 = 50,0
 		anchor2 = 66,0
 		saved-params = "is-checked"
-		text = "Discord"
+		text = "Дискорд"
 		command = "discord"
 	elem "github"
 		type = BUTTON
@@ -182,7 +182,7 @@ window "infowindow"
 		anchor1 = 66,0
 		anchor2 = 81,0
 		saved-params = "is-checked"
-		text = "Github"
+		text = "Гитхаб"
 		command = "github"
 	elem "report-issue"
 		type = BUTTON
@@ -191,7 +191,7 @@ window "infowindow"
 		anchor1 = 81,0
 		anchor2 = 97,0
 		saved-params = "is-checked"
-		text = "Report Issue"
+		text = "Репорт бага"
 		command = "report-issue"
 
 window "outputwindow"
@@ -220,7 +220,7 @@ window "outputwindow"
 		anchor1 = 100,100
 		anchor2 = none
 		saved-params = "is-checked"
-		text = "Chat"
+		text = "Чат"
 		command = ".winset \"saybutton.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
 		is-flat = true
 		button-type = pushbox

@@ -6,16 +6,16 @@
 	default = "https://katlin.dog/citadel-wiki"
 
 /datum/config_entry/string/wikiurltg
-	default = "http://www.tgstation13.org/wiki"
+	default = "https://tg.ss220.space/"
 
 /datum/config_entry/string/discordurl
-	default = "http://discord.gg"
+	default = "https://discord.gg/EaRzj2d9Cu"
 
 /datum/config_entry/string/rulesurl
-	default = "http://www.tgstation13.org/wiki/Rules"
+	default = "https://discord.com/channels/1347144227594833990/1347144227594833992"
 
 /datum/config_entry/string/githuburl
-	default = "https://www.github.com/tgstation/-tg-station"
+	default = "https://github.com/Lyutsikkk/Andromeda-13"
 
 /datum/config_entry/string/roundstatsurl
 

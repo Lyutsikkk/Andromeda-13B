@@ -276,7 +276,7 @@
 	icon = 'icons/hud/lobby/bottom_buttons.dmi'
 
 /atom/movable/screen/lobby/button/bottom/settings
-	name = "View Game Preferences"
+	name = "Посмотреть настройки игры"
 	icon_state = "settings"
 	base_icon_state = "settings"
 	screen_loc = "TOP:-122,CENTER:+29"

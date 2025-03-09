@@ -256,7 +256,7 @@ export const NaniteChamberControlContent = (props, context) => {
                         {program.has_rules && (
                           <Grid.Column>
                             <Section
-                              title="Rules"
+                              title="Правила"
                               level={2}>
                               {rules.map(rule => (
                                 <Fragment key={rule.display}>
