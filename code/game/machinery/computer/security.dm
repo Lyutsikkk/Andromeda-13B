@@ -93,13 +93,13 @@
 	"}
 					dat += {"
 <p style='text-align:center;'>"}
-					dat += "<A href='?src=[REF(src)];choice=New Record (General)'>New Record</A><BR>"
+					dat += "<A href='?src=[REF(src)];choice=New Record (General)'>Новая запись</A><BR>"
 					//search bar
 					dat += {"
 						<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 							<tr id='search_tr'>
 								<td align='center'>
-									<b>Search:</b> <input type='text' id='filter' value='' style='width:300px;'>
+									<b>Поиск:</b> <input type='text' id='filter' value='' style='width:300px;'>
 								</td>
 							</tr>
 						</table>
@@ -108,18 +108,18 @@
 </p>
 <table style="text-align:center;" cellspacing="0" width="100%">
 <tr>
-<th>Records:</th>
+<th>Записи:</th>
 </tr>
 </table>
 
 <span id='maintable_data_archive'>
 <table id='maintable_data' style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
-<th><A href='?src=[REF(src)];choice=Sorting;sort=name'>Name</A></th>
+<th><A href='?src=[REF(src)];choice=Sorting;sort=name'>ФИО</A></th>
 <th><A href='?src=[REF(src)];choice=Sorting;sort=id'>ID</A></th>
-<th><A href='?src=[REF(src)];choice=Sorting;sort=rank'>Rank</A></th>
-<th><A href='?src=[REF(src)];choice=Sorting;sort=fingerprint'>Fingerprints</A></th>
-<th>Criminal Status</th>
+<th><A href='?src=[REF(src)];choice=Sorting;sort=rank'>Должность</A></th>
+<th><A href='?src=[REF(src)];choice=Sorting;sort=fingerprint'>Отпечатки</A></th>
+<th>Статус</th>
 </tr>"}
 					if(!isnull(GLOB.data_core.general))
 						for(var/datum/data/record/R in sortRecord(GLOB.data_core.general, sortBy, order))
@@ -163,11 +163,11 @@
 							var complete_list = maintable.innerHTML;
 						</script>
 						<hr width='75%' />"}
-					dat += "<A href='?src=[REF(src)];choice=Record Maintenance'>Record Maintenance</A><br><br>"
-					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Log Out}</A>"
+					dat += "<A href='?src=[REF(src)];choice=Record Maintenance'>Ведение записей</A><br><br>"
+					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Разлогиниться}</A>"
 				if(2)
 					dat += "<B>Records Maintenance</B><HR>"
-					dat += "<BR><A href='?src=[REF(src)];choice=Delete All Records'>Delete All Records</A><BR><BR><A href='?src=[REF(src)];choice=Return'>Back</A>"
+					dat += "<BR><A href='?src=[REF(src)];choice=Delete All Records'>Удалить все записи</A><BR><BR><A href='?src=[REF(src)];choice=Return'>Назад</A>"
 				if(3)
 					dat += "<font size='4'><b>База данных</b></font><br>"
 					if(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1))
@@ -194,86 +194,86 @@
 						<tr><td>Ментальное состояние:</td><td>&nbsp;[active1.fields["m_stat"]]&nbsp;</td></tr>
 						</table></td>
 						<td><table><td align = center><a href='?src=[REF(src)];choice=Edit Field;field=show_photo_front'><img src=photo_front height=80 width=80 border=4></a><br>
-						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_front'>Print photo</a><br>
-						<a href='?src=[REF(src)];choice=Edit Field;field=upd_photo_front'>Update front photo</a></td>
+						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_front'>Распечатать фото</a><br>
+						<a href='?src=[REF(src)];choice=Edit Field;field=upd_photo_front'>Добавить фото</a></td>
 						<td align = center><a href='?src=[REF(src)];choice=Edit Field;field=show_photo_side'><img src=photo_side height=80 width=80 border=4></a><br>
-						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_side'>Print photo</a><br>
-						<a href='?src=[REF(src)];choice=Edit Field;field=upd_photo_side'>Update side photo</a></td></table>
+						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_side'>Распечатать фото</a><br>
+						<a href='?src=[REF(src)];choice=Edit Field;field=upd_photo_side'>Добавить фото</a></td></table>
 						</td></tr></table></td></tr></table>"}
 					else
 						dat += "<br>General Record Lost!<br>"
 					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-						dat += "<font size='4'><b>Security Data</b></font>"
-						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
-						dat += "<br><br>Minor Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_add'>Add New</A>"
+						dat += "<font size='4'><b>Криминальный записи</b></font>"
+						dat += "<br>Статус: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
+						dat += "<br><br>Мелкие преступления: <A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_add'>Добавить</A>"
 
 						// BLUEMOON EDIT START - возможность пометить правонарушение как обработанное и от имени ЦК | Логи у рекордса
 						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 						<tr>
-						<th>Crime</th>
-						<th>Details</th>
-						<th>Author</th>
-						<th>Time Added</th>
-						<th>Penalty Incurred</th>
-						<th>Del</th>
+						<th>Статья</th>
+						<th>Описание</th>
+						<th>Составитель</th>
+						<th>Время добавления</th>
+						<th>Понесённое наказание</th>
+						<th>Удл</th>
 						</tr>"}
 						for(var/datum/data/crime/c in active2.fields["mi_crim"])
 							dat += "<tr><td>[c.crimeName]</td>"
 							dat += "<td>[c.crimeDetails][c.centcom_enforced ? "<br><b style='color:green'>АВТОРИЗОВАНО ЦЕНТРАЛЬНЫМ КОМАНДОВАНИЕМ</b>" : ""]</td>"
 							dat += "<td>[c.author]</td>"
 							dat += "<td>[c.time]</td>"
-							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Switch\]</A></td>"
+							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Сменить\]</A></td>"
 							dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_delete;cdataid=[c.dataId]'>\[X\]</A></td>"
 							dat += "</tr>"
 						dat += "</table>"
 
 
-						dat += "<br>Major Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=ma_crim_add'>Add New</A>"
+						dat += "<br>Крупные преступления: <A href='?src=[REF(src)];choice=Edit Field;field=ma_crim_add'>Добавить</A>"
 
 						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 						<tr>
-						<th>Crime</th>
-						<th>Details</th>
-						<th>Author</th>
-						<th>Time Added</th>
-						<th>Penalty Incurred</th>
-						<th>Del</th>
+						<th>Статья</th>
+						<th>Описание</th>
+						<th>Составитель</th>
+						<th>Время добавления</th>
+						<th>Понесённое наказание</th>
+						<th>Удл</th>
 						</tr>"}
 						for(var/datum/data/crime/c in active2.fields["ma_crim"])
 							dat += "<tr><td>[c.crimeName]</td>"
 							dat += "<td>[c.crimeDetails][c.centcom_enforced ? "<br><b>[span_green("АВТОРИЗОВАНО ЦЕНТРАЛЬНЫМ КОМАНДОВАНИЕМ")]</b>" : ""]</td>"
 							dat += "<td>[c.author]</td>"
 							dat += "<td>[c.time]</td>"
-							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Switch\]</A></td>"
+							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Сменить\]</A></td>"
 							dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=ma_crim_delete;cdataid=[c.dataId]'>\[X\]</A></td>"
 							dat += "</tr>"
 						dat += "</table>"
 
-						dat += "<br>\nImportant Notes:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A>"
-						dat += "<br><br><font size='4'><b>Comments/Log</b></font><br>"
+						dat += "<br>\nВажные примечания:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A>"
+						dat += "<br><br><font size='4'><b>Логи криминальных записей</b></font><br>"
 						var/list/logs = active2.fields["actions_logs"]
 						var/log_string = logs.Join("<br>")
-						dat += "<br>\n<b>Actions Logs</b>:<br>[log_string]\n\t"
-						dat += "<br><A href='?src=[REF(src)];choice=Print Logs;'>Print Logs</A>"
-						dat += "<A href='?src=[REF(src)];choice=Delete Logs;'>Delete Logs</A>"
-						dat += "<br><br><b>Comments</b><br>"
+						dat += "<br>\n<b>Журнал логов</b>:<br>[log_string]\n\t"
+						dat += "<br><A href='?src=[REF(src)];choice=Print Logs;'>Распечатать логи</A>"
+						dat += "<A href='?src=[REF(src)];choice=Delete Logs;'>Удалить логи</A>"
+						dat += "<br><br><b>Коментарии</b><br>"
 						// BLUEMOON EDIT END
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
 							dat += (active2.fields[text("com_[]", counter)] + "<BR>")
 							if(active2.fields[text("com_[]", counter)] != "<B>Deleted</B>")
-								dat += text("<A href='?src=[REF(src)];choice=Delete Entry;del_c=[]'>Delete Entry</A><BR><BR>", counter)
+								dat += text("<A href='?src=[REF(src)];choice=Delete Entry;del_c=[]'>Удалить запись</A><BR><BR>", counter)
 							counter++
-						dat += "<A href='?src=[REF(src)];choice=Add Entry'>Add Entry</A><br><br>"
-						dat += "<A href='?src=[REF(src)];choice=Delete Record (Security)'>Delete Record (Security Only)</A><br>"
+						dat += "<A href='?src=[REF(src)];choice=Add Entry'>Добавить запись</A><br><br>"
+						dat += "<A href='?src=[REF(src)];choice=Delete Record (Security)'>Удалить записи (Только для сотрудников брига)</A><br>"
 					else
 						dat += "Security Record Lost!<br>"
-						dat += "<A href='?src=[REF(src)];choice=New Record (Security)'>New Security Record</A><br><br>"
-					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Delete Record (ALL)</A><br><A href='?src=[REF(src)];choice=Print Record'>Print Record</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Print Wanted Poster</A><BR><A href='?src=[REF(src)];choice=Generate Arrest Warrant'>Generate Arrest Warrant</A><BR><A href='?src=[REF(src)];choice=Return'>Back</A><BR><BR>"
-					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Log Out}</A>"
+						dat += "<A href='?src=[REF(src)];choice=New Record (Security)'>Новая криминальная запись</A><br><br>"
+					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Удалить записи (ВСЕ)</A><br><A href='?src=[REF(src)];choice=Print Record'>Распечатать записи</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Распечатать постеры розыскиваемых</A><BR><A href='?src=[REF(src)];choice=Generate Arrest Warrant'>Распечатать ордер на арест</A><BR><A href='?src=[REF(src)];choice=Return'>Назад</A><BR><BR>"
+					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Разлогиниться}</A>"
 				else
 		else
-			dat += "<A href='?src=[REF(src)];choice=Log In'>{Log In}</A>"
+			dat += "<A href='?src=[REF(src)];choice=Log In'>{Залогиниться}</A>"
 	var/datum/browser/popup = new(user, "secure_rec", "Консоль Криминальных Записей", 600, 400)
 	popup.set_content(dat)
 	popup.open()
@@ -400,15 +400,15 @@ What a mess.*/
 				else
 					report_text += "<B>General Record Lost!</B><BR>"
 				if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-					report_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+					report_text += text("<BR>\n<CENTER><B>Криминальные записи</B></CENTER><BR>\nСтатус: []", active2.fields["criminal"])
 
-					report_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
+					report_text += "<BR>\n<BR>\nМелкие нарушение:<BR>\n"
 					report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
+<th>Статья</th>
+<th>Описание</th>
+<th>Составитель</th>
+<th>Время добавления</th>
 </tr>"}
 					for(var/datum/data/crime/c in active2.fields["mi_crim"])
 						report_text += "<tr><td>[c.crimeName]</td>"
@@ -418,13 +418,13 @@ What a mess.*/
 						report_text += "</tr>"
 					report_text += "</table>"
 
-					report_text += "<BR>\nMajor Crimes: <BR>\n"
+					report_text += "<BR>\nКрупные нарушения: <BR>\n"
 					report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
+<th>Статья</th>
+<th>Описание</th>
+<th>Составитель</th>
+<th>Время добавления</th>
 </tr>"}
 					for(var/datum/data/crime/c in active2.fields["ma_crim"])
 						report_text += "<tr><td>[c.crimeName]</td>"
@@ -435,7 +435,7 @@ What a mess.*/
 					report_text += "</table>"
 
 
-					report_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+					report_text += text("<BR>\nВажные примечания:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Логи криминальных записей</B></CENTER><BR>", active2.fields["notes"])
 					var/counter = 1
 					while(active2.fields[text("com_[]", counter)])
 						report_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
@@ -560,7 +560,7 @@ What a mess.*/
 			var/counter = 1
 			while(active2.fields[text("com_[]", counter)])
 				counter++
-			active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), time2text(world.realtime, "MMM DD"), GLOB.year_integer, t1)
+			active2.fields[text("com_[]", counter)] = text("Создал/а [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), time2text(world.realtime, "MMM DD"), GLOB.year_integer, t1)
 
 		if("Delete Record (ALL)")
 			if(active1)
@@ -587,7 +587,7 @@ What a mess.*/
 				R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 				R.fields["mi_crim"] = list()
 				R.fields["ma_crim"] = list()
-				R.fields["notes"] = "No notes."
+				R.fields["notes"] = "Нет примечаний."
 				GLOB.data_core.security += R
 				active2 = R
 				screen = 3
@@ -595,17 +595,17 @@ What a mess.*/
 		if("New Record (General)")
 			//General Record
 			var/datum/data/record/G = new /datum/data/record()
-			G.fields["name"] = "New Record"
+			G.fields["name"] = "Новая запись"
 			G.fields["id"] = "[num2hex(rand(1, 1.6777215E7), 6)]"
-			G.fields["rank"] = "Unassigned"
-			G.fields["gender"] = "Male"
-			G.fields["age"] = "Unknown"
-			G.fields["species"] = "Human"
+			G.fields["rank"] = "Неназначенный"
+			G.fields["gender"] = "Мужской"
+			G.fields["age"] = "Неизвестно"
+			G.fields["species"] = "Человек"
 			G.fields["photo_front"] = new /icon()
 			G.fields["photo_side"] = new /icon()
 			G.fields["fingerprint"] = "?????"
-			G.fields["p_stat"] = "Active"
-			G.fields["m_stat"] = "Stable"
+			G.fields["p_stat"] = "Живой"
+			G.fields["m_stat"] = "Стабильно"
 			GLOB.data_core.general += G
 			active1 = G
 
@@ -617,7 +617,7 @@ What a mess.*/
 			R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 			R.fields["mi_crim"] = list()
 			R.fields["ma_crim"] = list()
-			R.fields["notes"] = "No notes."
+			R.fields["notes"] = "Нет примечаний."
 			R.fields["actions_logs"] = list(
 				"<u>[GLOB.current_date_string] | [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] ЗАПИСЬ НАЧАТА. СУБЪЕКТ - [active1.fields["name"]] | N/A | [active1.fields["id"]] -- ИНИЦИАТОР: [authenticated] ([rank]);</u><br>"
 				)
@@ -932,7 +932,7 @@ What a mess.*/
 						)
 				if("criminal")
 					if(istype(active2, /datum/data/record))
-						temp = "<h5>Criminal Status:</h5>"
+						temp = "<h5>Статус:</h5>"
 						temp += "<ul>"
 						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>Ничего</a></li>"
 						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Арестовать*</a></li>"
@@ -1084,15 +1084,15 @@ What a mess.*/
 					else
 						R.fields["name"] = "[pick(pick(GLOB.first_names_male), pick(GLOB.first_names_female))] [pick(GLOB.last_names)]"
 				if(2)
-					R.fields["gender"] = pick("Male", "Female", "Other")
+					R.fields["gender"] = pick("Мужской", "Женский", "Бесполный")
 				if(3)
 					R.fields["age"] = rand(5, 85)
 				if(4)
-					R.fields["criminal"] = pick("None", "*Arrest*", "Incarcerated", "Paroled", "Discharged")
+					R.fields["criminal"] = pick("Ничего", "*Арестовать*", "Задержан", "УДО", "Отпущен")
 				if(5)
-					R.fields["p_stat"] = pick("*Unconscious*", "Active", "Physically Unfit")
+					R.fields["p_stat"] = pick("*Без сознания*", "Живой", "Физически Непригодный")
 				if(6)
-					R.fields["m_stat"] = pick("*Insane*", "*Unstable*", "*Watch*", "Stable")
+					R.fields["m_stat"] = pick("*Безумный*", "*Нестабильно*", "*Следить*", "Стабильно")
 				if(7)
 					R.fields["species"] = pick(GLOB.roundstart_races)
 				if(8)
