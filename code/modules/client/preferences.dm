@@ -621,7 +621,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Кастомный цвет крови:</b>"
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_custom_blood_color;task=input'>[custom_blood_color ? "Включено" : "Отключено"]</a><BR>"
 					if(custom_blood_color)
-						dat += "<b>Цвет крови:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
+						dat += "<b>Цвет крови:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Изменить</a><BR>"
 					dat += "</td>"
 
 					dat += "<td valign='top'>"

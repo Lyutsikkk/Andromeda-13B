@@ -89,7 +89,7 @@
 			dat += "<center><h2>Выбор профессии</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Установить желаемую должность</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Навыки персонажа ([GetQuirkBalance(user)] points left)</h2>"
+				dat += "<center><h2>Навыки персонажа ([GetQuirkBalance(user)] осталось очков)</h2>"
 				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Настройка навыков</a><br></center>"
 				dat += "<center><b>Очки для навыков:</b> [all_quirks.len ? all_quirks.Join(", ") : "Нету"]</center>"
 			dat += "<table width='100%'><tr><td valign='top'>"
