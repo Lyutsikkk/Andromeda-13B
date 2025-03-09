@@ -30,8 +30,8 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 ))
 
 /obj/item/stack/sheet/glass
-	name = "glass"
-	desc = "HOLY SHEET! That is a lot of glass."
+	name = "стекло"
+	desc = "СВЯТЫЕ УГОДНИКИ! Здесь слишком много стекла."
 	singular_name = "glass sheet"
 	icon_state = "sheet-glass"
 	item_state = "sheet-glass"
@@ -158,8 +158,8 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 
 
 /obj/item/stack/sheet/rglass
-	name = "reinforced glass"
-	desc = "Glass which seems to have rods or something stuck in them."
+	name = "армированное стекло"
+	desc = "Стекло, в котором, кажется, застряли стержни или что-то еще."
 	singular_name = "reinforced glass sheet"
 	icon_state = "sheet-rglass"
 	item_state = "sheet-rglass"

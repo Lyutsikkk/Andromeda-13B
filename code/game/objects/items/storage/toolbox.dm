@@ -1,8 +1,8 @@
 GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 
 /obj/item/storage/toolbox
-	name = "toolbox"
-	desc = "Danger. Very robust."
+	name = "ящик инструментов"
+	desc = "Опасно! Крайне робастный."
 	icon_state = "toolbox_default"
 	item_state = "toolbox_default"
 	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
@@ -99,8 +99,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	has_soul = TRUE
 
 /obj/item/storage/toolbox/mechanical/old/heirloom
-	name = "old, robust toolbox" //this will be named "X family toolbox"
-	desc = "It's seen better days."
+	name = "старый робастный ящик инструментов" //this will be named "X family toolbox"
+	desc = "Он знавал лучшие времена."
 	slot_flags = ITEM_SLOT_BELT
 	//Citadel change buffed to base levels
 	total_mass = 2
@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	return
 
 /obj/item/storage/toolbox/mechanical/old/clean // the assistant traitor toolbox, damage scales with TC inside
-	name = "Toolbox"
+	name = "ящик инструментов"
 	desc = "Старый, синий ящик с инструментами. Он угрожает тошнотворными миазмами сильных энергий. Ты уверен в этом, Брейн? Ты точно хочешь вложить туда Телекристаллы?"
 	icon_state = "toolbox_blue_clean"
 	force = 19
@@ -142,7 +142,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/clothing/gloves/color/yellow(src)
 
 /obj/item/storage/toolbox/electrical
-	name = "electrical toolbox"
+	name = "ящик инструментов электрика"
 	icon_state = "yellow"
 	item_state = "toolbox_yellow"
 
@@ -160,10 +160,10 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 		new /obj/item/stack/cable_coil(src,30,pickedcolor)
 
 /obj/item/storage/toolbox/syndicate
-	name = "black and red toolbox"
+	name = "чёрно-красный ящик инструментов"
 	icon_state = "syndicate"
 	item_state = "toolbox_syndi"
-	desc = "A toolbox painted black with a red stripe. It looks more heavier than normal toolboxes."
+	desc = "Ящик для инструментов, выкрашенный в черный цвет с красной полосой. Он выглядит более тяжелым, чем обычные ящики для инструментов."
 	force = 15
 	throwforce = 18
 

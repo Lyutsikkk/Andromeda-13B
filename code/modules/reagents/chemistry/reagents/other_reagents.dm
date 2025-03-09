@@ -1245,15 +1245,15 @@
 	..()
 
 /datum/reagent/gold
-	name = "Gold"
-	description = "Gold is a dense, soft, shiny metal and the most malleable and ductile metal known."
+	name = "Золото"
+	description = "Золото - это плотный, мягкий, блестящий металл и самый податливый из известных металлов."
 	reagent_state = SOLID
 	color = "#F7C430" // rgb: 247, 196, 48
 	taste_description = "expensive metal"
 
 /datum/reagent/silver
-	name = "Silver"
-	description = "A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal."
+	name = "Серебро"
+	description = "Мягкий, белый, блестящий переходный металл, он обладает самой высокой электропроводностью среди всех элементов и самой высокой теплопроводностью среди всех металлов."
 	reagent_state = SOLID
 	color = "#D0D0D0" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"

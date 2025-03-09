@@ -10,8 +10,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		new_status? W.electrochromatic_dim() : W.electrochromatic_off()
 
 /obj/structure/window
-	name = "window"
-	desc = "A window."
+	name = "окно"
+	desc = "Это окно, просто стекло и каркас."
 	icon_state = "window"
 	density = TRUE
 	layer = ABOVE_OBJ_LAYER //Just above doors
@@ -59,35 +59,35 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 /obj/structure/window/examine(mob/user)
 	. = ..()
 	if(electrochromatic_status != NOT_ELECTROCHROMATIC)
-		. += "<span class='notice'>The window has electrochromatic circuitry on it.</span>"
+		. += "<span class='notice'>На окне есть электрохроматическая схема.</span>"
 	if(reinf)
 		if(anchored && state == WINDOW_SCREWED_TO_FRAME)
-			. += "<span class='notice'>The window is <b>screwed</b> to the frame.</span>"
+			. += "<span class='notice'>Окно <b>привинчено</b> к раме.</span>"
 		else if(anchored && state == WINDOW_IN_FRAME)
-			. += "<span class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>"
+			. += "<span class='notice'>Окно <i>откручено</i> но <b>вставлено</b> в раму.</span>"
 		else if(anchored && state == WINDOW_OUT_OF_FRAME)
-			. += "<span class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>"
+			. += "<span class='notice'>Окно вынесено за пределы рамы, но его можно <i>открыть</i>. Оно <b>привинчено</b> к полу.</span>"
 		else if(!anchored)
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += "<span class='notice'>Окно <i>откручено</i> от пола, и его можно <b>прикрутить</b>.</span>"
 		switch(state)
 			if(PRWINDOW_SECURE)
 				if(extra_reinforced)
-					. += "It's been screwed in with one way screws, you'd need to <b>heat their solder cover</b> to have any chance of backing them out."
+					. += "Он был завинчен односторонними винтами, вам нужно было бы <b>нагреть их припойную крышку</b>, чтобы иметь хоть какой-то шанс вытащить их обратно."
 				else
-					. += "It's been screwed in with solid screws, you'd need to <b>screw them</b> out to unsecure the window."
+					. += "Оно было прикручено прочными винтами, вам нужно было бы <b>вывинтить их</b> чтобы открыть окно."
 			if(PRWINDOW_BOLTS_HEATED)
-				. += "The solder cover melts away, and you'll likely be able to <b>unscrew them</b> now."
+				. += "Припойная крышка расплавляется, и вы, вероятно, сможете <b> открутить их</b> прямо сейчас."
 			if(PRWINDOW_BOLTS_OUT)
-				. += "The screws have been removed, revealing a small gap you could fit a <b>prying tool</b> in."
+				. += "TВинты были вывернуты, в результате чего образовалась небольшая щель, в которую можно было бы вставить и <b>отогнуть</b> для вскрытия."
 			if(PRWINDOW_POPPED)
-				. += "The main plate of the window has popped out of the frame, exposing some bars that look like they can be <b>cut</b>."
+				. += "Основная пластина окна вышла из рамы, обнажив несколько решеток, которые выглядят так, будто их можно <b>вырезать</b>."
 			if(PRWINDOW_BARS_CUT)
-				. += "The main pane can be easily moved out of the way to reveal some <b>bolts</b> holding the frame in."
+				. += "Основную панель можно легко отодвинуть в сторону, чтобы открыть <b>несколько болтов</b> удерживающих раму."
 	else
 		if(anchored)
-			. += "<span class='notice'>The window is <b>screwed</b> to the floor.</span>"
+			. += "<span class='notice'>Окно <b>прикручено</b> к полу.</span>"
 		else
-			. += "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>"
+			. += "<span class='notice'>Окно <i>откручено</i> от пола, и может быть разобран путем <b>выкруччен</b>.</span>"
 
 /obj/structure/window/Initialize(mapload, direct)
 	. = ..()
@@ -613,8 +613,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	anchored = FALSE
 
 /obj/structure/window/reinforced
-	name = "reinforced window"
-	desc = "A window that is reinforced with metal rods."
+	name = "армированное окно"
+	desc = "Окно, укрепленное металлическими прутьями."
 	icon_state = "rwindow"
 	reinf = TRUE
 	heat_resistance = 1600

@@ -85,7 +85,7 @@
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/toxin/formaldehyde = 1, /datum/reagent/bromine = 1)
 
 /datum/chemical_reaction/plasmasolidification
-	name = "Solid Plasma"
+	name = "Твердая плазма"
 	id = "solidplasma"
 	required_reagents = list(/datum/reagent/iron = 5, /datum/reagent/consumable/frostoil = 5, /datum/reagent/toxin/plasma = 20)
 	mob_react = FALSE

@@ -1,6 +1,6 @@
 /obj/item/wrench
-	name = "wrench"
-	desc = "A wrench with common uses. Can be found in your hand."
+	name = "гаечный ключ"
+	desc = "Гаечный ключ общего назначения. Его можно найти в вашей руке."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -30,15 +30,15 @@
 	return (BRUTELOSS)
 
 /obj/item/wrench/cyborg
-	name = "automatic wrench"
-	desc = "An advanced robotic wrench. Can be found in construction cyborgs."
+	name = "автоматический гаечный ключ"
+	desc = "Усовершенствованный роботизированный гаечный ключ. Его можно найти в разделе строительные киборги."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "wrench_cyborg"
 	toolspeed = 0.5
 
 /obj/item/wrench/combat
-	name = "combat wrench"
-	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
+	name = "боевой гаечный ключ"
+	desc = "Он похож на обычный гаечный ключ, но более острый. Его можно найти на поле боя."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench_combat"
 	item_state = "wrench_combat"
@@ -78,8 +78,8 @@
 
 
 /obj/item/wrench/brass
-	name = "brass wrench"
-	desc = "A brass wrench. It's faintly warm to the touch."
+	name = "латунный гаечный ключ"
+	desc = "Латунный гаечный ключ. Он слегка теплый на ощупь."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "wrench_clock"
 	toolspeed = 0.5
@@ -88,29 +88,29 @@
 	toolspeed = 1
 
 /obj/item/wrench/ashwalker
-	name = "bone wrench"
-	desc = "A shoddy wrench made out of bent bones and sinew."
+	name = "костный гаечный ключ"
+	desc = "Дрянной гаечный ключ, сделанный из согнутых костей и сухожилий."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "wrench_bone"
 	toolspeed = 0.75
 
 /obj/item/wrench/bronze
-	name = "bronze plated wrench"
-	desc = "A bronze plated wrench."
+	name = "гаечный ключ с бронзовым покрытием"
+	desc = "Просто ключ, гаечный ключ, но имеет бронзовое покрытие."
 	icon_state = "wrench_brass"
 	toolspeed = 0.95
 
 /obj/item/wrench/abductor
-	name = "alien wrench"
-	desc = "A polarized wrench. It causes anything placed between the jaws to turn."
+	name = "инопланетный гаечный ключ"
+	desc = "Гаечный ключ с поляризацией. Он поворачивает все, что находится между зажимами."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'
 	toolspeed = 0.1
 
 /obj/item/wrench/power
-	name = "hand drill"
-	desc = "A simple powered hand drill. It's fitted with a bolt bit."
+	name = "ручная дрель"
+	desc = "Универсальная дрель, что может закручивать болты, а так же откручивать винты."
 	icon_state = "drill_bolt"
 	item_state = "drill"
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -136,8 +136,8 @@
 	return (BRUTELOSS)
 
 /obj/item/wrench/medical
-	name = "medical wrench"
-	desc = "A medical wrench with common(medical?) uses. Can be found in your hand."
+	name = "медицинский гаечный ключ"
+	desc = "Медицинский гаечный ключ для обычного (медицинского?) использования. Его можно найти в вашей руке."
 	icon_state = "wrench_medical"
 	force = 2 //MEDICAL
 	throwforce = 4
@@ -174,8 +174,8 @@
 	return OXYLOSS
 
 /obj/item/wrench/advanced
-	name = "advanced wrench"
-	desc = "A wrench that uses the same magnetic technology that abductor tools use, but slightly more ineffeciently."
+	name = "усовершенствованный гаечный ключ"
+	desc = "Гаечный ключ, в котором используется та же магнитная технология, что и в инструментах для похищения, но несколько более неэффективно."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'

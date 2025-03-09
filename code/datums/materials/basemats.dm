@@ -9,8 +9,8 @@
 
 ///Breaks extremely easily but is transparent.
 /datum/material/glass
-	name = "glass"
-	desc = "Glass forged by melting sand."
+	name = "стекло"
+	desc = "Стекло, выкованное из расплавленного песка."
 	color = "#88cdf1"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -29,8 +29,8 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Has no special properties. Could be good against vampires in the future perhaps.
 /datum/material/silver
-	name = "silver"
-	desc = "Silver"
+	name = "серебро"
+	desc = "Серебро"
 	color = list(255/255, 284/255, 302/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/silver
@@ -39,8 +39,8 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Slight force decrease. It's gold, it's soft as fuck.
 /datum/material/gold
-	name = "gold"
-	desc = "Gold"
+	name = "золото"
+	desc = "Золото"
 	color = list(340/255, 240/255, 50/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //gold is shiny, but not as bright as bananium
 	strength_modifier = 0.8
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -51,8 +51,8 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Small force increase, for diamond swords
 /datum/material/diamond
-	name = "diamond"
-	desc = "Highly pressurized carbon"
+	name = "алмаз"
+	desc = "Углерод под высоким давлением"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	strength_modifier = 1.2
 	alpha = 132
@@ -64,7 +64,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Is slightly radioactive
 /datum/material/uranium
-	name = "uranium"
+	name = "уран"
 	desc = "Uranium"
 	color = rgb(48, 237, 26)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -84,8 +84,8 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Adds firestacks on hit (Still needs support to turn into gas on destruction)
 /datum/material/plasma
-	name = "plasma"
-	desc = "Isn't plasma a state of matter? Oh whatever."
+	name = "плазма"
+	desc = "Разве плазма - это не состояние материи? Да ладно."
 	color = list(298/255, 46/255, 352/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	strength_modifier = 0.7
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
@@ -119,8 +119,8 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Honks and slips
 /datum/material/bananium
-	name = "bananium"
-	desc = "Material with hilarious properties"
+	name = "бананиум"
+	desc = "Материал с забавными свойствами"
 	color = list(460/255, 464/255, 0, 0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0) //obnoxiously bright yellow
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/bananium
@@ -141,7 +141,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Mediocre force increase
 /datum/material/titanium
-	name = "titanium"
+	name = "титаниум"
 	desc = "Titanium"
 	color = "#b3c0c7"
 	strength_modifier = 1.1
@@ -163,7 +163,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Force decrease
 /datum/material/plastic
-	name = "plastic"
+	name = "пластик"
 	desc = "Plastic"
 	color = "#caccd9"
 	strength_modifier = 0.85

@@ -25,8 +25,8 @@
 	update_icon()
 
 /obj/item/stack/sheet/mineral/wood
-	name = "wooden plank"
-	desc = "One can only guess that this is a bunch of wood. You might be able to make a stake with this if you use something sharp on it"
+	name = "деревянная доска"
+	desc = "Можно только догадываться, что это доска. Возможно, из этого можно сделать колышек, если насадить на него что-нибудь острое."
 	singular_name = "wood plank"
 	icon_state = "sheet-wood"
 	item_state = "sheet-wood"

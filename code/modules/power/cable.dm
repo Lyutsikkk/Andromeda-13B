@@ -493,7 +493,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 
 /obj/item/stack/cable_coil
-	name = "cable coil"
+	name = "кабель"
 	custom_price = PRICE_CHEAP_AS_FREE
 	gender = NEUTER //That's a cable coil sounds better than that's some cable coils
 	icon = 'icons/obj/power.dmi'
@@ -505,7 +505,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	amount = MAXCOIL
 	merge_type = /obj/item/stack/cable_coil // This is here to let its children merge between themselves
 	color = "red"
-	desc = "A coil of insulated power cable."
+	desc = "Моток изолированного силового кабеля."
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3

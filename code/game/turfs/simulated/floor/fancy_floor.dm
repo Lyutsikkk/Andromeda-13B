@@ -259,7 +259,7 @@
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+	. += "<span class='notice'>На его краю есть <b>небольшая щель</b> можно отогнуть.</span>"
 
 /turf/open/floor/carpet/Initialize(mapload)
 	. = ..()

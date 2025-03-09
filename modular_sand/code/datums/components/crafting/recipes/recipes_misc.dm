@@ -16,7 +16,7 @@
 	category = CAT_MISCELLANEOUS
 
 /datum/crafting_recipe/wirecutters
-	name = "Wirecutters"
+	name = "Кусачки"
 	result = /obj/item/wirecutters/makeshift
 	reqs = list(/obj/item/stack/rods = 2,
 				/obj/item/stack/cable_coil = 5)
@@ -26,7 +26,7 @@
 	category = CAT_MISCELLANEOUS
 
 /datum/crafting_recipe/wrench
-	name = "Wrench"
+	name = "Гаечный ключ"
 	result = /obj/item/wrench/makeshift
 	reqs = list(/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/metal = 1)
@@ -48,7 +48,7 @@
 	category = CAT_MISCELLANEOUS
 
 /datum/crafting_recipe/toolbox
-	name = "Toolbox"
+	name = "Ящик инструментов"
 	result = /obj/item/storage/toolbox/greyscale
 	reqs = list(/obj/item/stack/rods = 3,
 				/obj/item/stack/sheet/metal = 5,
@@ -110,7 +110,7 @@
 	category = CAT_MISCELLANEOUS
 
 /datum/crafting_recipe/cable_coil
-	name = "cable coil"
+	name = "Кабеля"
 	result = /obj/item/stack/cable_coil
 	reqs = list(/obj/item/stack/rods = 30,
 			/obj/item/stack/sheet/glass = 15)

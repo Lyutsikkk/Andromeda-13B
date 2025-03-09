@@ -1,7 +1,7 @@
 #define WELDER_FUEL_BURN_INTERVAL 13
 /obj/item/weldingtool
-	name = "welding tool"
-	desc = "A standard edition welder provided by Nanotrasen."
+	name = "сварочный аппарат"
+	desc = "Сварочный аппарат стандартной комплектации от Nanotrasen."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	item_state = "welder"
@@ -329,15 +329,15 @@
 		return ""
 
 /obj/item/weldingtool/largetank
-	name = "industrial welding tool"
-	desc = "A slightly larger welder with a larger tank."
+	name = "промышленный сварочный аппарат"
+	desc = "Сварочный аппарат чуть большего размера с большим баком."
 	icon_state = "indwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 
 /obj/item/weldingtool/largetank/cyborg
-	name = "integrated welding tool"
-	desc = "An advanced welder designed to be used in robotic systems."
+	name = "встроенный сварочный аппарат"
+	desc = "Современный сварочный аппарат, предназначенный для использования в роботизированных системах."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
 	toolspeed = 0.5
@@ -346,8 +346,8 @@
 	return
 
 /obj/item/weldingtool/mini
-	name = "emergency welding tool"
-	desc = "A miniature welder used during emergencies."
+	name = "аппарат для аварийной сварки"
+	desc = "Миниатюрный сварочный аппарат, используемый в чрезвычайных ситуациях."
 	icon_state = "miniwelder"
 	max_fuel = 10
 	w_class = WEIGHT_CLASS_TINY
@@ -358,16 +358,16 @@
 	return
 
 /obj/item/weldingtool/hugetank
-	name = "upgraded industrial welding tool"
-	desc = "An upgraded welder based of the industrial welder."
+	name = "модернизированный промышленный сварочный аппарат"
+	desc = "Модернизированный сварочный аппарат на базе промышленного сварочного аппарата."
 	icon_state = "upindwelder"
 	item_state = "upindwelder"
 	max_fuel = 80
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
 
 /obj/item/weldingtool/bronze
-	name = "bronze plated welding tool"
-	desc = "A bronze plated welder."
+	name = "сварочный аппарат с бронзовым покрытием"
+	desc = "Сварочный аппарат, так же варит, так же жарит, но с покрытием из бронзы."
 	max_fuel = 21
 	toolspeed = 0.95
 	icon_state = "brasswelder"
@@ -376,8 +376,8 @@
 //Self filling welders below
 
 /obj/item/weldingtool/experimental
-	name = "experimental welding tool"
-	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
+	name = "экспериментальный сварочный инструмент"
+	desc = "Экспериментальный сварочный аппарат, способный самостоятельно вырабатывать топливо и менее вредный для глаз."
 	icon_state = "exwelder"
 	item_state = "exwelder"
 	max_fuel = 40
@@ -389,16 +389,16 @@
 	toolspeed = 0.5
 
 /obj/item/weldingtool/experimental/brass
-	name = "brass welding tool"
-	desc = "A brass welder that seems to constantly refuel itself. It is faintly warm to the touch."
+	name = "латунный сварочный аппарат"
+	desc = "Сварочный аппарат из латуни, который, кажется, постоянно сам себя заправляет. Он слегка теплый на ощупь."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	refueling_interval = 5
 	icon_state = "clockwelder"
 	item_state = "brasswelder"
 
 /obj/item/weldingtool/experimental/ashwalker
-	name = "necropolis welding torch"
-	desc = "A mysterious welding tool with its origins in the depths of the necropolis. A mysterious force keeps replenishing its fuel."
+	name = "сварка некроманта"
+	desc = "Таинственный сварочный аппарат, происхождение которого находится в недрах некрополя. Таинственная сила продолжает пополнять запасы топлива."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	refueling_interval = 5
 	toolspeed = 0.75
@@ -407,8 +407,8 @@
 	icon_state = "ashwelder"
 
 /obj/item/weldingtool/abductor
-	name = "alien welding tool"
-	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
+	name = "инопланетный сварочный аппарат"
+	desc = "Инопланетный сварочный аппарат. Какое бы топливо он ни использовал, оно никогда не заканчивается."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "welder"
 	self_fueling = TRUE
@@ -419,8 +419,8 @@
 	change_icons = 0
 
 /obj/item/weldingtool/advanced
-	name = "advanced welding tool"
-	desc = "A modern welding tool combined with an alien welding tool, it almost never runs out of fuel and works nearly as fast."
+	name = "усовершенствованный сварочный аппарат"
+	desc = "Современный сварочный аппарат схож с инопланетным сварочным аппаратом практически никогда не расходует топливо и работает почти так же быстро."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "welder"
 	self_fueling = TRUE

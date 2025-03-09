@@ -435,8 +435,8 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 //ALIENS
 
 /atom/movable/screen/alert/alien_tox
-	name = "Plasma"
-	desc = "There's flammable plasma in the air. If it lights up, you'll be toast."
+	name = "Плазма"
+	desc = "В воздухе витает горючая плазма. Если она загорится, вы будете поджарены."
 	icon_state = "alien_tox"
 	alerttooltipstyle = "alien"
 

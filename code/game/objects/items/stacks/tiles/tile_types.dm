@@ -606,9 +606,9 @@
 
 //Plasteel (normal)
 /obj/item/stack/tile/plasteel
-	name = "floor tile"
+	name = "напольная плитка"
 	singular_name = "floor tile"
-	desc = "The ground you walk on."
+	desc = "Поверхность, по которой ты ходишь."
 	icon_state = "tile"
 	force = 6
 	custom_materials = list(/datum/material/iron=500)
@@ -626,9 +626,9 @@
 	cost = MINERAL_MATERIAL_AMOUNT * 0.0625
 
 /obj/item/stack/tile/material
-	name = "floor tile"
+	name = "напольная плитка"
 	singular_name = "floor tile"
-	desc = "The ground you walk on."
+	desc = "Поверхность, по которой ты ходишь."
 	throwforce = 10
 	icon_state = "material_tile"
 	turf_type = /turf/open/floor/material

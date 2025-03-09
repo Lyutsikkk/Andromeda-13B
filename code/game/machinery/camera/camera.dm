@@ -3,8 +3,8 @@
 #define CAMERA_UPGRADE_MOTION 4
 
 /obj/machinery/camera
-	name = "security camera"
-	desc = "It's used to monitor rooms."
+	name = "камера"
+	desc = "Большой брат следит за тобой."
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "camera"
 	light_color = "#CDDDFF"

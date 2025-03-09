@@ -139,7 +139,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	icon_state = "wall3"
 
 /turf/closed/indestructible/fakeglass
-	name = "window"
+	name = "окно"
 	icon_state = "fake_window"
 	opacity = 0
 	smooth = SMOOTH_TRUE

@@ -57473,7 +57473,7 @@
 /area/maintenance/aft)
 "cGb" = (
 /obj/machinery/door/airlock/external{
-	name = "Transport Airlock"
+	name = "стыковочный шлюз"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -60569,7 +60569,7 @@
 /area/maintenance/starboard/aft)
 "cPx" = (
 /obj/machinery/door/airlock/external{
-	name = "Transport Airlock"
+	name = "стыковочный шлюз"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,

@@ -1,6 +1,6 @@
 /obj/machinery/door
-	name = "door"
-	desc = "It opens and closes."
+	name = "дверь"
+	desc = "Это открывается и закрывается"
 	icon = 'icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"
 	opacity = 1

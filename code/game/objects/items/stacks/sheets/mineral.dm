@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
  * Diamond
  */
 /obj/item/stack/sheet/mineral/diamond
-	name = "diamond"
+	name = "алмаз"
 	icon_state = "sheet-diamond"
 	item_state = "sheet-diamond"
 	singular_name = "diamond"
@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
  * Uranium
  */
 /obj/item/stack/sheet/mineral/uranium
-	name = "uranium"
+	name = "уран"
 	icon_state = "sheet-uranium"
 	item_state = "sheet-uranium"
 	singular_name = "uranium sheet"
@@ -154,7 +154,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  * Plasma
  */
 /obj/item/stack/sheet/mineral/plasma
-	name = "solid plasma"
+	name = "твердая плазма"
 	icon_state = "sheet-plasma"
 	item_state = "sheet-plasma"
 	singular_name = "plasma sheet"
@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
  * Gold
  */
 /obj/item/stack/sheet/mineral/gold
-	name = "gold"
+	name = "золото"
 	icon_state = "sheet-gold"
 	item_state = "sheet-gold"
 	singular_name = "gold bar"
@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
  * Silver
  */
 /obj/item/stack/sheet/mineral/silver
-	name = "silver"
+	name = "серебро"
 	icon_state = "sheet-silver"
 	item_state = "sheet-silver"
 	singular_name = "silver bar"
@@ -260,7 +260,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
  * Clown
  */
 /obj/item/stack/sheet/mineral/bananium
-	name = "bananium"
+	name = "бананиум"
 	icon_state = "sheet-bananium"
 	item_state = "sheet-bananium"
 	singular_name = "bananium sheet"
@@ -289,7 +289,7 @@ GLOBAL_LIST_INIT(bananium_recipes, list ( \
  * Titanium
  */
 /obj/item/stack/sheet/mineral/titanium
-	name = "titanium"
+	name = "титаниум"
 	icon_state = "sheet-titanium"
 	item_state = "sheet-titanium"
 	singular_name = "titanium sheet"
@@ -323,7 +323,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
  * Plastitanium
  */
 /obj/item/stack/sheet/mineral/plastitanium
-	name = "plastitanium"
+	name = "пластитаниум"
 	icon_state = "sheet-plastitanium"
 	item_state = "sheet-plastitanium"
 	singular_name = "plastitanium sheet"
@@ -428,7 +428,7 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
  * Alien Alloy
  */
 /obj/item/stack/sheet/mineral/abductor
-	name = "alien alloy"
+	name = "инопланетный сплав"
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "sheet-abductor"
 	item_state = "sheet-abductor"

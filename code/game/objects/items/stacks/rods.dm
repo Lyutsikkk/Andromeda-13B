@@ -16,8 +16,8 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	))
 
 /obj/item/stack/rods
-	name = "metal rod"
-	desc = "Some rods. Can be used for building or something."
+	name = "металлический стержень"
+	desc = "Несколько прутьев. Можно использовать для строительства или чего-то еще."
 	singular_name = "metal rod"
 	icon_state = "rods"
 	item_state = "rods"

@@ -46,7 +46,7 @@
 /area/template_noop)
 "aj" = (
 /obj/machinery/door/airlock/freezer{
-	name = "airlock";
+	name = "шлюз";
 	opacity = 0
 	},
 /obj/structure/fluff/paper{
@@ -638,7 +638,7 @@
 /area/ruin/powered)
 "bO" = (
 /obj/machinery/door/airlock/freezer{
-	name = "airlock";
+	name = "шлюз";
 	opacity = 0
 	},
 /obj/structure/fluff/paper{
@@ -899,7 +899,7 @@
 /area/ruin/powered)
 "wr" = (
 /obj/machinery/door/airlock/freezer{
-	name = "airlock";
+	name = "шлюз";
 	opacity = 0
 	},
 /obj/structure/fluff/paper{

@@ -61,8 +61,8 @@
 	maxstack = 50
 
 /datum/design/alienalloy
-	name = "Alien Alloy"
-	desc = "A sheet of reverse-engineered alien alloy."
+	name = "Инопланетный сплав"
+	desc = "Лист инопланетного сплава с обратной конструкцией."
 	id = "alienalloy"
 	build_type = PROTOLATHE | SMELTER
 	materials = list(/datum/material/iron = 4000, /datum/material/plasma = 4000)

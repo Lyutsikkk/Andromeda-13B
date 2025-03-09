@@ -14,7 +14,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/crowbar
-	name = "Pocket Crowbar"
+	name = "Лом"
 	id = "crowbar"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 50)
@@ -23,7 +23,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/heavy_crowbar
-	name = "Heavy Pocket Crowbar"
+	name = "Тяжёлый лом"
 	id = "heavy_crowbar"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 500)
@@ -56,7 +56,7 @@
 	category = list("initial","Tools")
 
 /datum/design/multitool
-	name = "Multitool"
+	name = "Мультитул"
 	id = "multitool"
 	build_type = AUTOLATHE | PROTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
@@ -65,7 +65,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/analyzer
-	name = "Analyzer"
+	name = "Анализатор"
 	id = "analyzer"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 20)
@@ -73,7 +73,7 @@
 	category = list("initial","Tools")
 
 /datum/design/tscanner
-	name = "T-Ray Scanner"
+	name = "рентгеновский сканер"
 	id = "tscanner"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 150)
@@ -82,7 +82,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/weldingtool
-	name = "Welding Tool"
+	name = "Сварочный аппарат"
 	id = "welding_tool"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 70, /datum/material/glass = 20)
@@ -99,7 +99,7 @@
 	category = list("initial","Tools")
 
 /datum/design/screwdriver
-	name = "Screwdriver"
+	name = "Отвертка"
 	id = "screwdriver"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 75)
@@ -108,7 +108,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wirecutters
-	name = "Wirecutters"
+	name = "Кусачки"
 	id = "wirecutters"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 80)
@@ -117,7 +117,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/wrench
-	name = "Wrench"
+	name = "гаечный ключ"
 	id = "wrench"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 150)
@@ -126,7 +126,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/welding_helmet
-	name = "Welding Helmet"
+	name = "Сварочная маска"
 	id = "welding_helmet"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1750, /datum/material/glass = 400)
@@ -142,7 +142,7 @@
 	category = list("initial","Tools")
 
 /datum/design/cable_coil
-	name = "Cable Coil"
+	name = "Кабеля"
 	id = "cable_coil"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 10, /datum/material/glass = 5)
@@ -152,7 +152,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/toolbox
-	name = "Toolbox"
+	name = "Ящик инструментов"
 	id = "tool_box"
 	build_type = AUTOLATHE
 	materials = list(MAT_CATEGORY_RIGID = 500)

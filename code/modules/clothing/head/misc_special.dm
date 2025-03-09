@@ -14,8 +14,8 @@
  * Welding mask
  */
 /obj/item/clothing/head/welding
-	name = "Welding Helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	name = "сварочная маска"
+	desc = "Петрович говорил тебе, не вари без маски, а то зайчиков наловишься."
 	icon_state = "welding"
 	item_state = "welding"
 	can_toggle = TRUE

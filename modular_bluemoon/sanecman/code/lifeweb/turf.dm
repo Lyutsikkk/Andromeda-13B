@@ -28,7 +28,7 @@
 
 // Окошко душеломов
 /turf/closed/indestructible/riveted/lfwb/soulbreaker/fakeglass
-	name = "window"
+	name = "окно"
 	desc = "Стекло выглядит очень крепким."
 	icon = 'modular_bluemoon/sanecman/icons/lifeweb/turf/soulbreaker_fakewindow_wall.dmi'
 	icon_state = "window"

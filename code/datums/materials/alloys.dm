@@ -27,8 +27,8 @@
  * Applies a significant slowdown effect to any and all items that contain it.
  */
 /datum/material/alloy/plasteel
-	name = "plasteel"
-	desc = "The heavy duty result of infusing iron with plasma."
+	name = "пласталь"
+	desc = "Этот лист представляет собой сплав железа и плазмы."
 	color = "#706374"
 	value_per_unit = 0.135
 	strength_modifier = 1.25
@@ -58,8 +58,8 @@
  * An alloy of titanium and plasma.
  */
 /datum/material/alloy/plastitanium
-	name = "plastitanium"
-	desc = "The extremely heat resistant result of infusing titanium with plasma."
+	name = "пластитаниум"
+	desc = "Чрезвычайно термостойкий результат плазменного напыления титана."
 	color = "#3a313a"
 	value_per_unit = 0.225
 	strength_modifier = 0.9 // It's a lightweight alloy.
@@ -130,8 +130,8 @@
  * Anything constructed from it can slowly regenerate.
  */
 /datum/material/alloy/alien
-	name = "alien alloy"
-	desc = "An extremely dense alloy similar to plasteel in composition. It requires exotic metallurgical processes to create."
+	name = "инопланетный сплав"
+	desc = "Чрезвычайно плотный сплав, схожий по составу с пласталью. Для его создания требуются экзотические металлургические процессы."
 	color = "#6041aa"
 	strength_modifier = 1.5 // It's twice the density of plasteel and just as durable. Getting hit with it is going to HURT.
 	integrity_modifier = 1.5

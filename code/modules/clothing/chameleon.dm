@@ -375,8 +375,8 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 	chameleon_action.emp_randomise(INFINITY)
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon)
-	desc = "These gloves will protect the wearer from electric shock."
-	name = "insulated gloves"
+	desc = "Эти перчатки защитят владельца от поражения электрическим током."
+	name = "изолированные перчатки"
 	icon_state = "yellow"
 	item_state = "ygloves"
 

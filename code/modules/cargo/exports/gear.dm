@@ -320,7 +320,7 @@
 
 /datum/export/gear/yellowgloves
 	cost = 50
-	unit_name = "insulated gloves"
+	unit_name = "изолированные перчатки"
 	export_types = list(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/red/insulated)
 
 /datum/export/gear/leathergloves

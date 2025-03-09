@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/medical1
-	name = "medicine closet"
-	desc = "Filled to the brim with medical junk."
+	name = "медецинский шкаф"
+	desc = "Доверху набитый медицинским хламом."
 	icon_state = "med"
 	req_access = list(ACCESS_MEDICAL)
 
@@ -22,7 +22,7 @@
 	new /obj/item/storage/box/rxglasses(src)
 
 /obj/structure/closet/secure_closet/medical2
-	name = "anesthetic closet"
+	name = "шкаф с анестезией"
 	desc = "Used to knock people out."
 	req_access = list(ACCESS_SURGERY)
 
@@ -34,7 +34,7 @@
 		new /obj/item/clothing/mask/breath/medical(src)
 
 /obj/structure/closet/secure_closet/medical3
-	name = "medical doctor's locker"
+	name = "шкаф врача"
 	req_access = list(ACCESS_SURGERY)
 	icon_state = "med_secure"
 
@@ -49,7 +49,7 @@
 	return
 
 /obj/structure/closet/secure_closet/paramedic
-    name = "paramedic's locker"
+    name = "шкаф парамедика"
     req_access = list(ACCESS_MEDICAL)
     icon_state = "emt_secure"
 
@@ -68,7 +68,7 @@
     return
 
 /obj/structure/closet/secure_closet/CMO
-	name = "\proper chief medical officer's locker"
+	name = "\proper шкаф главного врача"
 	req_access = list(ACCESS_CMO)
 	icon_state = "cmo"
 
@@ -106,8 +106,8 @@
 		new /obj/item/electropack(src)
 
 /obj/structure/closet/secure_closet/chemical
-	name = "chemical closet"
-	desc = "Store dangerous chemicals in here."
+	name = "шкаф химика"
+	desc = "Храните здесь опасные химикаты. А что это за синий лёд?"
 	icon_door = "chemical"
 
 /obj/structure/closet/secure_closet/chemical/PopulateContents()
