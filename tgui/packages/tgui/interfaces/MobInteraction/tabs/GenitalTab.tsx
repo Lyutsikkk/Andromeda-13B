@@ -74,8 +74,8 @@ export const GenitalTab = (props, context) => {
                         fluid
                         key={genital.always_accessible}
                         tooltip={genital.always_accessible
-                          ? "Forbid others from manipulating this genital at any moment"
-                          : "Allow others to manipulate this genital at any moment"}
+                          ? "Запретите другим манипулировать этим гениталием в любой момент"
+                          : "Позволяйте другим манипулировать этим гениталием в любой момент"}
                         icon={genital.always_accessible ? "hand-paper" : 'hand-rock'}
                         color={genital.always_accessible ? "green" : "default"}
                         onClick={() => act('genital', {

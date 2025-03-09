@@ -87,7 +87,7 @@ export const InfoSection = (props, context) => {
                   <Button
                     fluid
                     mb={-0.7}
-                    content={use_arousal_multiplier ? "" : "Custom lust gain"}
+                    content={use_arousal_multiplier ? "" : "Настройка чуствительности"}
                     tooltip={`${use_arousal_multiplier ? "Disable" : "Enable"} lust gain multiplier`}
                     icon={use_arousal_multiplier ? "toggle-on" : "toggle-off"}
                     selected={use_arousal_multiplier}
@@ -125,7 +125,7 @@ export const InfoSection = (props, context) => {
                   <Button
                     fluid
                     mb={-0.7}
-                    content={use_moaning_multiplier ? "" : "Custom moaning chance"}
+                    content={use_moaning_multiplier ? "" : "Настройка шанса стона"}
                     tooltip={`${use_moaning_multiplier ? "Disable" : "Enable"} moaning chance customizaton`}
                     icon={use_moaning_multiplier ? "toggle-on" : "toggle-off"}
                     selected={use_moaning_multiplier}

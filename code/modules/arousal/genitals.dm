@@ -6,9 +6,9 @@
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
 	var/masturbation_verb = "стимулировать"
-	var/orgasm_verb = "cumming" //present continous
-	var/arousal_verb = "You feel aroused"
-	var/unarousal_verb = "You no longer feel aroused"
+	var/orgasm_verb = "кончать" //present continous
+	var/arousal_verb = "Вы чувствуете возбуждение"
+	var/unarousal_verb = "Вы перестали возбуждаться"
 	var/fluid_transfer_factor = 0 //How much would a partner get in them if they climax using this?
 	var/size = 2 //can vary between num or text, just used in icon_state strings
 	var/datum/reagent/fluid_id = null
@@ -114,8 +114,8 @@
 
 /mob/living/carbon/verb/toggle_genitals()
 	set category = "IC"
-	set name = "Expose/Hide genitals"
-	set desc = "Allows you to toggle which genitals should show through clothes or not."
+	set name = "Обнажать/скрывать гениталии"
+	set desc = "Позволяет вам выбирать, какие гениталии должны просвечиваться сквозь одежду, а какие нет."
 
 	if(stat != CONSCIOUS)
 		to_chat(usr, "<span class='warning'>You can toggle genitals visibility right now...</span>")

@@ -64,7 +64,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Allow lewd verbs"
+          content="Допускать непристойности"
           icon={verb_consent ? "toggle-on" : "toggle-off"}
           selected={verb_consent}
           onClick={() => act('pref', {
@@ -76,7 +76,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Lewd verb sounds"
+          content="Непристойные звуки"
           icon={lewd_verb_sounds ? "volume-up" : "volume-mute"}
           selected={lewd_verb_sounds}
           onClick={() => act('pref', {
@@ -88,7 +88,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Arousal"
+          content="Возможность возбуждаться"
           icon={arousable ? "toggle-on" : "toggle-off"}
           selected={arousable}
           onClick={() => act('pref', {
@@ -100,7 +100,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Genital examine text"
+          content="Просмотр гениталий"
           icon={genital_examine ? "toggle-on" : "toggle-off"}
           selected={genital_examine}
           onClick={() => act('pref', {
@@ -112,7 +112,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Vore examine text"
+          content="Просмотр Воре"
           icon={vore_examine ? "toggle-on" : "toggle-off"}
           selected={vore_examine}
           onClick={() => act('pref', {
@@ -124,7 +124,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Voracious Medihound sleepers"
+          content="Борги не могут есть"
           icon={medihound_sleeper ? "toggle-on" : "toggle-off"}
           selected={medihound_sleeper}
           onClick={() => act('pref', {
@@ -136,7 +136,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Hear vore sounds"
+          content="Воре звуки"
           icon={eating_noises ? "volume-up" : "volume-mute"}
           selected={eating_noises}
           onClick={() => act('pref', {
@@ -148,7 +148,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Hear vore digestion sounds"
+          content="Воре звуки переваривания"
           icon={digestion_noises ? "volume-up" : "volume-mute"}
           selected={digestion_noises}
           onClick={() => act('pref', {
@@ -160,7 +160,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Allow trash forcefeeding (requires Trashcan quirk)"
+          content="Тебя кормят мусором (нужна черта Мусорный Бак)"
           icon={trash_forcefeed ? "toggle-on" : "toggle-off"}
           selected={trash_forcefeed}
           onClick={() => act('pref', {
@@ -172,7 +172,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Forced feminization"
+          content="Принудительная Женственность (Феминизация)"
           icon={forced_fem ? "toggle-on" : "toggle-off"}
           selected={forced_fem}
           onClick={() => act('pref', {
@@ -184,7 +184,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Forced Masculinization"
+          content="Принудительная Маскулинность (Мужификация?)"
           icon={forced_masc ? "toggle-on" : "toggle-off"}
           selected={forced_masc}
           onClick={() => act('pref', {
@@ -196,7 +196,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Lewd hypno"
+          content="ERP Гипноз"
           icon={hypno ? "toggle-on" : "toggle-off"}
           selected={hypno}
           onClick={() => act('pref', {
@@ -220,7 +220,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Breast enlargement"
+          content="Увеличение груди"
           icon={breast_enlargement ? "toggle-on" : "toggle-off"}
           selected={breast_enlargement}
           onClick={() => act('pref', {
@@ -232,7 +232,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Penis enlargement"
+          content="Увеличение пениса"
           icon={penis_enlargement ? "toggle-on" : "toggle-off"}
           selected={penis_enlargement}
           onClick={() => act('pref', {
@@ -244,7 +244,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Butt enlargement"
+          content="Увеличение попы"
           icon={butt_enlargement ? "toggle-on" : "toggle-off"}
           selected={butt_enlargement}
           onClick={() => act('pref', {
@@ -256,7 +256,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Belly inflation"
+          content="Увеличение живота"
           icon={belly_inflation ? "toggle-on" : "toggle-off"}
           selected={belly_inflation}
           onClick={() => act('pref', {
@@ -268,7 +268,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Hypno"
+          content="Обычный гипноз"
           icon={never_hypno ? "toggle-on" : "toggle-off"}
           selected={never_hypno}
           onClick={() => act('pref', {
@@ -280,7 +280,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Aphrodisiacs"
+          content="Реакция на Афродизиак"
           icon={no_aphro ? "toggle-on" : "toggle-off"}
           selected={no_aphro}
           onClick={() => act('pref', {
@@ -292,7 +292,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Ass slapping"
+          content="Шлепанье по заднице"
           icon={no_ass_slap ? "toggle-on" : "toggle-off"}
           selected={no_ass_slap}
           onClick={() => act('pref', {
@@ -304,7 +304,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Automatic wagging"
+          content="Авто виляние хвоста"
           icon={no_auto_wag ? "toggle-on" : "toggle-off"}
           selected={no_auto_wag}
           onClick={() => act('pref', {
@@ -328,7 +328,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Genital Stimulation Modifiers"
+          content="Модификаторы стимуляции гениталий"
           icon={stimulation_pref ? "toggle-on" : "toggle-off"}
           selected={stimulation_pref}
           onClick={() => act('pref', {
@@ -352,7 +352,7 @@ export const ContentPreferencesTab = (props, context) => {
         <Button
           fluid
           mb={-0.7}
-          content="Receive Cum Covering"
+          content="Покрываться кончёй"
           icon={cum_onto_pref ? "toggle-on" : "toggle-off"}
           selected={cum_onto_pref}
           onClick={() => act('pref', {

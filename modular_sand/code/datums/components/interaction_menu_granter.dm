@@ -1,17 +1,17 @@
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
-	set name = "Interact With"
-	set desc = "Perform an interaction with someone."
+	set name = "Взаимодействовать с"
+	set desc = "Выполните взаимодействие с кем-либо."
 	set category = "IC"
 	set src in view(usr.client)
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
 	if(!menu)
-		to_chat(usr, span_warning("You must have done something really bad to not have an interaction component."))
+		to_chat(usr, span_warning("Должно быть, вы сделали что-то действительно плохое, раз у вас нет компонента взаимодействия."))
 		return
 
 	if(!src)
-		to_chat(usr, span_warning("Your interaction target is gone!"))
+		to_chat(usr, span_warning("Ваша цель взаимодействия исчезла!"))
 		return
 	menu.open_menu(usr, src)
 

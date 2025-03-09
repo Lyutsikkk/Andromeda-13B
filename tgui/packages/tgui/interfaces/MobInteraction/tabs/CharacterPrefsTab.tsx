@@ -23,7 +23,7 @@ export const CharacterPrefsTab = (props, context) => {
   return (
     <Flex direction="column">
       <LabeledList>
-        <LabeledList.Item label="ERP Preference">
+        <LabeledList.Item label="Предпочтения ERP">
           <Button
             icon={"check"}
             color={erp_pref === 1 ? "green" : "default"}
@@ -46,20 +46,13 @@ export const CharacterPrefsTab = (props, context) => {
               value: 0,
             })} />
         </LabeledList.Item>
-        <LabeledList.Item label="Noncon Preference">
+        <LabeledList.Item label="Предпочтение Изнасилования">
           <Button
             icon={"check"}
             color={noncon_pref === 1 ? "green" : "default"}
             onClick={() => act('char_pref', {
               char_pref: 'noncon_pref',
               value: 1,
-            })} />
-          <Button
-            icon={"question"}
-            color={noncon_pref === 2 ? "yellow" : "default"}
-            onClick={() => act('char_pref', {
-              char_pref: 'noncon_pref',
-              value: 2,
             })} />
           <Button
             icon={"times"}
@@ -69,7 +62,7 @@ export const CharacterPrefsTab = (props, context) => {
               value: 0,
             })} />
         </LabeledList.Item>
-        <LabeledList.Item label="Vore Preference">
+        <LabeledList.Item label="Предпочтение Воре">
           <Button
             icon={"check"}
             color={vore_pref === 1 ? "green" : "default"}
@@ -92,7 +85,7 @@ export const CharacterPrefsTab = (props, context) => {
               value: 0,
             })} />
         </LabeledList.Item>
-        <LabeledList.Item label="Unholy Preference">
+        <LabeledList.Item label="Предпочтения грязного секса">
           <Button
             icon={"check"}
             color={unholy_pref === 1 ? "green" : "default"}
@@ -115,7 +108,7 @@ export const CharacterPrefsTab = (props, context) => {
               value: 0,
             })} />
         </LabeledList.Item>
-        <LabeledList.Item label="Extreme Preference">
+        <LabeledList.Item label="Жестокий секс">
           <Button
             icon={"check"}
             color={extreme_pref === 1 ? "green" : "default"}
@@ -139,7 +132,7 @@ export const CharacterPrefsTab = (props, context) => {
             })} />
         </LabeledList.Item>
         {extreme_pref ? (
-          <LabeledList.Item label="Extreme Harm">
+          <LabeledList.Item label="Особо жестокий секс">
             <Button
               icon={"check"}
               color={extreme_harm ? "green" : "default"}
