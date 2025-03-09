@@ -1,6 +1,6 @@
 /obj/machinery/computer/secure_data//TODO:SANITY
-	name = "security records console"
-	desc = "Used to view and edit personnel's security records."
+	name = "Консоль криминальных записей"
+	desc = "Используется для просмотра и редактирования записей о безопасности персонала."
 	icon_screen = "security"
 	icon_keyboard = "security_key"
 	req_one_access = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
@@ -169,7 +169,7 @@
 					dat += "<B>Records Maintenance</B><HR>"
 					dat += "<BR><A href='?src=[REF(src)];choice=Delete All Records'>Delete All Records</A><BR><BR><A href='?src=[REF(src)];choice=Return'>Back</A>"
 				if(3)
-					dat += "<font size='4'><b>Security Record</b></font><br>"
+					dat += "<font size='4'><b>База данных</b></font><br>"
 					if(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1))
 						if(istype(active1.fields["photo_front"], /obj/item/photo))
 							var/obj/item/photo/P1 = active1.fields["photo_front"]
@@ -178,20 +178,20 @@
 							var/obj/item/photo/P2 = active1.fields["photo_side"]
 							user << browse_rsc(P2.picture.picture_image, "photo_side")
 						dat += {"<table><tr><td><table>
-						<tr><td>Name:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=name'>&nbsp;[active1.fields["name"]]&nbsp;</A></td></tr>
+						<tr><td>ФИО</td><td><A href='?src=[REF(src)];choice=Edit Field;field=name'>&nbsp;[active1.fields["name"]]&nbsp;</A></td></tr>
 						<tr><td>ID:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=id'>&nbsp;[active1.fields["id"]]&nbsp;</A></td></tr>
-						<tr><td>Gender:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=gender'>&nbsp;[active1.fields["gender"]]&nbsp;</A></td></tr>
-						<tr><td>Age:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=age'>&nbsp;[active1.fields["age"]]&nbsp;</A></td></tr>"}
-						dat += "<tr><td>Species:</td><td><A href ='?src=[REF(src)];choice=Edit Field;field=species'>&nbsp;[active1.fields["species"]]&nbsp;</A></td></tr>"
+						<tr><td>Пол:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=gender'>&nbsp;[active1.fields["gender"]]&nbsp;</A></td></tr>
+						<tr><td>Возраст:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=age'>&nbsp;[active1.fields["age"]]&nbsp;</A></td></tr>"}
+						dat += "<tr><td>Раса:</td><td><A href ='?src=[REF(src)];choice=Edit Field;field=species'>&nbsp;[active1.fields["species"]]&nbsp;</A></td></tr>"
 						var/record_rank = GetJobName(active1.fields["rank"])
 						var/datum/job/job_datum = SSjob.name_occupations[record_rank]
 						var/how_many_alts = job_datum ? length(job_datum.alt_titles) : null
-						dat += {"<tr><td>Rank:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields["rank"]]&nbsp;</A>
+						dat += {"<tr><td>Должность:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields["rank"]]&nbsp;</A>
 						<br />
 						<a href='?src=[REF(src)];choice=Edit Field;field=alt_title;rank=[record_rank]'>Change title<span style='color:#BBBBBB; font-style: italic;'> ([how_many_alts + 1] options)</span></a></td></tr>
-						<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=fingerprint'>&nbsp;[active1.fields["fingerprint"]]&nbsp;</A></td></tr>
-						<tr><td>Physical Status:</td><td>&nbsp;[active1.fields["p_stat"]]&nbsp;</td></tr>
-						<tr><td>Mental Status:</td><td>&nbsp;[active1.fields["m_stat"]]&nbsp;</td></tr>
+						<tr><td>Отпечатки:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=fingerprint'>&nbsp;[active1.fields["fingerprint"]]&nbsp;</A></td></tr>
+						<tr><td>Физическое состояние:</td><td>&nbsp;[active1.fields["p_stat"]]&nbsp;</td></tr>
+						<tr><td>Ментальное состояние:</td><td>&nbsp;[active1.fields["m_stat"]]&nbsp;</td></tr>
 						</table></td>
 						<td><table><td align = center><a href='?src=[REF(src)];choice=Edit Field;field=show_photo_front'><img src=photo_front height=80 width=80 border=4></a><br>
 						<a href='?src=[REF(src)];choice=Edit Field;field=print_photo_front'>Print photo</a><br>
@@ -274,7 +274,7 @@
 				else
 		else
 			dat += "<A href='?src=[REF(src)];choice=Log In'>{Log In}</A>"
-	var/datum/browser/popup = new(user, "secure_rec", "Security Records Console", 600, 400)
+	var/datum/browser/popup = new(user, "secure_rec", "Консоль Криминальных Записей", 600, 400)
 	popup.set_content(dat)
 	popup.open()
 	return
@@ -394,9 +394,9 @@ What a mess.*/
 				var/obj/item/paper/P = new /obj/item/paper( loc )
 				var/report_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
 				if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
-					report_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-					report_text += "\nSpecies: [active1.fields["species"]]<BR>"
-					report_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+					report_text += text("ФИО: [] ID: []<BR>\nПол: []<BR>\nВозраст: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+					report_text += "\nРаса: [active1.fields["species"]]<BR>"
+					report_text += text("\nОтпечатки: []<BR>\nФизическое состояние: []<BR>\nМентальное состояние: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 				else
 					report_text += "<B>General Record Lost!</B><BR>"
 				if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
@@ -947,7 +947,7 @@ What a mess.*/
 						temp += "</ul>"
 				if("rank")
 					if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access) || (ACCESS_CENT_GENERAL in logged_access)))
-						temp = "<h5>Rank:</h5>"
+						temp = "<h5>Должность:</h5>"
 						temp += "<ul>"
 						for(var/rank in get_all_jobs())
 							temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a>"
