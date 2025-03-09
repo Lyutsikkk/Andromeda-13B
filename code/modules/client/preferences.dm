@@ -789,23 +789,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(APPEARANCE_CHAR_TAB)
 					dat += "<table><tr><td width='20%' height='300px' valign='top'>"
 
-					dat += "<h2>Body</h2>"
-					dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
+					dat += "<h2>Тело</h2>"
+					dat += "<b>Гендер:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Мужчина" : (gender == FEMALE ? "Женщина" : (gender == PLURAL ? "Небинарный" : "Object"))]</a><BR>"
 					if(pref_species.sexes)
-						dat += "<b>Body Model:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=body_model'>[features["body_model"] == MALE ? "Masculine" : "Feminine"]</a><BR>"
-					dat += "<b>Limb Modification:</b><BR>"
-					dat += "<a href='?_src_=prefs;preference=modify_limbs;task=input'>Modify Limbs</a><BR>"
+						dat += "<b>Тип тела:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=body_model'>[features["body_model"] == MALE ? "Мужеподобный" : "Женоподобный"]</a><BR>"
+					dat += "<b>Модификация конечностей:</b><BR>"
+					dat += "<a href='?_src_=prefs;preference=modify_limbs;task=input'>Изменить конечности</a><BR>"
 					for(var/modification in modified_limbs)
 						if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
 							dat += "<b>[modification]: [modified_limbs[modification][2]]</b><BR>"
 						else
 							dat += "<b>[modification]: [modified_limbs[modification][1]]</b><BR>"
 					dat += "<BR>"
-					dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
-					dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
-					dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
-					dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
-					dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
+					dat += "<b>Раса:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
+					dat += "<b>Особая раса:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "Нету"]</a><BR>"
+					dat += "<b>Случайное тело:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Рандом!</A><BR>"
+					dat += "<b>Всегда случайное тело:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Да" : "Нет"]</A><BR>"
+					dat += "<br><b>Задний фон:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
 
 					dat += "</td>"
 
@@ -813,7 +813,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(use_skintones)
 						dat += APPEARANCE_CATEGORY_COLUMN
 
-						dat += "<h3>Skin Tone</h3>"
+						dat += "<h3>Тон кожи</h3>"
 
 						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=s_tone;task=input'>[use_custom_skin_tone ? "custom: <span style='border:1px solid #161616; background-color: [skin_tone];'><font color='[color_hex2num(skin_tone) < 200 ? "FFFFFF" : "000000"]'>[skin_tone]</font></span>" : skin_tone]</a><BR>"
 
@@ -822,62 +822,62 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(!use_skintones)
 							dat += APPEARANCE_CATEGORY_COLUMN
 
-						dat += "<h2>Body Colors</h2>"
+						dat += "<h2>Цвета тела</h2>"
 
-						dat += "<b>Primary Color:</b><BR>"
-						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'><font color='[color_hex2num(features["mcolor"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor"]]</font></span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+						dat += "<b>Основной цвет:</b><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'><font color='[color_hex2num(features["mcolor"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor"]]</font></span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Изменить</a><BR>"
 
-						dat += "<b>Secondary Color:</b><BR>"
-						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'><font color='[color_hex2num(features["mcolor2"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor2"]]</font></span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+						dat += "<b>Вторичный цвет:</b><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'><font color='[color_hex2num(features["mcolor2"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor2"]]</font></span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Изменить</a><BR>"
 
-						dat += "<b>Tertiary Color:</b><BR>"
-						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'><font color='[color_hex2num(features["mcolor3"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor3"]]</font></span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
+						dat += "<b>Третичный цвет:</b><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'><font color='[color_hex2num(features["mcolor3"]) < 200 ? "FFFFFF" : "000000"]'>#[features["mcolor3"]]</font></span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Изменить</a><BR>"
 						mutant_colors = TRUE
 
-						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+						dat += "<b>Размер спрайта:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 
 					if(!(NOEYES in pref_species.species_traits))
-						dat += "<h3>Eye Type</h3>"
+						dat += "<h3>Тип глаза</h3>"
 						dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=eye_type;task=input'>[eye_type]</a><BR>"
 						if((EYECOLOR in pref_species.species_traits))
 							if(!use_skintones && !mutant_colors)
 								dat += APPEARANCE_CATEGORY_COLUMN
 							if(left_eye_color != right_eye_color)
 								split_eye_colors = TRUE
-							dat += "<h3>Heterochromia</h3>"
+							dat += "<h3>Гетерохромия</h3>"
 							dat += "<i>Eyes with special heterochromia: wide, big, bigcyclops, skrell, third, thirdbig.</i>"
 							dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"
 							if(!split_eye_colors)
-								dat += "<h3>Eye Color</h3>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'><font color='[color_hex2num(left_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[left_eye_color]</font></span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a>"
+								dat += "<h3>Цвет глаз</h3>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'><font color='[color_hex2num(left_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[left_eye_color]</font></span> <a href='?_src_=prefs;preference=eyes;task=input'>Изменить</a>"
 							else
-								dat += "<h3>Left Eye Color</h3>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'><font color='[color_hex2num(left_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[left_eye_color]</font></span> <a href='?_src_=prefs;preference=eye_left;task=input'>Change</a>"
-								dat += "<h3>Right Eye Color</h3>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[right_eye_color];'><font color='[color_hex2num(right_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[right_eye_color]</font></span> <a href='?_src_=prefs;preference=eye_right;task=input'>Change</a><BR>"
+								dat += "<h3>Цвет левого глаза</h3>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'><font color='[color_hex2num(left_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[left_eye_color]</font></span> <a href='?_src_=prefs;preference=eye_left;task=input'>Изменить</a>"
+								dat += "<h3>Цвет правого глаза</h3>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[right_eye_color];'><font color='[color_hex2num(right_eye_color) < 200 ? "FFFFFF" : "000000"]'>#[right_eye_color]</font></span> <a href='?_src_=prefs;preference=eye_right;task=input'>Изменить</a><BR>"
 
 					if(HAIR in pref_species.species_traits)
 
 						dat += APPEARANCE_CATEGORY_COLUMN
 
-						dat += "<h3>Hair Style</h3>"
+						dat += "<h3>Причёска</h3>"
 
 						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]</a>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
 						dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><BR>"
-						dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'><font color='[color_hex2num(hair_color) < 200 ? "FFFFFF" : "000000"]'>#[hair_color]</font></span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'><font color='[color_hex2num(hair_color) < 200 ? "FFFFFF" : "000000"]'>#[hair_color]</font></span> <a href='?_src_=prefs;preference=hair;task=input'>Изменить</a><BR>"
 
-						dat += "<h3>Facial Hair Style</h3>"
+						dat += "<h3>Растительность на лице</h3>"
 
 						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
 						dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><BR>"
-						dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'><font color='[color_hex2num(facial_hair_color) < 200 ? "FFFFFF" : "000000"]'>#[facial_hair_color]</font></span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'><font color='[color_hex2num(facial_hair_color) < 200 ? "FFFFFF" : "000000"]'>#[facial_hair_color]</font></span> <a href='?_src_=prefs;preference=facial;task=input'>Изменить</a><BR>"
 
-						dat += "<h3>Hair Gradient</h3>"
+						dat += "<h3>Градиент волос</h3>"
 
 						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=grad_style;task=input'>[grad_style]</a>"
 						dat += "<a href='?_src_=prefs;preference=previous_grad_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_grad_style;task=input'>&gt;</a><BR>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
-						dat += "<span style='border:1px solid #161616; background-color: #[grad_color];'><font color='[color_hex2num(grad_color) < 200 ? "FFFFFF" : "000000"]'>#[grad_color]</font></span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
+						dat += "<span style='border:1px solid #161616; background-color: #[grad_color];'><font color='[color_hex2num(grad_color) < 200 ? "FFFFFF" : "000000"]'>#[grad_color]</font></span> <a href='?_src_=prefs;preference=grad_color;task=input'>Изменить</a><BR>"
 
 						dat += "</td>"
 
