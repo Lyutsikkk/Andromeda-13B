@@ -1,6 +1,6 @@
 /client/proc/cmd_mentor_dementor()
 	set category = "Mentor"
-	set name = "Dementor"
+	set name = "Выкл ментор"
 	if(!is_mentor())
 		return
 	remove_mentor_verbs()
@@ -11,7 +11,7 @@
 
 /client/proc/cmd_mentor_rementor()
 	set category = "Mentor"
-	set name = "Rementor"
+	set name = "Вкл ментор"
 	if(!is_mentor())
 		return
 	add_mentor_verbs()

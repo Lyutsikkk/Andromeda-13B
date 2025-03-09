@@ -1,6 +1,6 @@
 /client/verb/mentorhelp(msg as text)
 	set category = "Mentor"
-	set name = "Mentorhelp"
+	set name = "Помощь ментора"
 
 	//clean the input msg
 	if(!msg)
@@ -22,7 +22,7 @@
 		SEND_SOUND(X, 'sound/items/bikehorn.ogg')
 		to_chat(X, mentor_msg)
 
-	to_chat(src, "<span class='mentornotice'><font color='purple'>PM to-<b>Mentors</b>: [msg]</font></span>")
+	to_chat(src, "<span class='mentornotice'><font color='purple'>Сообщение от-<b>Ментора</b>: [msg]</font></span>")
 	return
 
 /proc/get_mentor_counts()

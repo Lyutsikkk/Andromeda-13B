@@ -2,20 +2,20 @@
 	COOLDOWN_DECLARE(mentor_mouse_spawn)
 
 /client/proc/spawn_mentor_mouse()
-	set name = "Mentor Spawn"
+	set name = "Ментр спавн"
 	set category = "Mentor"
 
 	var/mob/living/mentor
 	var/turf/current_turf = get_turf(mob)
 
 	if(isobserver(mob) && COOLDOWN_FINISHED(src, mentor_mouse_spawn))
-		var/type = tgui_alert(src, "Which character you want to spawn?","Mentor Spawn",list("Mouse","Drone", "Cancel"))
-		if(type == "Cancel")
+		var/type = tgui_alert(src, "Какого персонажа вы хотите создать?","Ментр спавн",list("Мышь","Дрон", "Отмена"))
+		if(type == "Отмена")
 			return
-		if(type == "Mouse")
+		if(type == "Мышь")
 			mentor = /mob/living/simple_animal/hostile/syndimouse
 
-		if(type == "Drone")
+		if(type == "Дрон")
 			mentor = /mob/living/simple_animal/drone/mentordrone
 
 		mentor = new mentor(current_turf)
@@ -34,7 +34,7 @@
 		COOLDOWN_START(src, mentor_mouse_spawn, 10 SECONDS)
 
 /client/proc/despawn_mentor_mouse()
-	set name = "Mentor Despawn"
+	set name = "Ментр деспавн"
 	set category = "Mentor"
 
 	if(istype(mob, /mob/living/simple_animal/drone/mentordrone) || istype(mob, /mob/living/simple_animal/hostile/syndimouse))
