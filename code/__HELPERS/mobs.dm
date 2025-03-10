@@ -350,22 +350,22 @@
 
 //ordered by amount of tan. Keep the nonstandard skin tones last.
 GLOBAL_LIST_INIT(skin_tones, list(
-	"albino" = "#fff4e6",
-	"caucasian1" = "#ffe0d1",
-	"caucasian2" = "#fcccb3",
-	"caucasian3" = "#e8b59b",
-	"latino" = "#d9ae96",
-	"mediterranean" = "#c79b8b",
-	"asian1" = "#ffdeb3",
-	"asian2" = "#e3ba84",
-	"arab" = "#c4915e",
-	"indian" = "#b87840",
-	"african1" = "#754523",
-	"african2" = "#471c18",
-	"orange" = "#ffc905" //Spray tan overdose.
+	"альбинос" = "#fff4e6",
+	"европеец1" = "#ffe0d1",
+	"европеец2" = "#fcccb3",
+	"европеец3" = "#e8b59b",
+	"латино" = "#d9ae96",
+	"средиземный" = "#c79b8b",
+	"азиат1" = "#ffdeb3",
+	"азиат2" = "#e3ba84",
+	"араб" = "#c4915e",
+	"индус" = "#b87840",
+	"африканец1" = "#754523",
+	"африканец2" = "#471c18",
+	"оранжевый" = "#ffc905" //Spray tan overdose.
 	))
 
-GLOBAL_LIST_INIT(nonstandard_skin_tones, list("orange"))
+GLOBAL_LIST_INIT(nonstandard_skin_tones, list("оранжевый"))
 
 GLOBAL_LIST_EMPTY(species_list)
 
@@ -374,25 +374,25 @@ GLOBAL_LIST_EMPTY(species_datums)
 /proc/age2agedescription(age)
 	switch(age)
 		if(0 to 1)
-			return "infant"
+			return "младенец"
 		if(1 to 3)
-			return "toddler"
+			return "карапуз"
 		if(3 to 13)
-			return "child"
+			return "ребёнок"
 		if(13 to 19)
-			return "teenager"
+			return "подросток"
 		if(19 to 30)
-			return "young adult"
+			return "молодой человек"
 		if(30 to 45)
-			return "adult"
+			return "взрослый"
 		if(45 to 60)
-			return "middle-aged"
+			return "среднего возраста"
 		if(60 to 70)
-			return "aging"
+			return "престарелый"
 		if(70 to INFINITY)
-			return "elderly"
+			return "пожилой"
 		else
-			return "unknown"
+			return "неизвестно"
 
 /proc/is_species(A, species_datum)
 	. = FALSE

@@ -129,10 +129,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/erppref = "Ask"
 	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
-	var/mobsexpref = "No" 					//Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
-	var/hornyantagspref = "No" 				//Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
-	var/extremepref = "No" 					//This is for extreme shit, maybe even literal shit, better to keep it on no by default
-	var/extremeharm = "No" 					//If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/mobsexpref = "Нет" 					//Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
+	var/hornyantagspref = "Нет" 				//Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
+	var/extremepref = "Нет" 					//This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "Нет" 					//If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
 	var/eorg_enabled = TRUE
@@ -141,21 +141,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/lust_tolerance = 100
 	var/sexual_potency = 15
 	//Sandstorm CHANGES END
-	var/underwear = "Nude"				//underwear type
+	var/underwear = "Снят"				//underwear type
 	var/undie_color = "FFFFFF"
-	var/undershirt = "Nude"				//undershirt type
+	var/undershirt = "Снят"				//undershirt type
 	var/shirt_color = "FFFFFF"
-	var/socks = "Nude"					//socks type
+	var/socks = "Снят"					//socks type
 	var/socks_color = "FFFFFF"
 	var/backbag = DBACKPACK				//backpack type
 	var/jumpsuit_style = PREF_SUIT		//suit/skirt
-	var/hair_style = "Bald"				//Hair type
+	var/hair_style = "Лысый"				//Hair type
 	var/hair_color = "000000"				//Hair color
-	var/facial_hair_style = "Shaved"	//Face hair type
+	var/facial_hair_style = "Побритый"	//Face hair type
 	var/facial_hair_color = "000000"		//Facial hair color
 	var/grad_style						//Hair gradient style
 	var/grad_color = "FFFFFF"			//Hair gradient color
-	var/skin_tone = "caucasian1"		//Skin color
+	var/skin_tone = "европеец1"		//Skin color
 	var/use_custom_skin_tone = FALSE
 	var/left_eye_color = "000000"		//Eye color
 	var/right_eye_color = "000000"
@@ -356,8 +356,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//backgrounds
 	var/mutable_appearance/character_background
-	var/icon/bgstate = "steel"
-	var/list/bgstate_options = list("000", "midgrey", "FFF", "white", "steel", "techmaint", "dark", "plating", "reinforced")
+	var/icon/bgstate = "сталь"
+	var/list/bgstate_options = list("000", "серый", "FFF", "белый", "сталь", "технический мастер", "чёрный", "обшивка", "армированный")
 
 	var/show_mismatched_markings = FALSE //determines whether or not the markings lists should show markings that don't match the currently selected species. Intentionally left unsaved.
 
@@ -483,7 +483,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Назначение кнопок</a>"
 
 	if(!path)
-		dat += "<div class='notice'>Please create an account to save your preferences</div>"
+		dat += "<div class='notice'>Пожалуйста, создайте учетную запись, чтобы сохранить ваши настройки</div>"
 
 	dat += "</center>"
 
@@ -952,14 +952,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							chosen_limb_id = pref_species.limbs_id || pref_species.id
 						if(!mutant_category)
 							dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>Body sprite</h3>"
+						dat += "<h3>Спрайт тела</h3>"
 						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=bodysprite;task=input'>[chosen_limb_id]</a>"
 
 					//BLUEMOON edit start
 					if(pref_species.type == /datum/species/jelly/roundstartslime)
 						dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>be a slime?</h3>"
-						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=puddle_slime_task;task=input'>[features["puddle_slime_fea"] ? "Yes" : "No"]</a>"
+						dat += "<h3>быть слаймом?</h3>"
+						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=puddle_slime_task;task=input'>[features["puddle_slime_fea"] ? "Да" : "Нет"]</a>"
 						dat += "</td>"
 					//BLUEMOON edit end
 
@@ -971,30 +971,30 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "</td>"
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-					dat += "<h2>Clothing & Equipment</h2>"
+					dat += "<h2>Одежда и снаряжение</h2>"
 
-					dat += "<b>Backpack:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=bag;task=input'>[backbag]</a>"
-					dat += "<b>Jumpsuit:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a><BR>"
+					dat += "<b>Рюкзак:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=bag;task=input'>[backbag]</a>"
+					dat += "<b>Комбинезон:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a><BR>"
 					if((HAS_FLESH in pref_species.species_traits) || (HAS_BONE in pref_species.species_traits))
-						dat += "<BR><b>Temporal Scarring:</b><BR><a href='?_src_=prefs;preference=persistent_scars'>[(persistent_scars) ? "Enabled" : "Disabled"]</A>"
-						dat += "<a href='?_src_=prefs;preference=clear_scars'>Clear scar slots</A>"
-					dat += "<b>Uplink Location:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a>"
+						dat += "<BR><b>Временные шрамы:</b><BR><a href='?_src_=prefs;preference=persistent_scars'>[(persistent_scars) ? "Вкл" : "Выкл"]</A>"
+						dat += "<a href='?_src_=prefs;preference=clear_scars'>Очистить слот</A>"
+					dat += "<b>Место аплинка:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a>"
 
-					dat += "<h2>Consent preferences</h2>"
-					dat += "ERP : <a href='?_src_=prefs;preference=erp_pref'>[erppref]</a><br>"
+					dat += "<h2>Предпочтения согласия</h2>"
+					dat += "ЕРП : <a href='?_src_=prefs;preference=erp_pref'>[erppref]</a><br>"
 					dat += "Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
 					dat += "Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 					dat += "Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
-					dat += "Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
+					dat += "ЕРП антагонисты : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 
-					dat += "<h2>Lewd preferences</h2>"
-					dat += "<b>Lust tolerance:</b><a href='?_src_=prefs;preference=lust_tolerance;task=input'>[lust_tolerance]</a><br>"
-					dat += "<b>Sexual potency:</b><a href='?_src_=prefs;preference=sexual_potency;task=input'>[sexual_potency]</a>"
+					dat += "<h2>Непристойные предпочтения</h2>"
+					dat += "<b>Терпимость к похоти:</b><a href='?_src_=prefs;preference=lust_tolerance;task=input'>[lust_tolerance]</a><br>"
+					dat += "<b>Сексуальная потенция:</b><a href='?_src_=prefs;preference=sexual_potency;task=input'>[sexual_potency]</a>"
 					dat += "</td>"
 
 					//SPLURT EDIT BEGIN - gregnancy preferences
 					dat += "<td width='220px' height='300px' valign='top'>"
-					dat += "<h3>Pregnancy preferences</h3>"
+					dat += "<h3></h3>"
 					dat += "<b>Chance of impregnation:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=virility;task=input'>[virility ? virility : "Disabled"]</a>"
 					dat += "<b>Chance of getting pregnant:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=fertility;task=input'>[fertility ? fertility : "Disabled"]</a>"
 					dat += "<b>Lay inert eggs:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=inert_eggs'>[features["inert_eggs"] == TRUE ? "Enabled" : "Disabled"]</a>"
@@ -1008,19 +1008,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
 					if(NOGENITALS in pref_species.species_traits)
-						dat += "<b>Your species ([pref_species.name]) does not support genitals!</b><br>"
+						dat += "<b>Ваш вид ([pref_species.name]) не поддерживает гениталии!</b><br>"
 					else
 						if(pref_species.use_skintones)
-							dat += "<b>Genitals use skintone:</b><a href='?_src_=prefs;preference=genital_colour'>[features["genitals_use_skintone"] == TRUE ? "Yes" : "No"]</a>"
-						dat += "<h3>Penis</h3>"
-						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_cock'>[features["has_cock"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Использовать тон кожи для гениталий:</b><a href='?_src_=prefs;preference=genital_colour'>[features["genitals_use_skintone"] == TRUE ? "Да" : "Нет"]</a>"
+						dat += "<h3>Пенис</h3>"
+						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_cock'>[features["has_cock"] == TRUE ? "Да" : "Нет"]</a>"
 						if(features["has_cock"])
 							if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-								dat += "<b>Penis Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)</a><br>"
+								dat += "<b>Цвет пениса:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)</a><br>"
 							else
-								dat += "<b>Penis Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["cock_color"]];'><font color='[color_hex2num(features["cock_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["cock_color"]]</font></span> <a href='?_src_=prefs;preference=cock_color;task=input'>Change</a><br>"
+								dat += "<b>Цвет пениса:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["cock_color"]];'><font color='[color_hex2num(features["cock_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["cock_color"]]</font></span> <a href='?_src_=prefs;preference=cock_color;task=input'>Изменить</a><br>"
 							var/tauric_shape = FALSE
 							if(features["cock_taur"])
 								var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[features["cock_shape"]]
@@ -1028,55 +1028,55 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
 									if(T.taur_mode & P.accepted_taurs)
 										tauric_shape = TRUE
-							dat += "<b>Penis Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>"
-							dat += "<b>Penis Length:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_length;task=input'>[features["cock_length"]] centimeter(-s)</a>"
-							dat += "<b>Max Length:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_max_length;task=input'>[features["cock_max_length"] ? features["cock_max_length"] : "Disabled"]</a>"
-							dat += "<b>Min Length:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_min_length;task=input'>[features["cock_min_length"] ? features["cock_min_length"] : "Disabled"]</a>"
-							dat += "<b>Diameter Ratio:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_diameter_ratio;task=input'>[features["cock_diameter_ratio"]]</a>" //SPLURT Edit
-							dat += "<b>Penis Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
-							dat += "<b>Penis Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_accessible'>[features["cock_accessible"] ? "Yes" : "No"]</a>"
-							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=cock_stuffing'>[features["cock_stuffing"] == TRUE ? "Yes" : "No"]</a>" //SPLURT Edit
-							dat += "<b>Has Testicles:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Форма пениса:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>"
+							dat += "<b>Длина пениса:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_length;task=input'>[features["cock_length"]] сантиметра(ов)</a>"
+							dat += "<b>Максимальная длина:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_max_length;task=input'>[features["cock_max_length"] ? features["cock_max_length"] : "Выкл"]</a>"
+							dat += "<b>Минимальная длина:</b><a style='display:block;width:120px' href='?_src_=prefs;preference=cock_min_length;task=input'>[features["cock_min_length"] ? features["cock_min_length"] : "Выкл"]</a>"
+							dat += "<b>Диаметров:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_diameter_ratio;task=input'>[features["cock_diameter_ratio"]]</a>" //SPLURT Edit
+							dat += "<b>Видимость пениса:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
+							dat += "<b>Пенис всегда доступен:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_accessible'>[features["cock_accessible"] ? "Да" : "Нет"]</a>"
+							dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=cock_stuffing'>[features["cock_stuffing"] == TRUE ? "Да" : "Нет"]</a>" //SPLURT Edit
+							dat += "<b>Иметь тентакли:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Да" : "Нет"]</a>"
 							if(features["has_balls"])
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-									dat += "<b>Testicles Color:</b></a><BR>"
-									dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+									dat += "<b>Цвет тентаклей:</b></a><BR>"
+									dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 								else
-									dat += "<b>Testicles Color:</b></a><BR>"
-									dat += "<span style='border: 1px solid #161616; background-color: #[features["balls_color"]];'><font color='[color_hex2num(features["balls_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["balls_color"]]</font></span> <a href='?_src_=prefs;preference=balls_color;task=input'>Change</a><br>"
-								dat += "<b>Testicles Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=balls_shape;task=input'>[features["balls_shape"]]</a>"
-								dat += "<b>Testicles Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
-								dat += "<b>Testicles Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_accessible'>[features["balls_accessible"] ? "Yes" : "No"]</a>"
+									dat += "<b>Цвет мошонки:</b></a><BR>"
+									dat += "<span style='border: 1px solid #161616; background-color: #[features["balls_color"]];'><font color='[color_hex2num(features["balls_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["balls_color"]]</font></span> <a href='?_src_=prefs;preference=balls_color;task=input'>Изменить</a><br>"
+								dat += "<b>Форма мошонки:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=balls_shape;task=input'>[features["balls_shape"]]</a>"
+								dat += "<b>Видимость мошонки:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
+								dat += "<b>Мошонка всегда доступна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_accessible'>[features["balls_accessible"] ? "Да" : "нет"]</a>"
 
 								//SPLURT Edit
-								dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_stuffing'>[features["balls_stuffing"] == TRUE ? "Yes" : "No"]</a>"
-								dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_max_size;task=input'>[features["balls_max_size"] ? features["balls_max_size"] : "Disabled"]</a>"
-								dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_min_size;task=input'>[features["balls_min_size"] ? features["balls_min_size"] : "Disabled"]</a>"
-								dat += "<b>Produces:</b>"
+								dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_stuffing'>[features["balls_stuffing"] == TRUE ? "Да" : "Нет"]</a>"
+								dat += "<b>Максимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_max_size;task=input'>[features["balls_max_size"] ? features["balls_max_size"] : "Disabled"]</a>"
+								dat += "<b>Минимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=balls_min_size;task=input'>[features["balls_min_size"] ? features["balls_min_size"] : "Disabled"]</a>"
+								dat += "<b>Выделения:</b>"
 								var/datum/reagent/balls_fluid = find_reagent_object_from_type(features["balls_fluid"])
 								if(balls_fluid && (balls_fluid in GLOB.genital_fluids_list))
 									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=balls_fluid;task=input'>[balls_fluid.name]</a>"
 								else
-									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=balls_fluid;task=input'>Nothing?</a>"
+									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=balls_fluid;task=input'>Ничего?</a>"
 								//SPLURT Edit end
 
 						dat += "</td>"
 						dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>Vagina</h3>"
-						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_vag'>[features["has_vag"] == TRUE ? "Yes" : "No"]</a>"
+						dat += "<h3>Вагина</h3>"
+						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_vag'>[features["has_vag"] == TRUE ? "Да" : "Нет"]</a>"
 						if(features["has_vag"])
-							dat += "<b>Vagina Type:</b> <a style='display:block;width:100px' href='?_src_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
+							dat += "<b>Тип влагалища:</b> <a style='display:block;width:100px' href='?_src_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
 							if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-								dat += "<b>Vagina Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+								dat += "<b>Цвет вагины:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 							else
-								dat += "<b>Vagina Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["vag_color"]];'><font color='[color_hex2num(features["vag_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["vag_color"]]</font></span> <a href='?_src_=prefs;preference=vag_color;task=input'>Change</a><br>"
-							dat += "<b>Vagina Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_visibility;task=input'>[features["vag_visibility"]]</a>"
-							dat += "<b>Vagina Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_accessible'>[features["vag_accessible"] ? "Yes" : "No"]</a>"
-							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=vag_stuffing'>[features["vag_stuffing"] == TRUE ? "Yes" : "No"]</a>" //SPLURT Edit
-							dat += "<b>Vagina Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_accessible'>[features["vag_accessible"] ? "Yes" : "No"]</a>"
-							dat += "<b>Has Womb:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_womb'>[features["has_womb"] == TRUE ? "Yes" : "No"]</a>"
+								dat += "<b>Цвет вагины:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["vag_color"]];'><font color='[color_hex2num(features["vag_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["vag_color"]]</font></span> <a href='?_src_=prefs;preference=vag_color;task=input'>Изменить</a><br>"
+							dat += "<b>Видимость вагины:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_visibility;task=input'>[features["vag_visibility"]]</a>"
+							dat += "<b>Вагина всегда видна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_accessible'>[features["vag_accessible"] ? "Да" : "Нет"]</a>"
+							dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=vag_stuffing'>[features["vag_stuffing"] == TRUE ? "Да" : "Нет"]</a>" //SPLURT Edit
+							dat += "<b>Вагина всегда доступна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_accessible'>[features["vag_accessible"] ? "Да" : "Нет"]</a>"
+							dat += "<b>Has Womb:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_womb'>[features["has_womb"] == TRUE ? "Да" : "Нет"]</a>"
 							//SPLURT Edit
 							if(features["has_womb"] == TRUE)
 								dat += "<b>Produces:</b>"
@@ -1088,90 +1088,90 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							//SPLURT Edit end
 						dat += "</td>"
 						dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>Breasts</h3>"
-						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_breasts'>[features["has_breasts"] == TRUE ? "Yes" : "No"]</a>"
+						dat += "<h3>Груди</h3>"
+						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_breasts'>[features["has_breasts"] == TRUE ? "Да" : "Нет"]</a>"
 						if(features["has_breasts"])
 							if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 							else
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["breasts_color"]];'><font color='[color_hex2num(features["breasts_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["breasts_color"]]</font></span> <a href='?_src_=prefs;preference=breasts_color;task=input'>Change</a><br>"
-							dat += "<b>Cup Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_size;task=input'>[features["breasts_size"]]</a>"
-							dat += "<b>Breasts Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
-							dat += "<b>Breasts Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
-							dat += "<b>Breasts Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_accessible'>[features["breasts_accessible"] ? "Yes" : "No"]</a>"
-							dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["breasts_color"]];'><font color='[color_hex2num(features["breasts_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["breasts_color"]]</font></span> <a href='?_src_=prefs;preference=breasts_color;task=input'>Изменить</a><br>"
+							dat += "<b>Размер чашечки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_size;task=input'>[features["breasts_size"]]</a>"
+							dat += "<b>Форма груди:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
+							dat += "<b>Видимость груди:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
+							dat += "<b>Грудь всегда доступна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_accessible'>[features["breasts_accessible"] ? "Да" : "Нет"]</a>"
+							dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Да" : "Нет"]</a>"
 							//SPLURT Edit
-							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_stuffing'>[features["breasts_stuffing"] == TRUE ? "Yes" : "No"]</a>"
-							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_max_size;task=input'>[features["breasts_max_size"] ? features["breasts_max_size"] : "Disabled"]</a>"
-							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_min_size;task=input'>[features["breasts_min_size"] ? features["breasts_min_size"] : "Disabled"]</a>"
+							dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_stuffing'>[features["breasts_stuffing"] == TRUE ? "Да" : "Нет"]</a>"
+							dat += "<b>Максимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_max_size;task=input'>[features["breasts_max_size"] ? features["breasts_max_size"] : "Disabled"]</a>"
+							dat += "<b>Минимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_min_size;task=input'>[features["breasts_min_size"] ? features["breasts_min_size"] : "Disabled"]</a>"
 							if(features["breasts_producing"] == TRUE)
-								dat += "<b>Produces:</b>"
+								dat += "<b>Выделения:</b>"
 								var/datum/reagent/breasts_fluid = find_reagent_object_from_type(features["breasts_fluid"])
 								if(breasts_fluid && (breasts_fluid in GLOB.genital_fluids_list))
 									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_fluid;task=input'>[breasts_fluid.name]</a>"
 								else
-									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_fluid;task=input'>Nothing?</a>"
+									dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_fluid;task=input'>Ничего?</a>"
 							//SPLURT Edit end
 						dat += "</td>"
 						dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>Butt</h3>"
-						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_butt'>[features["has_butt"] == TRUE ? "Yes" : "No"]</a>"
+						dat += "<h3>Задница</h3>"
+						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_butt'>[features["has_butt"] == TRUE ? "да" : "Нет"]</a>"
 						if(features["has_butt"])
 							if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 							else
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["butt_color"]];'><font color='[color_hex2num(features["butt_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["butt_color"]]</font></span> <a href='?_src_=prefs;preference=butt_color;task=input'>Change</a><br>"
-							dat += "<b>Butt Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_size;task=input'>[features["butt_size"]]</a>"
-							dat += "<b>Butt Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_visibility;task=input'>[features["butt_visibility"]]</a>"
-							dat += "<b>Butt Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_accessible'>[features["butt_accessible"] ? "Yes" : "No"]</a>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["butt_color"]];'><font color='[color_hex2num(features["butt_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["butt_color"]]</font></span> <a href='?_src_=prefs;preference=butt_color;task=input'>Изменить</a><br>"
+							dat += "<b>Размер задницы:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_size;task=input'>[features["butt_size"]]</a>"
+							dat += "<b>Видимость задницы:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_visibility;task=input'>[features["butt_visibility"]]</a>"
+							dat += "<b>Задница всегда доступна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_accessible'>[features["butt_accessible"] ? "Да" : "Нет"]</a>"
 						//SPLURT Edit
-							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
-							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Disabled"]</a>"
-							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Disabled"]</a>"
-							dat += "<b>Has Anus:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Да" : "Нет"]</a>"
+							dat += "<b>Максимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Выкл"]</a>"
+							dat += "<b>Минимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Выкл"]</a>"
+							dat += "<b>Иметь анус:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Да" : "Нет"]</a>"
 							if(features["has_anus"])
-								dat += "<b>Butthole Color:</b></a><BR>"
+								dat += "<b>Цвет ануса:</b></a><BR>"
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-									dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+									dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 								else
-									dat += "<span style='border: 1px solid #161616; background-color: #[features["anus_color"]];'><font color='[color_hex2num(features["anus_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["anus_color"]]</font></span> <a href='?_src_=prefs;preference=anus_color;task=input'>Change</a><br>"
-									dat += "<b>Butthole Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=anus_shape;task=input'>[features["anus_shape"]]</a>"
-								dat += "<b>Butthole Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_visibility;task=input'>[features["anus_visibility"]]</a>"
-								dat += "<b>Butthole Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_accessible'>[features["anus_accessible"] ? "Yes" : "No"]</a>"
-								dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=anus_stuffing'>[features["anus_stuffing"] == TRUE ? "Yes" : "No"]</a>"
+									dat += "<span style='border: 1px solid #161616; background-color: #[features["anus_color"]];'><font color='[color_hex2num(features["anus_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["anus_color"]]</font></span> <a href='?_src_=prefs;preference=anus_color;task=input'>Изменить</a><br>"
+									dat += "<b>Размер ануса:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=anus_shape;task=input'>[features["anus_shape"]]</a>"
+								dat += "<b>Видимость ануса:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_visibility;task=input'>[features["anus_visibility"]]</a>"
+								dat += "<b>Анус всегда доступен:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_accessible'>[features["anus_accessible"] ? "Да" : "Нет"]</a>"
+								dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=anus_stuffing'>[features["anus_stuffing"] == TRUE ? "Да" : "Нет"]</a>"
 
-							dat += "<b>Butt Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_accessible'>[features["butt_accessible"] ? "Yes" : "No"]</a>"
-						dat += "<h3>Anus</h3>"
-						dat += "<b>Anus Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_accessible'>[features["anus_accessible"] ? "Yes" : "No"]</a>"
+							dat += "<b>Задница всегда доступна:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_accessible'>[features["butt_accessible"] ? "Да" : "Нет"]</a>"
+						dat += "<h3>Анус</h3>"
+						dat += "<b>Анус всегда доступен:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=anus_accessible'>[features["anus_accessible"] ? "Да" : "Нет"]</a>"
 						dat += "</td>"
 						dat += APPEARANCE_CATEGORY_COLUMN
-						dat += "<h3>Belly</h3>"
+						dat += "<h3>Живот</h3>"
 						dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_belly'>[features["has_belly"] == TRUE ? "Yes" : "No"]</a>"
 						if(features["has_belly"])
 							if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(Skin tone overriding)<br>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 							else
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["belly_color"]];'><font color='[color_hex2num(features["belly_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["belly_color"]]</font></span> <a href='?_src_=prefs;preference=belly_color;task=input'>Change</a><br>"
-							dat += "<b>Belly Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_size;task=input'>[features["belly_size"]]</a>"
-							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_max_size;task=input'>[features["belly_max_size"] ? features["belly_max_size"] : "Disabled" ]</a>"
-							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_min_size;task=input'>[features["belly_min_size"] ? features["belly_min_size"] : "Disabled" ]</a>"
-							dat += "<b>Belly Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_visibility;task=input'>[features["belly_visibility"]]</a>"
-							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_stuffing'>[features["belly_stuffing"] == TRUE ? "Yes" : "No"]</a>"
-							dat += "<b>Belly Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_accessible'>[features["belly_accessible"] ? "Yes" : "No"]</a>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["belly_color"]];'><font color='[color_hex2num(features["belly_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["belly_color"]]</font></span> <a href='?_src_=prefs;preference=belly_color;task=input'>Изменить</a><br>"
+							dat += "<b>Размер живота:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_size;task=input'>[features["belly_size"]]</a>"
+							dat += "<b>Максимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_max_size;task=input'>[features["belly_max_size"] ? features["belly_max_size"] : "Выкл" ]</a>"
+							dat += "<b>Минимальный размер:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_min_size;task=input'>[features["belly_min_size"] ? features["belly_min_size"] : "Выкл" ]</a>"
+							dat += "<b>Видимость живота:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_visibility;task=input'>[features["belly_visibility"]]</a>"
+							dat += "<b>Игруши:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_stuffing'>[features["belly_stuffing"] == TRUE ? "Да" : "Нет"]</a>"
+							dat += "<b>Живот всегда доступен:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_accessible'>[features["belly_accessible"] ? "Да" : "Нет"]</a>"
 						dat += "</td>"
 						if(all_quirks.Find("Дуллахан"))
 							dat += APPEARANCE_CATEGORY_COLUMN
 							dat += "<h3>Neckfire</h3>"
-							dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_neckfire;task=input'>[features["neckfire"] ? "Yes" : "No"]</a>"
+							dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_neckfire;task=input'>[features["neckfire"] ? "Да" : "Нет"]</a>"
 							if(features["neckfire"])
-								dat += "<b>Color:</b></a><BR>"
-								dat += "<span style='border: 1px solid #161616; background-color: #[features["neckfire_color"]];'><font color='[color_hex2num(features["neckfire_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["neckfire_color"]]</font></span><a href='?_src_=prefs;preference=has_neckfire_color;task=input'>Change</a><br>"
+								dat += "<b>Цвет:</b></a><BR>"
+								dat += "<span style='border: 1px solid #161616; background-color: #[features["neckfire_color"]];'><font color='[color_hex2num(features["neckfire_color"]) < 200 ? "FFFFFF" : "000000"]'>#[features["neckfire_color"]]</font></span><a href='?_src_=prefs;preference=has_neckfire_color;task=input'>Изменить</a><br>"
 
 							dat += "</td>"
 						//SPLURT Edit end
