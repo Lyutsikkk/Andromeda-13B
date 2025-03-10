@@ -4,9 +4,9 @@
 	recommended_species = list("Human")
 
 /datum/sprite_accessory/mam_body_markings/tattoo/heart
-	name = "Tattoo - Heart"
+	name = "Татуировка - Сердце"
 	icon_state = "tat_heart"
-	covered_limbs = list("Left Arm" =  MATRIX_RED, "Right Arm" =  MATRIX_RED)
+	covered_limbs = list("Левая рука" =  MATRIX_RED, "Правая рука" =  MATRIX_RED)
 
 ///datum/sprite_accessory/mam_body_markings/tattoo/heart_groin
 	//name = "Tattoo - Heart (Groin)"
@@ -14,9 +14,9 @@
 	//covered_limbs = list("Chest" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/hive
-	name = "Tattoo - Hive"
+	name = "Татуировка - Улей"
 	icon_state = "tat_hive"
-	covered_limbs = list("Chest" = MATRIX_RED)
+	covered_limbs = list("Грудь" = MATRIX_RED)
 	gender_specific = 1
 
 ///datum/sprite_accessory/mam_body_markings/tattoo/nightling
@@ -25,19 +25,19 @@
 	//covered_limbs = list("Chest" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/circuit
-	name = "Tattoo - Circuit"
+	name = "Татуировка - Схема"
 	icon_state = "tat_campbell"
-	covered_limbs = list("Left Arm" =  MATRIX_RED, "Right Arm" =  MATRIX_RED, "Left Leg" =  MATRIX_RED, "Right Leg" =  MATRIX_RED)
+	covered_limbs = list("Левая рука" =  MATRIX_RED, "Правая рука" =  MATRIX_RED, "Левая нога" =  MATRIX_RED, "Правая нога" =  MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/silverburgh //dunno what this is.
-	name = "Tattoo - Silverburgh"
+	name = "Татуировка - Сильвербург"
 	icon_state = "tat_silverburgh"
-	covered_limbs = list("Left Leg" =  MATRIX_RED, "Right Leg" =  MATRIX_RED)
+	covered_limbs = list("Левая нога" =  MATRIX_RED, "Правая нога" =  MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/tiger
-	name = "Tattoo - Tiger"
+	name = "Татуировка - Тигр"
 	icon_state = "tat_tiger"
-	covered_limbs = list("Chest" = MATRIX_RED, "Left Arm" =  MATRIX_RED, "Right Arm" =  MATRIX_RED, "Left Leg" =  MATRIX_RED, "Right Leg" =  MATRIX_RED)
+	covered_limbs = list("Грудь" = MATRIX_RED, "Левая рука" =  MATRIX_RED, "Правая рука" =  MATRIX_RED, "Левая нога" =  MATRIX_RED, "Правая нога" =  MATRIX_RED)
 	gender_specific = 1
 
 //datum/sprite_accessory/mam_body_markings/tattoo/tiger_groin
@@ -51,27 +51,27 @@
 	//covered_limbs = list("Left Leg" =  MATRIX_RED, "Right Leg" =  MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/infinity
-	name = "Tattoo - Infinity"
+	name = "Татуировка - Бесконечность"
 	icon_state = "tat_infinity"
-	covered_limbs = list("Left Arm" =  MATRIX_RED, "Right Arm" =  MATRIX_RED, "Left Leg" =  MATRIX_RED, "Right Leg" =  MATRIX_RED)
+	covered_limbs = list("Левая рука" =  MATRIX_RED, "Правая рука" =  MATRIX_RED, "Левая нога" =  MATRIX_RED, "Права нога" =  MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tattoo/butterfly
-	name = "Tattoo - Butterfly"
+	name = "Татуировка - Бабочка"
 	icon_state = "tat_butterfly"
-	covered_limbs = list("Chest" =  MATRIX_RED)
+	covered_limbs = list("Грудь" =  MATRIX_RED)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/tails/mam_tails/teshari
-	name = "Teshari"
-	icon_state = "teshari"
+	name = "Тешари"
+	icon_state = "тешари"
 	color_src = MATRIXED
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/mam_tails/teshari/teshari_thin
-	name = "Teshari thin"
-	icon_state = "teshari2"
+	name = "Тешари тонкий"
+	icon_state = "тешари2"
 /*
 /datum/sprite_accessory/tails/mam_tails/murid_two
 	name = "Murid II"
@@ -81,29 +81,29 @@
 	matrixed_sections = MATRIX_ALL
 */
 /datum/sprite_accessory/tails/mam_tails/leopard
-	name = "Leopard Tail"
-	icon_state = "leopard"
+	name = "Хвост леопарда"
+	icon_state = "леопард"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/leopard
-	name = "Leopard Tail"
-	icon_state = "leopard"
+	name = "Хвост леопарда"
+	icon_state = "леопард"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 /datum/sprite_accessory/tails/mam_tails/otiea
-	name = "Otie (Alt)"
-	icon_state = "otiea"
+	name = "Выдра (альт)"
+	icon_state = "выдра"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/otiea
-	name = "Otie (Alt)"
-	icon_state = "otiea"
+	name = "Выдра (альт)"
+	icon_state = "выдра"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
@@ -111,7 +111,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/hair/zoey
-	name = "Zoey"
+	name = "Зои"
 	icon_state = "hair_zoey"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/hair.dmi'
 	recommended_species = list("Human")
@@ -158,7 +158,7 @@
 	icon_state = "hair_undercut_fem_s"
 
 /datum/sprite_accessory/hair/zoey/katara/angel
-	name = "Angel"
+	name = "Ангел"
 	icon_state = "hair_angel_s"
 
 /datum/sprite_accessory/hair/zoey/katara/chub
@@ -168,7 +168,7 @@
 ////
 
 /datum/sprite_accessory/hair/zoey/jagged_s
-	name = "Vulp Jagged"
+	name = "Изрезанный вульп"
 	icon_state = "jagged_s"
 	recommended_species = list("mammal", "undead_mammal")
 
@@ -236,7 +236,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/sprite_accessory/tails/human/xeno
-	name = "Xenomorph Tail"
+	name = "Хвост ксеноморфа"
 	icon_state = "xeno"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
@@ -244,7 +244,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/human/scolo
-	name = "Centipede Tail"
+	name = "Хвост сороконожки"
 	icon_state = "scolo"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
@@ -252,7 +252,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/human/leopard
-	name = "Leopard Tail"
+	name = "Хвост леопарда"
 	icon_state = "leopard"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
@@ -260,7 +260,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails_animated/human/leopard
-	name = "Leopard Tail"
+	name = "Хвост леопарда"
 	icon_state = "leopard"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
