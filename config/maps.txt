@@ -27,105 +27,105 @@ map metastation
 ##max_rounds_played 2
 endmap
 
-map syndicatestation
-voteweight 2
-disabled
+#map syndicatestation
+#voteweight 2
+#disabled
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map peacesyndicatestation
-maxplayers 70
-voteweight 2
+#map peacesyndicatestation
+#maxplayers 70
+#voteweight 2
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map pubbystation
-minplayers 70
+#map pubbystation
+#minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map omegastation
-maxplayers 70
+#map omegastation
+#maxplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
 map deltastation
-default
-minplayers 70
+#default
+#minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
 endmap
 
-map smexistation
-minplayers 70
+#map smexistation
+#minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map bluemoonsmexistation
-minplayers 70
+#map bluemoonsmexistation
+#minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
 #map runtimestation
 #endmap
 
-map festivestation
-minplayers 70
-endmap
+#map festivestation
+#minplayers 70
+#endmap
 
-map prisonstation
-minplayers 50
-endmap
+#map prisonstation
+#minplayers 50
+#endmap
 
 #map multiz_debug
 #endmap
 
-map kilostation
-maxplayers 70
+#map kilostation
+#maxplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map smolstation
-endmap
+#map smolstation
+#endmap
 
-map taustation
+#map taustation
+#minplayers 70
+##max_round_search_span 6
+##max_rounds_played 2
+#endmap
+
+#map cogstation
+#minplayers 70
+##max_round_search_span 6
+##max_rounds_played 2
+#endmap
+
+#map layeniastation
+#minplayers 70
+#voteweight 4
+##max_round_search_span 6
+##max_rounds_played 2
+#endmap
+
+#map lambdastation
 minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map cogstation
-minplayers 70
+#map 4nalstation
+#minplayers 70
 ##max_round_search_span 6
 ##max_rounds_played 2
-endmap
+#endmap
 
-map layeniastation
-minplayers 70
-voteweight 4
-##max_round_search_span 6
-##max_rounds_played 2
-endmap
-
-map lambdastation
-minplayers 70
-##max_round_search_span 6
-##max_rounds_played 2
-endmap
-
-map 4nalstation
-minplayers 70
-##max_round_search_span 6
-##max_rounds_played 2
-endmap
-
-map icemoonstation
-minplayers 30
-endmap
+#map icemoonstation
+#minplayers 30
+#endmap
