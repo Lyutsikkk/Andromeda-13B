@@ -539,9 +539,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[GENERAL_CHAR_TAB]' [character_settings_tab == GENERAL_CHAR_TAB ? "class='linkOn'" : ""]>Общее</a>"
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[BACKGROUND_CHAR_TAB]' [character_settings_tab == BACKGROUND_CHAR_TAB ? "class='linkOn'" : ""]>Описание</a>"
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[APPEARANCE_CHAR_TAB]' [character_settings_tab == APPEARANCE_CHAR_TAB ? "class='linkOn'" : ""]>Внешность</a>"
-			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[MARKINGS_CHAR_TAB]' [character_settings_tab == MARKINGS_CHAR_TAB ? "class='linkOn'" : ""]>Тату</a>"
+			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[MARKINGS_CHAR_TAB]' [character_settings_tab == MARKINGS_CHAR_TAB ? "class='linkOn'" : ""]>Особенности на теле</a>"
 			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[SPEECH_CHAR_TAB]' [character_settings_tab == SPEECH_CHAR_TAB ? "class='linkOn'" : ""]>Голос</a>"
-			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[LOADOUT_CHAR_TAB]' [character_settings_tab == LOADOUT_CHAR_TAB ? "class='linkOn'" : ""]>Раундстарт вещи</a>" //If you change the index of this tab, change all the logic regarding tab
+			dat += "<a href='?_src_=prefs;preference=character_tab;tab=[LOADOUT_CHAR_TAB]' [character_settings_tab == LOADOUT_CHAR_TAB ? "class='linkOn'" : ""]>Лодаут</a>" //If you change the index of this tab, change all the logic regarding tab
 			dat += "</center>"
 
 			dat += "<HR>"
@@ -578,8 +578,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					chosen_gear = list()
 
 				dat += "<td width=65% style=\"line-height:10px\">"
-				dat += "<center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для стартовых[gear_points == 1 ? "" : "s"] вещей</center><br>"
-				dat += "<center><a href='?_src_=prefs;preference=gear;clear_loadout=1'>Очистить стартовые вещи</a></b></center>"
+				dat += "<center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для лодаут[gear_points == 1 ? "" : "s"] вещей</center><br>"
+				dat += "<center><a href='?_src_=prefs;preference=gear;clear_loadout=1'>Сбросить лодаут</a></b></center>"
 				dat += "</td>"
 			else
 				dat += "<td width=35% style=\"line-height:10px\">"
@@ -982,9 +982,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Предпочтения согласия</h2>"
 					dat += "ЕРП : <a href='?_src_=prefs;preference=erp_pref'>[erppref]</a><br>"
-					dat += "Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
-					dat += "Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
-					dat += "Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+					dat += "Изнасилование : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
+					dat += "Воре : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
+					dat += "ЕРП с мобами : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
 					dat += "ЕРП антагонисты : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 
 					dat += "<h2>Непристойные предпочтения</h2>"
@@ -1036,10 +1036,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Видимость пениса:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
 							dat += "<b>Пенис всегда доступен:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_accessible'>[features["cock_accessible"] ? "Да" : "Нет"]</a>"
 							dat += "<b>Игрушки:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=cock_stuffing'>[features["cock_stuffing"] == TRUE ? "Да" : "Нет"]</a>" //SPLURT Edit
-							dat += "<b>Иметь тентакли:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Да" : "Нет"]</a>"
+							dat += "<b>Иметь машонку:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Да" : "Нет"]</a>"
 							if(features["has_balls"])
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
-									dat += "<b>Цвет тентаклей:</b></a><BR>"
+									dat += "<b>Цвет машонки:</b></a><BR>"
 									dat += "<span style='border: 1px solid #161616; background-color: [SKINTONE2HEX(skin_tone)];'><font color='[color_hex2num(SKINTONE2HEX(skin_tone)) < 200 ? "FFFFFF" : "000000"]'>[SKINTONE2HEX(skin_tone)]</font></span>(В зависимости от тона кожи)<br>"
 								else
 									dat += "<b>Цвет мошонки:</b></a><BR>"
@@ -1327,7 +1327,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</tr></table>"
 				if(LOADOUT_CHAR_TAB)
 					dat += "<table align='center' width='100%'>"
-					dat += "<tr><td colspan=4><center><b>Раундстарт слоты</b></center></td></tr>"
+					dat += "<tr><td colspan=4><center><b>Лодаут слоты</b></center></td></tr>"
 					dat += "<tr><td colspan=4><center>"
 					for(var/iteration in 1 to MAXIMUM_LOADOUT_SAVES)
 						dat += "<a [loadout_slot == iteration ? "class='linkOn'" : "href='?_src_=prefs;preference=gear;select_slot=[iteration]'"]>[iteration]</a>"
@@ -1839,9 +1839,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a> "
-		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изминения</a> "
+		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изменения</a> "
 
-	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изминения</a>"
+	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изменения</a>"
 	dat += "</center>"
 
 	winshow(user, "preferences_window", TRUE)

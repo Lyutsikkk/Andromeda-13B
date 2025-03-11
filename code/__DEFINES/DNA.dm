@@ -206,6 +206,6 @@
 #define G_NEUTER 4
 
 #define PREVIEW_PREF_JOB "В форме должности"
-#define PREVIEW_PREF_LOADOUT "Раундстарт вещи"
+#define PREVIEW_PREF_LOADOUT "Лодаут"
 #define PREVIEW_PREF_NAKED "Голый"
 #define PREVIEW_PREF_NAKED_AROUSED "Голый - Возбуждённый"

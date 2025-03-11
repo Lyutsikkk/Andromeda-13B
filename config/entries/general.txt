@@ -8,7 +8,7 @@ ROUND_END_COUNTDOWN 150
 # INACTIVITY_PERIOD 300
 
 ## period of time in seconds for players to be considered afk and kickable
-# AFK_PERIOD 600
+# AFK_PERIOD 3600
 
 ## disconnect players who are considered afk
 # KICK_INACTIVE

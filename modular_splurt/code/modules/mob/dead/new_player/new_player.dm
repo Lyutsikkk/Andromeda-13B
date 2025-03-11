@@ -23,7 +23,7 @@
 	output += "</center>"
 
 	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Настройки для нового игрока</div>", 250, 265)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Игровые настройки</div>", 250, 265)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output)
 	popup.open(FALSE)

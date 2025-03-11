@@ -98,7 +98,7 @@
 				dat += "<b>Вам запрещено использовать пользовательские имена и внешность. Вы можете продолжать настраивать своих персонажей, но как только вы присоединитесь к игре, вы будете выбраны случайным образом.</b><br>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Рандомный ник</A> "
 			dat += "<b>Всегда случайное имя:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Да" : "Нет"]</a><BR>"
-			dat += "<b>Жесткий костюм с Хвостом:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Да" : "Нет"]</a><BR>"
+			dat += "<b>Видимость хвоста в скафандре:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Да" : "Нет"]</a><BR>"
 
 			dat += "<b>[nameless ? "Обозначение по умолчанию" : "Никнейм"]:</b>"
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -226,14 +226,14 @@
 			dat += "<br><br>"
 			//SPLURT EDIT END
 			//SKYRAT EDIT
-			dat += 	"ERP : <a href='?_src_=prefs;preference=erp_pref'>[erppref]</a><br>"
-			dat += 	"Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
-			dat += 	"Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
+			dat += 	"ЕРП : <a href='?_src_=prefs;preference=erp_pref'>[erppref]</a><br>"
+			dat += 	"Изнасилование : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
+			dat += 	"Воре : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 			//END OF SKYRAT EDIT
 
 			//Gardelin0 Addoon
-			dat += 	"Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
-			dat += 	"Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
+			dat += 	"ЕРП с мобами : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+			dat += 	"ЕРП антагонисты : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 			//END OF Gardelin0 Addoon
 
 			dat += "<h2>Records</h2><br>"
@@ -978,7 +978,7 @@
 				chosen_gear = list()
 
 			dat += "<table align='center' width='100%'>"
-			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для стартовых вещей</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
+			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для лодаут вещей</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
 			dat += "<tr><td colspan=4><center>Вы можете выбрать только один предмет в каждой категории, если только это не тот предмет, который появляется у вас в рюкзаке или в руках.</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
 
@@ -1212,9 +1212,9 @@
 
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a> "
-		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изминения</a> "
+		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изменения</a> "
 
-	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изминения</a>"
+	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изменения</a>"
 	dat += "</center>"
 
 	winshow(user, "preferences_window", TRUE)
