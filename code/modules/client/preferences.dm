@@ -994,7 +994,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					//SPLURT EDIT BEGIN - gregnancy preferences
 					dat += "<td width='220px' height='300px' valign='top'>"
-					dat += "<h3></h3>"
+					dat += "<h3>Pregnancy preferences</h3>"
 					dat += "<b>Chance of impregnation:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=virility;task=input'>[virility ? virility : "Disabled"]</a>"
 					dat += "<b>Chance of getting pregnant:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=fertility;task=input'>[fertility ? fertility : "Disabled"]</a>"
 					dat += "<b>Lay inert eggs:</b><a style='display:block;width:100px' href ='?_src_=prefs;preference=inert_eggs'>[features["inert_eggs"] == TRUE ? "Enabled" : "Disabled"]</a>"
@@ -1296,8 +1296,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "</tr></table>"
 						// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
 						dat += "<center>"
-						dat += "<h3>Danger Zone</h3>"
-						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Remove All Markings</a>"
+						dat += "<h3>Опасная зона</h3>"
+						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Удаление всех маркировок</a>"
 						dat += "</center>"
 						// BLUEMOON ADD END
 
@@ -1310,8 +1310,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 					//SANDSTORM EDIT - additional language + runechat color
 					dat += "<b>Дополнительный язык</b><br>"
-					dat += "<a href='?_src_=prefs;preference=language;task=menu'>[english_list(language, "None")]</a></center><br>"
-					dat += "<b>Кастомный цвет рунного чата:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Enabled" : "Disabled"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
+					dat += "<a href='?_src_=prefs;preference=language;task=menu'>[english_list(language, "Нету")]</a></center><br>"
+					dat += "<b>Кастомный цвет рунного чата:</b> <a href='?_src_=prefs;preference=enable_personal_chat_color'>[enable_personal_chat_color ? "Вкл" : "Выкл"]</a><br> [enable_personal_chat_color ? "<span style='border: 1px solid #161616; background-color: [personal_chat_color];'><font color='[color_hex2num(personal_chat_color) < 200 ? "FFFFFF" : "000000"]'>[personal_chat_color]</font></span> <a href='?_src_=prefs;preference=personal_chat_color;task=input'>Change</a>" : ""]<br>"
 					dat += "</td>"
 					//END OF SANDSTORM EDIT
 					dat += "<td width='340px' height='300px' valign='top'>"
@@ -1336,7 +1336,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr><td colspan=4><center><b>"
 
 					if(!length(GLOB.loadout_items))
-						dat += "<center>ERROR: No loadout categories - something is horribly wrong!"
+						dat += "<center>ОШИБКА: Нет категорий загрузки - что-то ужасно неправильно!"
 					else
 						if(!GLOB.loadout_categories[gear_category])
 							gear_category = GLOB.loadout_categories[1]
@@ -1357,7 +1357,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<tr><td colspan=4><center><b>"
 
 						if(!length(GLOB.loadout_categories[gear_category]))
-							dat += "No subcategories detected. Something is horribly wrong!"
+							dat += "Подкатегорий не обнаружено. Что-то здесь ужасно не так!"
 						else
 							var/list/subcategories = GLOB.loadout_categories[gear_category]
 							if(!subcategories.Find(gear_subcategory))
@@ -1402,20 +1402,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									if(loadout_item)
 										class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
 										if(gear.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC)
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_polychromic=1;loadout_gear_name=[html_encode(gear.name)];'>Color</a>"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_polychromic=1;loadout_gear_name=[html_encode(gear.name)];'>Цвет</a>"
 											for(var/loadout_color in loadout_item[LOADOUT_COLOR])
 												extra_loadout_data += "<span style='border: 1px solid #161616; background-color: [loadout_color];'><font color='[color_hex2num(loadout_color) < 200 ? "FFFFFF" : "000000"]'>[loadout_color]</font></span>"
 										else
 											var/loadout_color_non_poly = "#FFFFFF"
 											if(length(loadout_item[LOADOUT_COLOR]))
 												loadout_color_non_poly = loadout_item[LOADOUT_COLOR][1]
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color=1;loadout_gear_name=[html_encode(gear.name)];'>Color</a>"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color=1;loadout_gear_name=[html_encode(gear.name)];'>Цвет</a>"
 											extra_loadout_data += "<span style='border: 1px solid #161616; background-color: [loadout_color_non_poly];'><font color='[color_hex2num(loadout_color_non_poly) < 200 ? "FFFFFF" : "000000"]'>[loadout_color_non_poly]</font></span>"
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_HSV=1;loadout_gear_name=[html_encode(gear.name)];'>HSV Color</a>" // SPLURT EDIT
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_HSV=1;loadout_gear_name=[html_encode(gear.name)];'>HSV Цвет</a>" // SPLURT EDIT
 										if(gear.loadout_flags & LOADOUT_CAN_NAME)
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Имя</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 										if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Описание</a>"
 										else
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
 										// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
@@ -1424,7 +1424,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										else
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
 										if(ispath(gear.path, /obj/item/clothing/neck/petcollar)) //"name tag" sounds better for me, but in petcollar code "tagname" is used so let it be.
-											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_tagname=1;loadout_gear_name=[html_encode(gear.name)];'>Name tag</a> [loadout_item["loadout_custom_tagname"] ? loadout_item["loadout_custom_tagname"] : "Name tag is visible for everyone looking at wearer."]"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_tagname=1;loadout_gear_name=[html_encode(gear.name)];'>тег имени</a> [loadout_item["loadout_custom_tagname"] ? loadout_item["loadout_custom_tagname"] : "Тег имени виден любому, кто смотрит на его владельца."]"
 									  // BLUEMOON ADD END
 									else if((gear_points - gear.cost) < 0)
 										class_link = "style='white-space:normal;' class='linkOff'"
@@ -1456,7 +1456,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/progress_made = unlockable_loadout_data[unlockable.progress_key]
 										if(!progress_made)
 											progress_made = 0
-										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description] Progress: [min(progress_made, unlockable.progress_required)]/[unlockable.progress_required]</i></font></td></tr>"
+										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description] Прогресс: [min(progress_made, unlockable.progress_required)]/[unlockable.progress_required]</i></font></td></tr>"
 								dat += "</table>"
 							else
 								dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
@@ -1475,7 +1475,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									even = !even
 									dat += "<tr style='vertical-align:top; background-color: [background_cl];'><td width=15%><a \
 										\"style='white-space:normal;' href='?_src_=prefs;preference=gear;clear_invalid_gear=[html_encode(test_item)];'\" \
-											>[test_item ? test_item : "no path!!?! Report to an admin!"]</a></td>"
+											>[test_item ? test_item : "нет пути!!?! Сообщить администратору!"]</a></td>"
 									dat += "<td style='vertical-align:top'>"
 									var/list/other_data = entry["loadout_item"] ? entry - "loadout_item" : entry
 									dat += json_encode(other_data)
@@ -1483,9 +1483,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</table>"
 		if(PREFERENCES_TAB) // Game Preferences
 			dat += "<center>"
-			dat += "<a href='?_src_=prefs;preference=preferences_tab;tab=[GAME_PREFS_TAB]' [preferences_tab == GAME_PREFS_TAB ? "class='linkOn'" : ""]>General</a>"
+			dat += "<a href='?_src_=prefs;preference=preferences_tab;tab=[GAME_PREFS_TAB]' [preferences_tab == GAME_PREFS_TAB ? "class='linkOn'" : ""]>Основное</a>"
 			dat += "<a href='?_src_=prefs;preference=preferences_tab;tab=[OOC_PREFS_TAB]' [preferences_tab == OOC_PREFS_TAB ? "class='linkOn'" : ""]>OOC</a>"
-			dat += "<a href='?_src_=prefs;preference=preferences_tab;tab=[CONTENT_PREFS_TAB]' [preferences_tab == CONTENT_PREFS_TAB ? "class='linkOn'" : ""]>Content</a>"
+			dat += "<a href='?_src_=prefs;preference=preferences_tab;tab=[CONTENT_PREFS_TAB]' [preferences_tab == CONTENT_PREFS_TAB ? "class='linkOn'" : ""]>Содержание</a>"
 			dat += "</center>"
 
 			dat += "<HR>"
@@ -1493,46 +1493,46 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			switch(preferences_tab)
 				if(GAME_PREFS_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-					dat += "<h2>General Settings</h2>"
-					dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
-					dat += "<b>Outline:</b> <a href='?_src_=prefs;preference=outline_enabled'>[outline_enabled ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Outline Color:</b> [outline_color ? "<span style='border:1px solid #161616; background-color: [outline_color];'>" : "Theme-based (null)"]<font color='[color_hex2num(outline_color) < 200 ? "FFFFFF" : "000000"]'>[outline_color]</font></span> <a href='?_src_=prefs;preference=outline_color'>Change</a><BR>"
-					dat += "<b>Screentip:</b> <a href='?_src_=prefs;preference=screentip_pref'>[screentip_pref]</a><br>"
-					dat += "<b>Screentip Color:</b> <span style='border:1px solid #161616; background-color: [screentip_color];'><font color='[color_hex2num(screentip_color) < 200 ? "FFFFFF" : "000000"]'>[screentip_color]</font></span> <a href='?_src_=prefs;preference=screentip_color'>Change</a><BR>"
+					dat += "<h2>Основные настройки</h2>"
+					dat += "<b>Стиль UI:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
+					dat += "<b>Контур:</b> <a href='?_src_=prefs;preference=outline_enabled'>[outline_enabled ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Цвет контура:</b> [outline_color ? "<span style='border:1px solid #161616; background-color: [outline_color];'>" : "Основной цвет"]<font color='[color_hex2num(outline_color) < 200 ? "FFFFFF" : "000000"]'>[outline_color]</font></span> <a href='?_src_=prefs;preference=outline_color'>Изменить</a><BR>"
+					dat += "<b>Подсказка:</b> <a href='?_src_=prefs;preference=screentip_pref'>[screentip_pref]</a><br>"
+					dat += "<b>Цвет подсказки:</b> <span style='border:1px solid #161616; background-color: [screentip_color];'><font color='[color_hex2num(screentip_color) < 200 ? "FFFFFF" : "000000"]'>[screentip_color]</font></span> <a href='?_src_=prefs;preference=screentip_color'>Изменить</a><BR>"
 					dat += "<font style='border-bottom:2px dotted white; cursor:help;'\
-						title=\"This is an accessibility preference, if disabled, fallbacks to only text which colorblind people can understand better\">\
-						<b>Screentip context with images:</b></font> <a href='?_src_=prefs;preference=screentip_images'>[screentip_images ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
-					dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
+						title=\"Это параметр доступности, если он отключен, то используется только для текста, который лучше понимают дальтоники\">\
+						<b>Подсказки с контекстом и изображениями:</b></font> <a href='?_src_=prefs;preference=screentip_images'>[screentip_images ? "Разрешить" : "ЗАпретить"]</a><br>"
+					dat += "<b>tgui Экран:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Первичный" : "All"]</a><br>"
+					dat += "<b>tgui Стиль:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Причудливый" : "Ничего лишнего"]</a><br>"
 					dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 					dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 					//SANDSTORM CHANGES BEGIN
 					dat += "<b>See Runechat for emotes:</b> <a href='?_src_=prefs;preference=see_chat_emotes'>[see_chat_emotes ? "Enabled" : "Disabled"]</a><br>"
 					//SANDSTORM CHANGES END
-					dat += "<b>Shift view when pixelshifting:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Enabled" : "Disabled"]</a><br>" //SPLURT Edit
+					dat += "<b>Изменение вида при сдвиге пикселей:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Вкл" : "Выкл"]</a><br>" //SPLURT Edit
 					dat += "<br>"
-					dat += "<b>Ghost Ears:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "All Speech" : "Nearest Creatures"]</a><br>"
-					dat += "<b>Ghost Radio:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "All Messages":"No Messages"]</a><br>"
-					dat += "<b>Ghost Sight:</b> <a href='?_src_=prefs;preference=ghost_sight'>[(chat_toggles & CHAT_GHOSTSIGHT) ? "All Emotes" : "Nearest Creatures"]</a><br>"
-					dat += "<b>Ghost Whispers:</b> <a href='?_src_=prefs;preference=ghost_whispers'>[(chat_toggles & CHAT_GHOSTWHISPER) ? "All Speech" : "Nearest Creatures"]</a><br>"
-					dat += "<b>Ghost PDA:</b> <a href='?_src_=prefs;preference=ghost_pda'>[(chat_toggles & CHAT_GHOSTPDA) ? "All Messages" : "Nearest Creatures"]</a><br>"
+					dat += "<b>Слышимые звуки у призраков:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "Все сообщения" : "Ближайшие существа"]</a><br>"
+					dat += "<b>Радио у призраков:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "Все сообщения":"Нету"]</a><br>"
+					dat += "<b>Взгляд у призраков:</b> <a href='?_src_=prefs;preference=ghost_sight'>[(chat_toggles & CHAT_GHOSTSIGHT) ? "Все сообщения" : "Ближайшие существа"]</a><br>"
+					dat += "<b>Шептание у призраков:</b> <a href='?_src_=prefs;preference=ghost_whispers'>[(chat_toggles & CHAT_GHOSTWHISPER) ? "Всё" : "Ближайшие существа"]</a><br>"
+					dat += "<b>КПК у призраков:</b> <a href='?_src_=prefs;preference=ghost_pda'>[(chat_toggles & CHAT_GHOSTPDA) ? "Все сообщения" : "Ближайшие существа"]</a><br>"
 
 					dat += "</td>"
 
 					dat += "<td width='300px' height='300px' valign='top'>"
 
-					dat += "<h2>Special Role Settings</h2>"
+					dat += "<h2>Особые настройки роли</h2>"
 
 					if(jobban_isbanned(user, ROLE_INTEQ))
-						dat += "<font color=red><b>You are banned from antagonist roles.</b></font>"
+						dat += "<font color=red><b>Вам забанили роли антагонистов.</b></font>"
 						src.be_special = list()
 
-					dat += "<b>DISABLE ALL ANTAGONISM</b> <a href='?_src_=prefs;preference=disable_antag'>[(toggles & NO_ANTAG) ? "YES" : "NO"]</a><br>"
+					dat += "<b>ВЫКЛЮЧИТЬ ЛЮБОЙ АНТАГОНИЗМ</b> <a href='?_src_=prefs;preference=disable_antag'>[(toggles & NO_ANTAG) ? "ДА" : "НЕТ"]</a><br>"
 
 					for (var/i in GLOB.special_roles)
 						if(jobban_isbanned(user, i))
-							dat += "<b>Be [capitalize(i)]:</b> <a href='?_src_=prefs;jobbancheck=[i]'>BANNED</a><br>"
+							dat += "<b>Вы [capitalize(i)]:</b> <a href='?_src_=prefs;jobbancheck=[i]'>ЗАБАНЕНЫ</a><br>"
 						else
 							var/days_remaining = null
 							if(ispath(GLOB.special_roles[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
@@ -1541,109 +1541,109 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								days_remaining = temp_mode.get_remaining_days(user.client)
 
 							if(days_remaining)
-								dat += "<b>Be [capitalize(i)]:</b> <font color=red> \[IN [days_remaining] DAYS\]</font><br>"
+								dat += "<b>Вам осталось [capitalize(i)]:</b> <font color=red> \[ [days_remaining] Дней\]</font><br>"
 							else
 								var/enabled_text = ""
 								if(i in be_special)
 									if(be_special[i] >= 1)
-										enabled_text = "Enabled"
+										enabled_text = "Включено"
 									else
-										enabled_text = "Low"
+										enabled_text = "Низнкий"
 								else
-									enabled_text = "Disabled"
+									enabled_text = "Выключено"
 								dat += "<b>Be [capitalize(i)]:</b> <a href='?_src_=prefs;preference=be_special;be_special_type=[i]'>[enabled_text]</a><br>"
-					dat += "<b>Allow Midround Antagonist Roll:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Разрешить роли Midround антагонистов:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Вкл" : "Выкл"]</a><br>"
 
 					dat += "</td></tr></table>"
 
 				if(OOC_PREFS_TAB)
 					dat += "<table>"
 					dat += "<tr><td width='340px' height='300px' valign='top'>"
-					dat += "<h2>OOC Settings</h2>"
-					dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
-					dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<h2>OOC настройки</h2>"
+					dat += "<b>Мигающее окно:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Вкл":"Выкл"]</a><br>"
+					dat += "<b>Шум окна:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Вкл":"Выкл"]</a><br>"
 					dat += "<br>"
-					dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
-					dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
-					dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<b>Проигрывание музыки администратора:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Вкл":"Выкл"]</a><br>"
+					dat += "<b>Проигрывание музыки в лобби:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Вкл":"Выкл"]</a><br>"
+					dat += "<b>Просмотреть пул-реквесты:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Вкл":"Выкл"]</a><br>"
 					dat += "<br>"
 					if(user.client)
 						if(unlock_content)
-							dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
+							dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Публичный" : "Скрытый"]</a><br>"
 						if(unlock_content || check_rights_for(user.client, R_ADMIN))
-							dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'><font color='[color_hex2num(ooccolor ? ooccolor : GLOB.normal_ooc_colour) < 200 ? "FFFFFF" : "000000"]'>[ooccolor ? ooccolor : GLOB.normal_ooc_colour]</font></span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
-							dat += "<b>Antag OOC Color:</b> <span style='border: 1px solid #161616; background-color: [aooccolor ? aooccolor : GLOB.normal_aooc_colour];'><font color='[color_hex2num(aooccolor ? aooccolor : GLOB.normal_aooc_colour) < 200 ? "FFFFFF" : "000000"]'>[aooccolor ? aooccolor : GLOB.normal_aooc_colour]</font></span> <a href='?_src_=prefs;preference=aooccolor;task=input'>Change</a><br>"
+							dat += "<b>OOC Цвет:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'><font color='[color_hex2num(ooccolor ? ooccolor : GLOB.normal_ooc_colour) < 200 ? "FFFFFF" : "000000"]'>[ooccolor ? ooccolor : GLOB.normal_ooc_colour]</font></span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Изменить</a><br>"
+							dat += "<b>Цвет Антагониста OOC:</b> <span style='border: 1px solid #161616; background-color: [aooccolor ? aooccolor : GLOB.normal_aooc_colour];'><font color='[color_hex2num(aooccolor ? aooccolor : GLOB.normal_aooc_colour) < 200 ? "FFFFFF" : "000000"]'>[aooccolor ? aooccolor : GLOB.normal_aooc_colour]</font></span> <a href='?_src_=prefs;preference=aooccolor;task=input'>Изменить</a><br>"
 
 					if(user.client.holder)
-						dat += "<h2>Admin Settings</h2>"
-						dat += "<b>Adminhelp Sounds:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Enabled":"Disabled"]</a><br>"
-						dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Enabled":"Disabled"]</a><br>"
+						dat += "<h2>Настройки администратора</h2>"
+						dat += "<b>Звуки ахелпа:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Вкл":"Выкл"]</a><br>"
+						dat += "<b>Объявление о входе в систему:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Вкл":"Выкл"]</a><br>"
 						dat += "<br>"
-						dat += "<b>Combo HUD Lighting:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Full-bright":"No Change"]</a><br>"
-						dat += "<b>Use Modern Player Panel:</b> <a href='?_src_=prefs;preference=use_new_playerpanel'>[use_new_playerpanel ? "Yes" : "No"]</a><br>" //SPLURT Edit
+						dat += "<b>Комбинированное освещение HUD:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Все цвета":"Без изменений"]</a><br>"
+						dat += "<b>Использовать современную панель проигрывателя:</b> <a href='?_src_=prefs;preference=use_new_playerpanel'>[use_new_playerpanel ? "Да" : "Нет"]</a><br>" //SPLURT Edit
 
 						//deadmin
-						dat += "<h2>Deadmin While Playing</h2>"
+						dat += "<h2>Снятие админ прав во время игры</h2>"
 						if(CONFIG_GET(flag/auto_deadmin_players))
-							dat += "<b>Always Deadmin:</b> FORCED</a><br>"
+							dat += "<b>Всегда снимать права:</b> ПРИНУДИТЕЛЬНО</a><br>"
 						else
-							dat += "<b>Always Deadmin:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(deadmin & DEADMIN_ALWAYS)?"Enabled":"Disabled"]</a><br>"
+							dat += "<b>Всегда снимать права:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(deadmin & DEADMIN_ALWAYS)?"Вкл":"Выкл"]</a><br>"
 							if(!(deadmin & DEADMIN_ALWAYS))
 								dat += "<br>"
 								if(!CONFIG_GET(flag/auto_deadmin_antagonists))
-									dat += "<b>As Antag:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(deadmin & DEADMIN_ANTAGONIST)?"Deadmin":"Keep Admin"]</a><br>"
+									dat += "<b>В роли антагониста:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(deadmin & DEADMIN_ANTAGONIST)?"Снимать права":"Оставаться админом"]</a><br>"
 								else
-									dat += "<b>As Antag:</b> FORCED<br>"
+									dat += "<b>В роли антагониста:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_heads))
-									dat += "<b>As Command:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(deadmin & DEADMIN_POSITION_HEAD)?"Deadmin":"Keep Admin"]</a><br>"
+									dat += "<b>В роли командования:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(deadmin & DEADMIN_POSITION_HEAD)?"Снимать права":"Оставаться админом"]</a><br>"
 								else
-									dat += "<b>As Command:</b> FORCED<br>"
+									dat += "<b>В роли командования:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_security))
-									dat += "<b>As Security:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(deadmin & DEADMIN_POSITION_SECURITY)?"Deadmin":"Keep Admin"]</a><br>"
+									dat += "<b>В роли службы безопасности:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(deadmin & DEADMIN_POSITION_SECURITY)?"Снимать права":"Оставаться админом"]</a><br>"
 								else
-									dat += "<b>As Security:</b> FORCED<br>"
+									dat += "<b>В роли службы безопасности:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_silicons))
-									dat += "<b>As Silicon:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(deadmin & DEADMIN_POSITION_SILICON)?"Deadmin":"Keep Admin"]</a><br>"
+									dat += "<b>В роли борга:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(deadmin & DEADMIN_POSITION_SILICON)?"Снимать права":"Оставаться админом"]</a><br>"
 								else
-									dat += "<b>As Silicon:</b> FORCED<br>"
+									dat += "<b>В роли борга:</b> ПРИНУДИТЕЛЬНО<br>"
 
 					dat += "</td>"
 
 					dat += "<td width='300px' height='300px' valign='top'>"
 
-					dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
-					dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
-					dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
+					dat += "<h2>Настройки экрана</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
+					dat += "<b>Широкоэкранный:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Вкл ([CONFIG_GET(string/default_view)])" : "Выкл (15x15)"]</a><br>"
+					dat += "<b>Полноэкранный:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Меню с длинной полосой:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Авто stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Авто OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Дрожание экрана:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Полностью" : ((screenshake==0) ? "Нету" : "[screenshake]")]</a><br>"
 					if (user && user.client && !user.client.prefs.screenshake==0)
-						dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
-					dat += "<b>Recoil Screen Push:</b> <a href='?_src_=prefs;preference=recoil_screenshake'>[(recoil_screenshake==100) ? "Full" : ((recoil_screenshake==0) ? "None" : "[screenshake]")]</a><br>"
+						dat += "<b>Дрожание при уроне:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "Вкл" : ((damagescreenshake==0) ? "Выкл" : "Only when down")]</a><br>"
+					dat += "<b>Отдача:</b> <a href='?_src_=prefs;preference=recoil_screenshake'>[(recoil_screenshake==100) ? "Полностью" : ((recoil_screenshake==0) ? "Нету" : "[screenshake]")]</a><br>"
 					var/p_chaos
 					if (!preferred_chaos)
-						p_chaos = "No preference"
+						p_chaos = "Нету предпочтений"
 					else
 						p_chaos = preferred_chaos
-					dat += "<b>Preferred Chaos Amount:</b> <a href='?_src_=prefs;preference=preferred_chaos;task=input'>[p_chaos]</a><br>"
+					dat += "<b>Предпочтительное количество хаоса:</b> <a href='?_src_=prefs;preference=preferred_chaos;task=input'>[p_chaos]</a><br>"
 
 					//SPLURT Edit
-					dat += "<h2>S.P.L.U.R.T. Preferences</h2>"
-					dat += "<b>Be Antagonist Victim:</b> <a href='?_src_=prefs;preference=be_victim;task=input'>[be_victim ? be_victim : BEVICTIM_ASK]</a><br>"
-					dat += "<b>Disable combat mode cursor:</b> <a href='?_src_=prefs;preference=disable_combat_cursor'>[disable_combat_cursor?"Yes":"No"]</a><br>"
-					dat += "<b>Splashscreen Player Panel Style:</b> <a href='?_src_=prefs;preference=tg_playerpanel'>[(toggles & TG_PLAYER_PANEL)?"TG":"Old"]</a><br>"
-					dat += "<b>Character Creation Menu Style:</b> <a href='?_src_=prefs;preference=charcreation_style'>[new_character_creator ? "New" : "Old"]</a><br>"
+					dat += "<h2>S.P.L.U.R.T. Предпочтения</h2>"
+					dat += "<b>Быть жертвой антагониста:</b> <a href='?_src_=prefs;preference=be_victim;task=input'>[be_victim ? be_victim : BEVICTIM_ASK]</a><br>"
+					dat += "<b>Отключить курсор боевого режима:</b> <a href='?_src_=prefs;preference=disable_combat_cursor'>[disable_combat_cursor?"Да":"Нет"]</a><br>"
+					dat += "<b>Стиль панели игрока:</b> <a href='?_src_=prefs;preference=tg_playerpanel'>[(toggles & TG_PLAYER_PANEL)?"TG":"Old"]</a><br>"
+					dat += "<b>Стиль меню настройки персонажа:</b> <a href='?_src_=prefs;preference=charcreation_style'>[new_character_creator ? "Новый" : "Старый"]</a><br>"
 					//SPLURT Edit end
 
 					dat += "<br>"
 
 					if(unlock_content)
-						dat += "<b>Ghost Form:</b> <a href='?_src_=prefs;task=input;preference=ghostform'>[ghost_form]</a><br>"
+						dat += "<b>Форма призрака:</b> <a href='?_src_=prefs;task=input;preference=ghostform'>[ghost_form]</a><br>"
 						dat += "<B>Ghost Orbit: </B> <a href='?_src_=prefs;task=input;preference=ghostorbit'>[ghost_orbit]</a><br>"
 					var/button_name = "If you see this something went wrong."
 					switch(ghost_accs)
@@ -1654,7 +1654,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(GHOST_ACCS_NONE)
 							button_name = GHOST_ACCS_NONE_NAME
 
-					dat += "<b>Ghost Accessories:</b> <a href='?_src_=prefs;task=input;preference=ghostaccs'>[button_name]</a><br>"
+					dat += "<b>Аксессуары призрака:</b> <a href='?_src_=prefs;task=input;preference=ghostaccs'>[button_name]</a><br>"
 					switch(ghost_others)
 						if(GHOST_OTHERS_THEIR_SETTING)
 							button_name = GHOST_OTHERS_THEIR_SETTING_NAME
@@ -1663,86 +1663,86 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(GHOST_OTHERS_SIMPLE)
 							button_name = GHOST_OTHERS_SIMPLE_NAME
 
-					dat += "<b>Ghosts of Others:</b> <a href='?_src_=prefs;task=input;preference=ghostothers'>[button_name]</a><br>"
+					dat += "<b>Призраки других людей:</b> <a href='?_src_=prefs;task=input;preference=ghostothers'>[button_name]</a><br>"
 					dat += "<br>"
 
 					dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
 
-					dat += "<b>Income Updates:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Allowed" : "Muted"]</a><br>"
+					dat += "<b>Сообщение о поступлении обновлений:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Разрешить" : "Приглушить"]</a><br>"
 					dat += "<br>"
 
-					dat += "<b>Parallax (Fancy Space):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
+					dat += "<b>Параллакс (космос):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
 					switch (parallax)
 						if (PARALLAX_LOW)
-							dat += "Low"
+							dat += "Низкий"
 						if (PARALLAX_MED)
-							dat += "Medium"
+							dat += "Средний"
 						if (PARALLAX_INSANE)
-							dat += "Insane"
+							dat += "Безумный"
 						if (PARALLAX_DISABLE)
-							dat += "Disabled"
+							dat += "Выключен"
 						else
-							dat += "High"
+							dat += "Высокий"
 					dat += "</a><br>"
-					dat += "<b>Ambient Occlusion:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>Fit Viewport:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Auto" : "Manual"]</a><br>"
-					dat += "<b>HUD Button Flashes:</b> <a href='?_src_=prefs;preference=hud_toggle_flash'>[hud_toggle_flash ? "Enabled" : "Disabled"]</a><br>"
-					dat += "<b>HUD Button Flash Color:</b> <span style='border: 1px solid #161616; background-color: [hud_toggle_color];'><font color='[color_hex2num(hud_toggle_color) < 200 ? "FFFFFF" : "000000"]'>[hud_toggle_color]</font></span> <a href='?_src_=prefs;preference=hud_toggle_color;task=input'>Change</a><br>"
+					dat += "<b>Окружающее затемнение:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>Исправление вида:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Авто" : "Инструкция"]</a><br>"
+					dat += "<b>HUD мигание кнопок:</b> <a href='?_src_=prefs;preference=hud_toggle_flash'>[hud_toggle_flash ? "Вкл" : "Выкл"]</a><br>"
+					dat += "<b>HUD цвет мигающих кнопок:</b> <span style='border: 1px solid #161616; background-color: [hud_toggle_color];'><font color='[color_hex2num(hud_toggle_color) < 200 ? "FFFFFF" : "000000"]'>[hud_toggle_color]</font></span> <a href='?_src_=prefs;preference=hud_toggle_color;task=input'>Изменить</a><br>"
 
 
 					if (CONFIG_GET(flag/maprotation) && CONFIG_GET(flag/tgstyle_maprotation))
 						var/p_map = preferred_map
 						if (!p_map)
-							p_map = "Default"
+							p_map = "По умолчанию"
 							if (config.defaultmap)
 								p_map += " ([config.defaultmap.map_name])"
 						else
 							if (p_map in config.maplist)
 								var/datum/map_config/VM = config.maplist[p_map]
 								if (!VM)
-									p_map += " (No longer exists)"
+									p_map += " (Больше не существует)"
 								else
 									p_map = VM.map_name
 							else
-								p_map += " (No longer exists)"
+								p_map += " (Больше не существует)"
 						if(CONFIG_GET(flag/allow_map_voting))
-							dat += "<b>Preferred Map:</b> <a href='?_src_=prefs;preference=preferred_map;task=input'>[p_map]</a><br>"
+							dat += "<b>Предпочитаемая карта:</b> <a href='?_src_=prefs;preference=preferred_map;task=input'>[p_map]</a><br>"
 
 					dat += "</td></tr></table>"
 
 				if(CONTENT_PREFS_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-					dat += "<h2>Fetish content prefs</h2>"
-					dat += "<b>Allow Lewd Verbs:</b> <a href='?_src_=prefs;preference=verb_consent'>[(toggles & VERB_CONSENT) ? "Yes":"No"]</a><br>" // Skyrat - ERP Mechanic Addition
-					dat += "<b>Lewd Verb Sounds:</b> <a href='?_src_=prefs;preference=lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Yes":"No"]</a><br>" // Sandstorm - ERP Mechanic Addition
-					dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
-					dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-					dat += "<b>Vore examine text</b>:<a href='?_src_=prefs;preference=vore_examine'>[(cit_toggles & VORE_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-					dat += "<b>Voracious MediHound sleepers:</b> <a href='?_src_=prefs;preference=hound_sleeper'>[(cit_toggles & MEDIHOUND_SLEEPER) ? "Yes" : "No"]</a><br>"
-					dat += "<b>Hear Vore Sounds:</b> <a href='?_src_=prefs;preference=toggleeatingnoise'>[(cit_toggles & EATING_NOISES) ? "Yes" : "No"]</a><br>"
-					dat += "<b>Hear Vore Digestion Sounds:</b> <a href='?_src_=prefs;preference=toggledigestionnoise'>[(cit_toggles & DIGESTION_NOISES) ? "Yes" : "No"]</a><br>"
-					dat += "<b>Allow trash forcefeeding (requires Trashcan quirk)</b> <a href='?_src_=prefs;preference=toggleforcefeedtrash'>[(cit_toggles & TRASH_FORCEFEED) ? "Yes" : "No"]</a><br>"
-					dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<h2>Предпочтения к фетишистскому контентуф</h2>"
+					dat += "<b>Допускать непристойные словечки:</b> <a href='?_src_=prefs;preference=verb_consent'>[(toggles & VERB_CONSENT) ? "Да":"Нет"]</a><br>" // Skyrat - ERP Mechanic Addition
+					dat += "<b>Звук непристойных слов:</b> <a href='?_src_=prefs;preference=lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Да":"Нет"]</a><br>" // Sandstorm - ERP Mechanic Addition
+					dat += "<b>Возбудимость:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Вкл" : "Выкл"]</a><BR>"
+					dat += "<b>Анализ текста гениталий</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Вкл" : "Выкл"]</a><BR>"
+					dat += "<b>Vore examine text</b>:<a href='?_src_=prefs;preference=vore_examine'>[(cit_toggles & VORE_EXAMINE) ? "Вкл" : "Выкл"]</a><BR>"
+					dat += "<b>Voracious MediHound sleepers:</b> <a href='?_src_=prefs;preference=hound_sleeper'>[(cit_toggles & MEDIHOUND_SLEEPER) ? "Да" : "Нет"]</a><br>"
+					dat += "<b>Hear Vore Sounds:</b> <a href='?_src_=prefs;preference=toggleeatingnoise'>[(cit_toggles & EATING_NOISES) ? "Да" : "Нет"]</a><br>"
+					dat += "<b>Hear Vore Digestion Sounds:</b> <a href='?_src_=prefs;preference=toggledigestionnoise'>[(cit_toggles & DIGESTION_NOISES) ? "Да" : "Нет"]</a><br>"
+					dat += "<b>Разрешить принудительную загрузку мусора (требуется функция Trashcan quirk)</b> <a href='?_src_=prefs;preference=toggleforcefeedtrash'>[(cit_toggles & TRASH_FORCEFEED) ? "Да" : "Нет"]</a><br>"
+					dat += "<b>Принудительная феминизация:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Принудительная муженизация:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Непристойный гипноз:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Разрешить" : "Запретить"]</a><br>"
 					dat += "</td>"
 					dat +="<td width='300px' height='300px' valign='top'>"
-					dat += "<h2>Other content prefs</h2>"
-					dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Belly Inflation:</b> <a href='?_src_=prefs;preference=belly_inflation'>[(cit_toggles & BELLY_INFLATION) ? "Allowed" : "Disallowed"]</a><br>" //SPLURT Edit
-					dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
-					dat += "<b>Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Disallowed" : "Allowed"]</a><br>"
-					dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
+					dat += "<h2>Предпочтения другого контента</h2>"
+					dat += "<b>Увеличение груди:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Увеличение пениса:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Увеличение задницы:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Увеличение живота:</b> <a href='?_src_=prefs;preference=belly_inflation'>[(cit_toggles & BELLY_INFLATION) ? "Разрешить" : "Запретить"]</a><br>" //SPLURT Edit
+					dat += "<b>Гипноз:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Запретить" : "Разрешить"]</a><br>"
+					dat += "<b>Афродизиаки:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Запретить" : "Разрешить"]</a><br>"
+					dat += "<b>Шлепки по жопе:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Запретить" : "Разрешить"]</a><br>"
 					//Gardelin0 EDIT
-					dat += "<b>Sex Jitter:</b> <a href='?_src_=prefs;preference=sex_jitter'>[(cit_toggles & SEX_JITTER) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Сексуальное возбуждение:</b> <a href='?_src_=prefs;preference=sex_jitter'>[(cit_toggles & SEX_JITTER) ? "Разрешить" : "Запретить"]</a><br>"
 					//SPLURT EDIT
-					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Edging :</b> <a href='?_src_=prefs;preference=edgingpref'>[(cit_toggles & EDGING) ? "Allowed" : "Disallowed"]</a><br>"
-					dat += "<b>Receive Cum Covering :</b> <a href='?_src_=prefs;preference=cumontopref'>[(cit_toggles & CUM_ONTO) ? "Allowed" : "Disallowed"]</a><br>"
+					dat += "<b>Взаимодействие с целомудрием :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Модификаторы стимуляции гениталий :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Edging :</b> <a href='?_src_=prefs;preference=edgingpref'>[(cit_toggles & EDGING) ? "Разрешить" : "Запретить"]</a><br>"
+					dat += "<b>Быть покрытым спермой :</b> <a href='?_src_=prefs;preference=cumontopref'>[(cit_toggles & CUM_ONTO) ? "Разрешить" : "Запретить"]</a><br>"
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables verbs involving farts, shit and piss.'>?</span> "
 					dat += "<b>Unholy ERP verbs :</b> <a href='?_src_=prefs;preference=unholypref'>[unholypref]</a><br>" //https://www.youtube.com/watch?v=OHKARc-GObU
 					dat += "<span style='border-radius: 2px;border:1px dotted white;cursor:help;' title='Enables macro / micro stepping and stomping interactions.'>?</span> "
@@ -1839,9 +1839,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a> "
-		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изминения</a> "
+		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изменения</a> "
 
-	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изминения</a>"
+	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изменения</a>"
 	dat += "</center>"
 
 	winshow(user, "preferences_window", TRUE)

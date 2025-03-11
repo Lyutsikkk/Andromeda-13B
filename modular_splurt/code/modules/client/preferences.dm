@@ -1212,9 +1212,9 @@
 
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a> "
-		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изминения</a> "
+		dat += "<a href='?_src_=prefs;preference=save'>Сохранить изменения</a> "
 
-	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изминения</a>"
+	dat += "<a href='?_src_=prefs;preference=reset_all'>Сбросить изменения</a>"
 	dat += "</center>"
 
 	winshow(user, "preferences_window", TRUE)
