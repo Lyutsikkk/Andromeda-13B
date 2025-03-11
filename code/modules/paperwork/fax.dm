@@ -1,8 +1,8 @@
 GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department", "NT Complaint Department", "NT Customer Relations", "Nanotrasen Tech Support", "NT Internal Affairs Dept"))
 
 /obj/machinery/fax
-	name = "Fax Machine"
-	desc = "Bluespace technologies on the application of bureaucracy."
+	name = "Факс"
+	desc = "Технологии Блюспейс по применению бюрократии."
 	icon = 'icons/obj/machines/fax.dmi'
 	icon_state = "fax"
 	density = TRUE

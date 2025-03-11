@@ -1,7 +1,7 @@
 #define INIT_ORDER_MODPACKS 16.5
 
 SUBSYSTEM_DEF(modpacks)
-	name = "Modpacks"
+	name = "Модпаки"
 	init_order = INIT_ORDER_MODPACKS
 	flags = SS_NO_FIRE
 	var/list/loaded_modpacks
@@ -16,22 +16,22 @@ SUBSYSTEM_DEF(modpacks)
 	for(var/datum/modpack/package as anything in all_modpacks)
 		var/fail_msg = package.pre_initialize()
 		if(QDELETED(package))
-			stack_trace("Modpack of type [package.type] is null or queued for deletion.")
+			stack_trace("Модпак [package.type] пуст или в очереди на удаление.")
 		if(fail_msg)
-			stack_trace("Modpack [package.type] failed to pre-initialize: [fail_msg].")
+			stack_trace("Модпаку [package.type] не удалось выполнить предварительную инициализацию: [fail_msg].")
 		if(loaded_modpacks[package.name])
-			stack_trace("Attempted to register duplicate modpack name: [package.name].")
+			stack_trace("Попытка зарегистрировать дубликат имени модпака: [package.name].")
 		loaded_modpacks.Add(package)
 
 	// Handle init and post-init (two stages in case a modpack needs to implement behavior based on the presence of other packs).
 	for(var/datum/modpack/package as anything in loaded_modpacks)
 		var/fail_msg = package.initialize()
 		if(fail_msg)
-			stack_trace("Modpack [(istype(package) && package.name) || "Unknown"] failed to initialize: [fail_msg]")
+			stack_trace("Модпак [(istype(package) && package.name) || "Unknown"] не удалось инициализировать: [fail_msg]")
 	for(var/datum/modpack/package as anything in loaded_modpacks)
 		var/fail_msg = package.post_initialize()
 		if(fail_msg)
-			stack_trace("Modpack [(istype(package) && package.name) || "Unknown"] failed to post-initialize: [fail_msg]")
+			stack_trace("Модпак [(istype(package) && package.name) || "Unknown"] не удалось выполнить пост-инициализацию: [fail_msg]")
 
 	if(SSdbcore.IsConnected())
 		load_admins() // To make admins always have modular added verbs
@@ -39,8 +39,8 @@ SUBSYSTEM_DEF(modpacks)
 	. = ..()
 
 /mob/verb/modpacks_list()
-	set name = "Modpacks List"
-	set category = "Special Verbs"
+	set name = "Лист модпаков"
+	set category = "Специальные возможности"
 
 	if(!SSmodpacks.initialized)
 		return

@@ -1,6 +1,6 @@
 /obj/structure/window/reinforced/fulltile/lf_haron
-	name = "reinforced window"
-	desc = "A window that is reinforced with metal rods."
+	name = "армированное окно"
+	desc = "Окно, укрепленное металлическими прутьями."
 	icon = 'modular_bluemoon/krashly/icons/obj/structures.dmi'
 	dir = 12
 	icon_state = "blackwindow1"

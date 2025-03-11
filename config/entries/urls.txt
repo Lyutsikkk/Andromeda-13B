@@ -3,13 +3,13 @@
 # SERVER ss13.example.com:2506
 
 ## forum address
-# DISCORDURL https://discord.gg
+DISCORDURL https://discord.gg/NxTZeUPtRf
 
 ## Wiki address
-WIKIURL http://splurtstation.sytes.net/wiki/index.php
+# WIKIURL http://splurtstation.sytes.net/wiki/index.php
 
 ## Wiki address of upstream
-WIKIURLTG http://www.tgstation13.org/wiki
+# WIKIURLTG http://www.tgstation13.org/wiki
 
 ## Rules address
 # RULESURL https://citadel-station.net/wikimain/index.php?title=Rules_-_Main
@@ -34,4 +34,4 @@ WIKIURLTG http://www.tgstation13.org/wiki
 # GITHUBREPOID 62485194
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-# BANAPPEALS https://citadel-station.net/forum/viewforum.php?f=8&sid=a0ce5331d5594ef6d49661609c6f4ff9
+BANAPPEALS https://discord.gg/NxTZeUPtRf

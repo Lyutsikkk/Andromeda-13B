@@ -568,14 +568,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A very nice looking drink. But that's just, like, your opinion, man."
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail
-	name = "Screwdriver"
+	name = "Отвертка"
 	description = "Vodka, mixed with plain ol' orange juice. The result is surprisingly delicious."
 	color = "#A68310" // rgb: 166, 131, 16
 	boozepwr = 55
 	quality = DRINK_NICE
 	taste_description = "oranges"
 	glass_icon_state = "screwdriverglass"
-	glass_name = "Screwdriver"
+	glass_name = "Отвертка"
 	glass_desc = "A simple, yet superb mixture of Vodka and orange juice. Just the thing for the tired engineer."
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M)

@@ -87,18 +87,18 @@
 
 /datum/export/tool/screwdriver
 	cost = 2
-	unit_name = "screwdriver"
+	unit_name = "отвёртка"
 	export_types = list(/obj/item/screwdriver)
 	include_subtypes = FALSE
 
 /datum/export/tool/wrench
 	cost = 2
-	unit_name = "wrench"
+	unit_name = "гаечный ключ"
 	export_types = list(/obj/item/wrench)
 
 /datum/export/tool/crowbar
 	cost = 2
-	unit_name = "crowbar"
+	unit_name = "лом"
 	export_types = list(/obj/item/crowbar)
 
 /datum/export/tool/wirecutters
@@ -109,7 +109,7 @@
 
 /datum/export/tool/weldingtool
 	cost = 5
-	unit_name = "welding tool"
+	unit_name = "сварочный аппарат"
 	export_types = list(/obj/item/weldingtool)
 	include_subtypes = FALSE
 
@@ -152,12 +152,12 @@
 
 /datum/export/tool/analyzer
 	cost = 5
-	unit_name = "analyzer"
+	unit_name = "анализатор"
 	export_types = list(/obj/item/analyzer)
 
 /datum/export/analyzer/t_scanner
 	cost = 10
-	unit_name = "t-ray scanner"
+	unit_name = "рентгеновский сканер"
 	export_types = list(/obj/item/t_scanner)
 
 /datum/export/radio

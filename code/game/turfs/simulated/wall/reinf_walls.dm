@@ -1,6 +1,6 @@
 /turf/closed/wall/r_wall
-	name = "reinforced wall"
-	desc = "A huge chunk of reinforced metal used to separate rooms."
+	name = "укреплённая стена"
+	desc = "Огромный кусок армированного металла, используемый для разделения помещений."
 	icon = 'icons/turf/walls/reinforced_wall.dmi'
 	icon_state = "r_wall"
 	opacity = 1

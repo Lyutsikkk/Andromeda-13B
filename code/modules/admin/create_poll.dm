@@ -1,37 +1,37 @@
 /client/proc/create_poll()
-	set name = "Create Poll"
-	set category = "Special Verbs"
+	set name = "Создать голосование"
+	set category = "Специальные возможности"
 	if(!check_rights(R_POLL))
 		return
 	if(!SSdbcore.Connect())
-		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(src, "<span class='danger'>Не удалось установить соединение с базой данных.</span>")
 		return
-	var/polltype = input("Choose poll type.","Poll Type") as null|anything in list("Single Option","Text Reply","Rating","Multiple Choice", "Instant Runoff Voting")
+	var/polltype = input("Выберите тип голосования.","Тип голосования") as null|anything in list("Одиночный вариант","Текстовый ответ","Оценка","Множественный выбор", "Голосование за мгновенный рестарт")
 	var/choice_amount = 0
 	switch(polltype)
-		if("Single Option")
+		if("Одиночный вариант")
 			polltype = POLLTYPE_OPTION
-		if("Text Reply")
+		if("Текстовый ответ")
 			polltype = POLLTYPE_TEXT
-		if("Rating")
+		if("Оценка")
 			polltype = POLLTYPE_RATING
-		if("Multiple Choice")
+		if("Множественный выбор")
 			polltype = POLLTYPE_MULTI
-			choice_amount = input("How many choices should be allowed?","Select choice amount") as num|null
+			choice_amount = input("Как много будет вариантов ответа?","Выберите количество") as num|null
 			switch(choice_amount)
 				if(0)
-					to_chat(src, "Multiple choice poll must have at least one choice allowed.")
+					to_chat(src, "Опрос с множественным выбором должен иметь по крайней мере один разрешенный вариант выбора.")
 					return
 				if(1)
 					polltype = POLLTYPE_OPTION
 				if(null)
 					return
-		if ("Instant Runoff Voting")
+		if ("Голосование за мгновенный рестарт")
 			polltype = POLLTYPE_IRV
 		else
 			return FALSE
 	var/starttime = SQLtime()
-	var/endtime = input("Set end time for poll as format YYYY-MM-DD HH:MM:SS. All times in server time. HH:MM:SS is optional and 24-hour. Must be later than starting time for obvious reasons.", "Set end time", SQLtime()) as text
+	var/endtime = input("Установите время окончания опроса в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС. Все время указано по времени сервера. ЧЧ:ММ:СС необязательно и в формате 24 часа. Должно быть позже времени начала по очевидным причинам", "Установите время окончания", SQLtime()) as text
 	if(!endtime)
 		return
 	var/datum/db_query/query_validate_time = SSdbcore.NewQuery({"
@@ -43,13 +43,13 @@
 	if(query_validate_time.NextRow())
 		var/checktime = text2num(query_validate_time.item[1])
 		if(!checktime)
-			to_chat(src, "Datetime entered is improperly formatted or not later than current server time.")
+			to_chat(src, "Введенная дата и время имеют неправильный формат или не позднее текущего времени сервера..")
 			qdel(query_validate_time)
 			return
 		endtime = query_validate_time.item[1]
 	qdel(query_validate_time)
 	var/adminonly
-	switch(alert("Admin only poll?",,"Да","Нет","Cancel"))
+	switch(alert("Голосвание только для админов?",,"Да","Нет","Назад"))
 		if("Да")
 			adminonly = 1
 		if("Нет")
@@ -57,26 +57,26 @@
 		else
 			return
 	var/dontshow
-	switch(alert("Hide poll results from tracking until completed?",,"Да","Нет","Cancel"))
+	switch(alert("Скрыть результаты опроса от отслеживания до его завершения?",,"Да","Нет","Назад"))
 		if("Да")
 			dontshow = 1
 		if("Нет")
 			dontshow = 0
 		else
 			return
-	var/question = input("Write your question","Question") as message|null
+	var/question = input("Напишите ваш вопрос","Вопрос") as message|null
 	if(!question)
 		return
 	var/list/sql_option_list = list()
 	if(polltype != POLLTYPE_TEXT)
 		var/add_option = 1
 		while(add_option)
-			var/option = input("Write your option","Option") as message|null
+			var/option = input("Введите ваш ответ","ответ") as message|null
 			if(!option)
 				return
 			var/default_percentage_calc = 0
 			if(polltype != POLLTYPE_IRV)
-				switch(alert("Should this option be included by default when poll result percentages are generated?",,"Да","Нет","Cancel"))
+				switch(alert("Должен ли этот параметр быть включен по умолчанию при формировании процентных значений результатов опроса?",,"Да","Нет","Назад"))
 					if("Да")
 						default_percentage_calc = 1
 					if("Нет")
@@ -89,37 +89,37 @@
 			var/descmid = ""
 			var/descmax = ""
 			if(polltype == POLLTYPE_RATING)
-				minval = input("Set minimum rating value.","Minimum rating") as num|null
+				minval = input("Установить минимальное значение рейтинга.","Минимальный рейтинг") as num|null
 				if(minval == null)
 					return
-				maxval = input("Set maximum rating value.","Maximum rating") as num|null
+				maxval = input("Установить максимальное значение рейтинга.","Максимальный рейтинг") as num|null
 				if(minval >= maxval)
-					to_chat(src, "Maximum rating value can't be less than or equal to minimum rating value")
+					to_chat(src, "Максимальное значение рейтинга не может быть меньше или равно минимальному значению рейтинга.")
 					continue
 				if(maxval == null)
 					return
-				descmin = input("Optional: Set description for minimum rating","Minimum rating description") as message|null
+				descmin = input("Необязательно: Задайте описание для минимального рейтинга", "Описание минимального рейтинга") as message|null
 				if(descmin == null)
 					return
-				descmid = input("Optional: Set description for median rating","Median rating description") as message|null
+				descmid = input("Необязательно: Задайте описание для среднего рейтинга","Описание среднего рейтинга") as message|null
 				if(descmid == null)
 					return
-				descmax = input("Optional: Set description for maximum rating","Maximum rating description") as message|null
+				descmax = input("Необязательно: Задайте описание для максимального рейтинга","Описание максимального рейтинга") as message|null
 				if(descmax == null)
 					return
 			sql_option_list += list(list(
 				"text" = option, "minval" = minval, "maxval" = maxval,
 				"descmin" = descmin, "descmid" = descmid, "descmax" = descmax,
 				"default_percentage_calc" = default_percentage_calc))
-			switch(alert(" ",,"Add option","Finish", "Cancel"))
-				if("Add option")
+			switch(alert(" ",,"Добавить ответ","Готово", "Назад"))
+				if("Добавить ответ")
 					add_option = 1
-				if("Finish")
+				if("Готово")
 					add_option = 0
 				else
 					return FALSE
-	var/m1 = "[key_name(usr)] has created a new server poll. Poll type: [polltype] - Admin Only: [adminonly ? "Yes" : "No"] - Question: [question]"
-	var/m2 = "[key_name_admin(usr)] has created a new server poll. Poll type: [polltype] - Admin Only: [adminonly ? "Yes" : "No"]<br>Question: [question]"
+	var/m1 = "[key_name(usr)] Создал серверное голосование. Тип голосования: [polltype] - Только для админов: [adminonly ? "Да" : "Нет"] - Вопрос: [question]"
+	var/m2 = "[key_name_admin(usr)] Создал серверное голосование. Тип голосования: [polltype] - Только для админов: [adminonly ? "Да" : "Нет"] - Вопрос: [question]"
 	var/datum/db_query/query_polladd_question = SSdbcore.NewQuery({"
 		INSERT INTO [format_table_name("poll_question")] (polltype, starttime, endtime, question, adminonly, multiplechoiceoptions, createdby_ckey, createdby_ip, dontshow)
 		VALUES (:polltype, :starttime, :endtime, :question, :adminonly, :choice_amount, :ckey, INET_ATON(:address), :dontshow)

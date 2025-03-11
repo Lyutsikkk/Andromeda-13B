@@ -110,7 +110,7 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/consumable/space_cola = 1)
 
 /datum/chemical_reaction/screwdriver
-	name = "Screwdriver"
+	name = "Отвёртка"
 	id = /datum/reagent/consumable/ethanol/screwdrivercocktail
 	results = list(/datum/reagent/consumable/ethanol/screwdrivercocktail = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 2, /datum/reagent/consumable/orangejuice = 1)

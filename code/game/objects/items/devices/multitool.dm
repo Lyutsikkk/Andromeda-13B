@@ -11,8 +11,8 @@
 
 
 /obj/item/multitool
-	name = "multitool"
-	desc = "Used for pulsing wires to test which to cut. Not recommended by doctors."
+	name = "мультитул"
+	desc = "Используется для накручивания проводов, чтобы определить, какие из них следует перерезать. Не рекомендуется врачами."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "multitool"
 	item_state = "multitool"
@@ -34,8 +34,8 @@
 	var/mode = 0
 
 /obj/item/multitool/chaplain
-	name = "\improper hypertool"
-	desc = "Used for pulsing wires to test which to cut. Also emits microwaves to fry some brains!"
+	name = "\improper гипертул"
+	desc = "Используется для накручивания проводов, чтобы проверить, какие из них нужно перерезать. Также испускает микроволны, чтобы поджарить мозги!"
 	damtype = BRAIN
 	force = 18
 	armour_penetration = 35
@@ -254,8 +254,8 @@
 	return TRUE
 
 /obj/item/multitool/cyborg
-	name = "multitool"
-	desc = "Optimised and stripped-down version of a regular multitool."
+	name = "мультитул"
+	desc = "Оптимизированная и урезанная версия обычного мультитула."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "multitool_cyborg"
 	toolspeed = 0.5
@@ -264,8 +264,8 @@
 	return
 
 /obj/item/multitool/abductor
-	name = "alien multitool"
-	desc = "An omni-technological interface."
+	name = "инопланетный мультитул"
+	desc = "Универсальный технологический интерфейс."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "multitool"
 	toolspeed = 0.1
@@ -275,8 +275,8 @@
 	return
 
 /obj/item/multitool/advanced
-	name = "advanced multitool"
-	desc = "The reproduction of an abductor's multitool, this multitool is a classy silver."
+	name = "усовершенствованный мультитул"
+	desc = "Этот стильный серебристый мультитул, представляющий собой копию инопланетного мультитула."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "multitool"
 	toolspeed = 0.2
@@ -286,8 +286,8 @@
 	return
 
 /obj/item/multitool/advanced/brass
-	name = "clockwork multitool"
-	desc = "A brass...multitool? With three prongs arcing electricity between them. It vibrates subtly in your hand."
+	name = "заводной мультитул"
+	desc = "Латунный...мультитул? С тремя зубцами, между которыми образуется электрическая дуга. Он слегка вибрирует в вашей руке."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "clockitool"
 	toolspeed = 0.2

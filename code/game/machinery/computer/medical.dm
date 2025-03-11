@@ -8,8 +8,8 @@
 #define MED_FIELD(N, V, E, LB) list(field = N, value = V, edit = E, line_break = LB)
 
 /obj/machinery/computer/med_data //TODO:SANITY
-	name = "Medical Records Console"
-	desc = "This can be used to check medical records."
+	name = "Консоль медицинских записей"
+	desc = "Это может быть использовано для проверки медицинских записей."
 	icon_keyboard = "med_key"
 	icon_screen = "medcomp"
 	req_one_access = list(ACCESS_MEDICAL, ACCESS_FORENSICS_LOCKERS)

@@ -2081,7 +2081,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile{
 	desc = "Enjoy the view.";
-	name = "window"
+	name = "окно"
 	},
 /turf/open/floor/plating,
 /area/awaymission/cabin/caves/mountain)

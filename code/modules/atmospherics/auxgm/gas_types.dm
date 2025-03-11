@@ -57,7 +57,7 @@
 /datum/gas/plasma
 	id = GAS_PLASMA
 	specific_heat = 200
-	name = "Plasma"
+	name = "Плазма"
 	gas_overlay = "plasma"
 	moles_visible = MOLES_GAS_VISIBLE
 	flags = GAS_FLAG_DANGEROUS

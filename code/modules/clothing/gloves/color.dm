@@ -2,8 +2,8 @@
 	dying_key = DYE_REGISTRY_GLOVES
 
 /obj/item/clothing/gloves/color/yellow
-	desc = "These gloves will protect the wearer from electric shock."
-	name = "Insulated Gloves"
+	name = "Изолированные перчатки"
+	desc = "Эти перчатки защитят владельца от поражения электрическим током."
 	icon_state = "yellow"
 	item_state = "ygloves"
 	siemens_coefficient = 0
@@ -162,8 +162,8 @@
 	item_state = "redgloves"
 
 /obj/item/clothing/gloves/color/red/insulated
-	name = "insulated gloves"
-	desc = "These gloves will protect the wearer from electric shock."
+	name = "изолированные перчатки"
+	desc = "Эти перчатки защитят владельца от поражения электрическим током."
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	resistance_flags = NONE

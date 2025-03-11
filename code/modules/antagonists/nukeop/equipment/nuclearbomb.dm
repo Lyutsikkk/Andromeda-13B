@@ -61,8 +61,8 @@
 		. += "There are [get_time_left()] seconds until detonation."
 
 /obj/machinery/nuclearbomb/selfdestruct
-	name = "station self-destruct terminal"
-	desc = "For when it all gets too much to bear. Do not taunt."
+	name = "ядерная боеголовка"
+	desc = "На тот случай, если все это станет невыносимым. Не насмехайся."
 	icon = 'icons/obj/machines/nuke_terminal.dmi'
 	icon_state = "nuclearbomb_base"
 	anchored = TRUE //stops it being moved

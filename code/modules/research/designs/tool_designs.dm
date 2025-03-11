@@ -83,7 +83,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/tricorder
-	name = "Tricorder"
+	name = "Трикодер"
 	desc = "Многофункциональное устройство, которое может выполнять огромный спектр задач."
 	id = "tricorder"
 	build_type = PROTOLATHE

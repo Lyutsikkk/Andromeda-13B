@@ -259,7 +259,7 @@
 				to_chat(our_guy, "<span class='danger'>You trip on your shoelaces a bit[have_anything ? ", flinging what you were holding" : ""]!</span>")
 
 			if(14 to 25) // 1.3ish% chance to stumble and be a bit off balance (like being disarmed)
-				to_chat(our_guy, "<span class='danger'>You stumble a bit on your untied shoelaces!</span>")
+				to_chat(our_guy, "<span class='danger'>Ты немного споткнулся из-за развязанных шнурков на ботинках!</span>")
 				our_guy.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION)
 				our_guy.Stagger(SHOVE_OFFBALANCE_DURATION)		//yes, same.
 			if(26 to 1000)
@@ -284,8 +284,8 @@
 		to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You begin [tied ? "untying" : "tying"] the laces on [src]...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете [tied ? "развязывать" : "завязывать"] шнурки на [src]...</span>")
 
 	if(do_after(user, lace_time, src, extra_checks = CALLBACK(src, PROC_REF(still_shoed), user)))
-		to_chat(user, "<span class='notice'>You [tied ? "untie" : "tie"] the laces on [src].</span>")
+		to_chat(user, "<span class='notice'>Вы [tied ? "развязываете" : "завязываете"] шнурки на [src].</span>")
 		adjust_laces(tied ? SHOES_TIED : SHOES_UNTIED, user)

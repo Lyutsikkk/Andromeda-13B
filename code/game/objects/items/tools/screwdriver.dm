@@ -1,6 +1,6 @@
 /obj/item/screwdriver
-	name = "screwdriver"
-	desc = "You can be totally screwy with this."
+	name = "отвертка"
+	desc = "Можно открутить винтики, а можно выколоть глаза."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver_map"
 	item_state = "screwdriver"
@@ -83,8 +83,8 @@
 	return eyestab(M,user)
 
 /obj/item/screwdriver/brass
-	name = "brass screwdriver"
-	desc = "A screwdriver made of brass. The handle feels freezing cold."
+	name = "латунная отвертка"
+	desc = "Отвертка из латуни. На ощупь ручка очень холодная."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "screwdriver_clock"
 	item_state = "screwdriver_brass"
@@ -95,24 +95,24 @@
 	toolspeed = 1
 
 /obj/item/screwdriver/ashwalker
-	name = "bone screwdriver"
-	desc = "A rudimentary screwdriver made of carved bones."
+	name = "костяная отвертка"
+	desc = "Примитивная отвертка, сделанная из резной кости."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "screwdriver_bone"
 	toolspeed = 0.75
 	random_color = FALSE
 
 /obj/item/screwdriver/bronze
-	name = "bronze screwdriver"
-	desc = "A screwdriver plated with bronze."
+	name = "отвёртка с бронзовым покрытием"
+	desc = "Просто отвёртка, удобная штука, но с бронзовым покрытием."
 	icon_state = "screwdriver_brass"
 	item_state = "screwdriver_brass"
 	toolspeed = 0.95
 	random_color = FALSE
 
 /obj/item/screwdriver/abductor
-	name = "alien screwdriver"
-	desc = "An ultrasonic screwdriver."
+	name = "инопланетная отвертка"
+	desc = "Ультразвуковая отвертка."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "screwdriver_a"
 	item_state = "screwdriver_nuke"
@@ -124,8 +124,8 @@
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "screwdriver_nuke")
 
 /obj/item/screwdriver/power
-	name = "hand drill"
-	desc = "A simple powered hand drill. It's fitted with a screw bit."
+	name = "ручная дрель"
+	desc = "Универсальная дрель, что может закручивать болты, а так же откручивать винты."
 	icon_state = "drill_screw"
 	item_state = "drill"
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -154,8 +154,8 @@
 	user.put_in_active_hand(b_drill)
 
 /obj/item/screwdriver/cyborg
-	name = "automated screwdriver"
-	desc = "An electrical screwdriver, designed to be both precise and quick."
+	name = "автоматическая отвертка"
+	desc = "Электрическая отвертка, предназначенная для точной и быстрой работы."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "screwdriver_cyborg"
 	hitsound = 'sound/items/drill_hit.ogg'
@@ -164,8 +164,8 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/advanced
-	name = "advanced screwdriver"
-	desc = "A classy silver screwdriver with an alien alloy tip, it works almost as well as the real thing."
+	name = "усовершенствованная отвертка"
+	desc = "Стильная серебряная отвертка с наконечником из инопланетного сплава, она работает почти так же хорошо, как настоящая."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "screwdriver_a"
 	item_state = "screwdriver_nuke"

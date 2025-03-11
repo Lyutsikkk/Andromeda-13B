@@ -13,8 +13,8 @@
  */
 
 /obj/structure/table
-	name = "table"
-	desc = "A square piece of metal standing on four metal legs. It can not move."
+	name = "стол"
+	desc = "Квадратный каркас металла, стоящий на четырех металлических ножках. Он не может двигаться"
 	icon = 'icons/obj/smooth_structures/table.dmi'
 	icon_state = "table"
 	density = TRUE
@@ -644,8 +644,8 @@
  * Reinforced tables
  */
 /obj/structure/table/reinforced
-	name = "reinforced table"
-	desc = "A reinforced version of the four legged table."
+	name = "прочный стол"
+	desc = "Усиленная версия стола на четырех ножках."
 	icon = 'icons/obj/smooth_structures/reinforced_table.dmi'
 	icon_state = "r_table"
 	deconstruction_ready = 0

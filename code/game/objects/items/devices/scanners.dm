@@ -19,8 +19,8 @@ GENETICS SCANNER
 #define SCANNER_VERBOSE 	1
 
 /obj/item/t_scanner
-	name = "\improper T-ray scanner"
-	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
+	name = "\improper рентгеновский сканер"
+	desc = "Устройство терагерцового излучения и сканер, используемые для обнаружения объектов под полом, таких как кабели и трубы."
 	custom_price = PRICE_REALLY_CHEAP
 	icon = 'icons/obj/device.dmi'
 	icon_state = "t-ray0"
@@ -733,8 +733,8 @@ GENETICS SCANNER
 	woundscan(user, patient, src)
 
 /obj/item/analyzer
-	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
-	name = "analyzer"
+	name = "анализатор"
+	desc = "Ручной сканер состояния окружающей среды, который сообщает о текущем уровне загазованности. Нажмите Alt, чтобы использовать встроенную функцию барометра."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "analyzer"
 	item_state = "analyzer"
@@ -940,8 +940,8 @@ GENETICS SCANNER
 	to_chat(user, examine_block(results))
 
 /obj/item/analyzer/ranged
-	desc = "A hand-held scanner which uses advanced spectroscopy and infrared readings to analyze gases as a distance. Alt-Click to use the built in barometer function."
-	name = "long-range analyzer"
+	desc = "Ручной сканер, который использует передовые технологии спектроскопии и инфракрасные измерения для анализа газов на расстоянии. Нажмите Alt, чтобы использовать встроенную функцию барометра."
+	name = "анализатор дальнего действия"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "ranged_analyzer"
 

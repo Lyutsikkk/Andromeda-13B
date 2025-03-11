@@ -52,7 +52,7 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(H, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(H, "<span class='warning'>На вас не надета маска!</span>")
 				return
 
 		if(H.internal)

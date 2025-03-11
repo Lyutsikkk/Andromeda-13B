@@ -23,7 +23,7 @@
 	var/paintjob = "none"
 	var/glassdoor = 0
 
-	var/doorname = "airlock"
+	var/doorname = "шлюз"
 
 /datum/airlock_maker/New(var/atom/target_loc)
 	linked = new(target_loc)

@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/captains
-	name = "\proper captain's locker"
+	name = "\proper шкаф капитана"
 	req_access = list(ACCESS_CAPTAIN)
 	icon_state = "cap"
 /obj/structure/closet/secure_closet/captains/PopulateContents() //Excess clothing and such can be found in the Captain's Wardrobe. You can also find this file in code/modules/vending/wardrobes.
@@ -19,7 +19,7 @@
 	new /obj/item/storage/garment_case/captain(src) //BLUEMOON add
 
 /obj/structure/closet/secure_closet/hop
-	name = "\proper head of personnel's locker"
+	name = "\proper шкаф главы персонала"
 	req_access = list(ACCESS_HOP)
 	icon_state = "hop"
 /obj/structure/closet/secure_closet/hop/PopulateContents()
@@ -45,7 +45,7 @@
 	new /obj/item/storage/garment_case/hop(src) // BLUEMOON add
 
 /obj/structure/closet/secure_closet/hos
-	name = "\proper head of security's locker"
+	name = "\proper шкаф главы службы безопасносит"
 	req_access = list(ACCESS_HOS)
 	icon_state = "hos"
 /obj/structure/closet/secure_closet/hos/PopulateContents()
@@ -85,7 +85,7 @@
 	new /obj/item/mod/module/holster(src)
 
 /obj/structure/closet/secure_closet/warden
-	name = "\proper warden's locker"
+	name = "\proper шкаф вардена"
 	req_access = list(ACCESS_ARMORY)
 	icon_state = "warden"
 /obj/structure/closet/secure_closet/warden/PopulateContents()
@@ -114,7 +114,7 @@
 	new /obj/item/clothing/head/beret/sec/corporatewarden(src)
 
 /obj/structure/closet/secure_closet/security
-	name = "security officer's locker"
+	name = "шкаф сотрудника безопасности"
 	req_access = list(ACCESS_SECURITY)
 	icon_state = "sec"
 /obj/structure/closet/secure_closet/security/PopulateContents()
@@ -152,7 +152,7 @@
 	new /obj/item/encryptionkey/headset_med(src)
 
 /obj/structure/closet/secure_closet/detective
-	name = "\improper detective's cabinet"
+	name = "\improper шкаф детектива"
 	req_access = list(ACCESS_FORENSICS_LOCKERS)
 	icon_state = "cabinet"
 	resistance_flags = FLAMMABLE
@@ -174,20 +174,20 @@
 	new /obj/item/pinpointer/crew(src)
 
 /obj/structure/closet/secure_closet/injection
-	name = "lethal injections"
+	name = "шкаф с инъекциями"
 	req_access = list(ACCESS_HOS)
 /obj/structure/closet/secure_closet/injection/PopulateContents()
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/syringe/lethal/execution(src)
 /obj/structure/closet/secure_closet/brig
-	name = "brig locker"
+	name = "тюремный шкафчик"
 	req_access = list(ACCESS_BRIG)
 	anchored = TRUE
 	var/id = null
 /obj/structure/closet/secure_closet/evidence
 	anchored = TRUE
-	name = "Secure Evidence Closet"
+	name = "шкаф для улик"
 	req_access_txt = "0"
 	req_one_access_txt = list(ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS)
 /obj/structure/closet/secure_closet/brig/PopulateContents()
@@ -198,7 +198,7 @@
 	new /obj/item/radio/headset/headset_prisoner( src )
 
 /obj/structure/closet/secure_closet/courtroom
-	name = "courtroom locker"
+	name = "судейский шкаф"
 	req_access = list(ACCESS_COURT)
 /obj/structure/closet/secure_closet/courtroom/PopulateContents()
 	..()
@@ -211,14 +211,14 @@
 	new /obj/item/storage/briefcase(src)
 /obj/structure/closet/secure_closet/contraband/armory
 	anchored = TRUE
-	name = "Contraband Locker"
+	name = "шкаф для контрабанды"
 	req_access = list(ACCESS_ARMORY)
 /obj/structure/closet/secure_closet/contraband/heads
 	anchored = TRUE
-	name = "Contraband Locker"
+	name = "шкаф для контрабанды"
 	req_access = list(ACCESS_HEADS)
 /obj/structure/closet/secure_closet/armory1
-	name = "armory armor locker"
+	name = "шкаф с оружием"
 	req_access = list(ACCESS_ARMORY)
 	icon_state = "armory"
 /obj/structure/closet/secure_closet/armory1/PopulateContents()

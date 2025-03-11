@@ -1565,7 +1565,7 @@
 /area/cargo/storage)
 "fs" = (
 /obj/machinery/door/airlock/external{
-	name = "Transport Airlock"
+	name = "стыковочный шлюз"
 	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,

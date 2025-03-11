@@ -9,7 +9,7 @@
 	var/list/navigation_images = list()
 
 /mob/living/verb/navigate()
-	set name = "Navigate"
+	set name = "Навигатор"
 	set category = "IC"
 
 	if(incapacitated())
@@ -41,7 +41,7 @@
 		balloon_alert(src, "no navigation signals!")
 		return
 
-	var/destination_id = tgui_input_list(src, "Select a location", "Navigate", sort_list(destination_list))
+	var/destination_id = tgui_input_list(src, "Выберите пункт назначения", "Навигатор", sort_list(destination_list))
 	var/navigate_target = destination_list[destination_id]
 
 	if(isnull(navigate_target))

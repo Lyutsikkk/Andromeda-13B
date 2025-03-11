@@ -216,7 +216,7 @@
 
 
 /obj/structure/closet/secure_closet/hosnew //ITS LOCKER CLEAN OUT DAY! -Radar
-	name = "\proper head of security's locker"
+	name = "\proper шкаф главы службы безопасности"
 	req_access = list(ACCESS_HOS)
 	icon_state = "hos"
 

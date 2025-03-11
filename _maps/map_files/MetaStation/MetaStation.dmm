@@ -19277,7 +19277,7 @@
 /area/tcommsat/server)
 "bEl" = (
 /obj/machinery/door/airlock/external{
-	name = "Transport Airlock"
+	name = "стыковочный шлюз"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -80634,7 +80634,7 @@
 /area/commons/locker)
 "sIA" = (
 /obj/machinery/door/airlock/external{
-	name = "Transport Airlock"
+	name = "стыковочный шлюз"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8

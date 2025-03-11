@@ -108,8 +108,8 @@
 // three different channels (lighting/equipment/environ) - may each be set to on, off, or auto
 
 /obj/machinery/power/apc
-	name = "area power controller"
-	desc = "A control terminal for the area's electrical systems."
+	name = "терминал управления питания"
+	desc = "Терминал управления электрическими системами этого помещения."
 	plane = ABOVE_WALL_PLANE
 
 	icon_state = "apc0"

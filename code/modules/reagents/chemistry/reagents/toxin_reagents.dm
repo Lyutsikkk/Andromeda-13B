@@ -67,8 +67,8 @@
 		mytray.adjustToxic(1.5) //It is still toxic, mind you, but not to the same degree.
 
 /datum/reagent/toxin/plasma
-	name = "Plasma"
-	description = "Plasma in its liquid form."
+	name = "Плазма"
+	description = "Плазма в жидком виде."
 	taste_description = "bitterness"
 	specific_heat = SPECIFIC_HEAT_PLASMA
 	taste_mult = 1.5

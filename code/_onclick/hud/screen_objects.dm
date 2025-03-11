@@ -100,7 +100,7 @@
 		return TRUE
 	var/area/A = get_area(usr)
 	if(!A.outdoors)
-		to_chat(usr, span_warning("There is already a defined structure here."))
+		to_chat(usr, span_warning("Здесь уже есть определенная структура."))
 		return TRUE
 	create_area(usr)
 
@@ -322,7 +322,7 @@
 				if((check.clothing_flags & ALLOWINTERNALS))
 					internals = TRUE
 			if(!internals)
-				to_chat(C, span_warning("You are not wearing an internals mask!"))
+				to_chat(C, span_warning("На вас не надета маска!"))
 				return
 
 		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)

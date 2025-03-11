@@ -621,7 +621,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Кастомный цвет крови:</b>"
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_custom_blood_color;task=input'>[custom_blood_color ? "Включено" : "Отключено"]</a><BR>"
 					if(custom_blood_color)
-						dat += "<b>Цвет крови:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
+						dat += "<b>Цвет крови:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Изменить</a><BR>"
 					dat += "</td>"
 
 					dat += "<td valign='top'>"
@@ -1559,9 +1559,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(OOC_PREFS_TAB)
 					dat += "<table>"
 					dat += "<tr><td width='340px' height='300px' valign='top'>"
-					dat += "<h2>OOC настройки</h2>"
-					dat += "<b>Мигающее окно:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Вкл":"Выкл"]</a><br>"
-					dat += "<b>Шум окна:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Вкл":"Выкл"]</a><br>"
+					dat += "<h2>OOC Settings</h2>"
+					dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<br>"
 					dat += "<b>Проигрывание музыки администратора:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Вкл":"Выкл"]</a><br>"
 					dat += "<b>Проигрывание музыки в лобби:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Вкл":"Выкл"]</a><br>"
@@ -1571,42 +1571,42 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(unlock_content)
 							dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Публичный" : "Скрытый"]</a><br>"
 						if(unlock_content || check_rights_for(user.client, R_ADMIN))
-							dat += "<b>OOC Цвет:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'><font color='[color_hex2num(ooccolor ? ooccolor : GLOB.normal_ooc_colour) < 200 ? "FFFFFF" : "000000"]'>[ooccolor ? ooccolor : GLOB.normal_ooc_colour]</font></span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Изменить</a><br>"
-							dat += "<b>Цвет Антагониста OOC:</b> <span style='border: 1px solid #161616; background-color: [aooccolor ? aooccolor : GLOB.normal_aooc_colour];'><font color='[color_hex2num(aooccolor ? aooccolor : GLOB.normal_aooc_colour) < 200 ? "FFFFFF" : "000000"]'>[aooccolor ? aooccolor : GLOB.normal_aooc_colour]</font></span> <a href='?_src_=prefs;preference=aooccolor;task=input'>Изменить</a><br>"
+							dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'><font color='[color_hex2num(ooccolor ? ooccolor : GLOB.normal_ooc_colour) < 200 ? "FFFFFF" : "000000"]'>[ooccolor ? ooccolor : GLOB.normal_ooc_colour]</font></span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
+							dat += "<b>Antag OOC Color:</b> <span style='border: 1px solid #161616; background-color: [aooccolor ? aooccolor : GLOB.normal_aooc_colour];'><font color='[color_hex2num(aooccolor ? aooccolor : GLOB.normal_aooc_colour) < 200 ? "FFFFFF" : "000000"]'>[aooccolor ? aooccolor : GLOB.normal_aooc_colour]</font></span> <a href='?_src_=prefs;preference=aooccolor;task=input'>Change</a><br>"
 
 					if(user.client.holder)
-						dat += "<h2>Настройки администратора</h2>"
-						dat += "<b>Звуки ахелпа:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Вкл":"Выкл"]</a><br>"
-						dat += "<b>Объявление о входе в систему:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Вкл":"Выкл"]</a><br>"
+						dat += "<h2>Admin Settings</h2>"
+						dat += "<b>Adminhelp Sounds:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Enabled":"Disabled"]</a><br>"
+						dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Enabled":"Disabled"]</a><br>"
 						dat += "<br>"
-						dat += "<b>Комбинированное освещение HUD:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Все цвета":"Без изменений"]</a><br>"
-						dat += "<b>Использовать современную панель проигрывателя:</b> <a href='?_src_=prefs;preference=use_new_playerpanel'>[use_new_playerpanel ? "Да" : "Нет"]</a><br>" //SPLURT Edit
+						dat += "<b>Combo HUD Lighting:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Full-bright":"No Change"]</a><br>"
+						dat += "<b>Use Modern Player Panel:</b> <a href='?_src_=prefs;preference=use_new_playerpanel'>[use_new_playerpanel ? "Yes" : "No"]</a><br>" //SPLURT Edit
 
 						//deadmin
 						dat += "<h2>Снятие админ прав во время игры</h2>"
 						if(CONFIG_GET(flag/auto_deadmin_players))
 							dat += "<b>Всегда снимать права:</b> ПРИНУДИТЕЛЬНО</a><br>"
 						else
-							dat += "<b>Всегда снимать права:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(deadmin & DEADMIN_ALWAYS)?"Вкл":"Выкл"]</a><br>"
+							dat += "<b>Always Deadmin:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_always'>[(deadmin & DEADMIN_ALWAYS)?"Enabled":"Disabled"]</a><br>"
 							if(!(deadmin & DEADMIN_ALWAYS))
 								dat += "<br>"
 								if(!CONFIG_GET(flag/auto_deadmin_antagonists))
-									dat += "<b>В роли антагониста:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(deadmin & DEADMIN_ANTAGONIST)?"Снимать права":"Оставаться админом"]</a><br>"
+									dat += "<b>As Antag:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_antag'>[(deadmin & DEADMIN_ANTAGONIST)?"Deadmin":"Keep Admin"]</a><br>"
 								else
 									dat += "<b>В роли антагониста:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_heads))
-									dat += "<b>В роли командования:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(deadmin & DEADMIN_POSITION_HEAD)?"Снимать права":"Оставаться админом"]</a><br>"
+									dat += "<b>As Command:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_head'>[(deadmin & DEADMIN_POSITION_HEAD)?"Deadmin":"Keep Admin"]</a><br>"
 								else
 									dat += "<b>В роли командования:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_security))
-									dat += "<b>В роли службы безопасности:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(deadmin & DEADMIN_POSITION_SECURITY)?"Снимать права":"Оставаться админом"]</a><br>"
+									dat += "<b>As Security:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_security'>[(deadmin & DEADMIN_POSITION_SECURITY)?"Deadmin":"Keep Admin"]</a><br>"
 								else
 									dat += "<b>В роли службы безопасности:</b> ПРИНУДИТЕЛЬНО<br>"
 
 								if(!CONFIG_GET(flag/auto_deadmin_silicons))
-									dat += "<b>В роли борга:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(deadmin & DEADMIN_POSITION_SILICON)?"Снимать права":"Оставаться админом"]</a><br>"
+									dat += "<b>As Silicon:</b> <a href = '?_src_=prefs;preference=toggle_deadmin_silicon'>[(deadmin & DEADMIN_POSITION_SILICON)?"Deadmin":"Keep Admin"]</a><br>"
 								else
 									dat += "<b>В роли борга:</b> ПРИНУДИТЕЛЬНО<br>"
 
@@ -1614,17 +1614,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<td width='300px' height='300px' valign='top'>"
 
-					dat += "<h2>Настройки экрана</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
-					dat += "<b>Широкоэкранный:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Вкл ([CONFIG_GET(string/default_view)])" : "Выкл (15x15)"]</a><br>"
-					dat += "<b>Полноэкранный:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Меню с длинной полосой:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Авто stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Авто OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Дрожание экрана:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Полностью" : ((screenshake==0) ? "Нету" : "[screenshake]")]</a><br>"
+					dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
+					dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+					dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Screen Shake:</b> <a href='?_src_=prefs;preference=screenshake'>[(screenshake==100) ? "Full" : ((screenshake==0) ? "None" : "[screenshake]")]</a><br>"
 					if (user && user.client && !user.client.prefs.screenshake==0)
-						dat += "<b>Дрожание при уроне:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "Вкл" : ((damagescreenshake==0) ? "Выкл" : "Only when down")]</a><br>"
-					dat += "<b>Отдача:</b> <a href='?_src_=prefs;preference=recoil_screenshake'>[(recoil_screenshake==100) ? "Полностью" : ((recoil_screenshake==0) ? "Нету" : "[screenshake]")]</a><br>"
+						dat += "<b>Damage Screen Shake:</b> <a href='?_src_=prefs;preference=damagescreenshake'>[(damagescreenshake==1) ? "On" : ((damagescreenshake==0) ? "Off" : "Only when down")]</a><br>"
+					dat += "<b>Recoil Screen Push:</b> <a href='?_src_=prefs;preference=recoil_screenshake'>[(recoil_screenshake==100) ? "Full" : ((recoil_screenshake==0) ? "None" : "[screenshake]")]</a><br>"
 					var/p_chaos
 					if (!preferred_chaos)
 						p_chaos = "Нету предпочтений"
@@ -1633,11 +1633,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Предпочтительное количество хаоса:</b> <a href='?_src_=prefs;preference=preferred_chaos;task=input'>[p_chaos]</a><br>"
 
 					//SPLURT Edit
-					dat += "<h2>S.P.L.U.R.T. Предпочтения</h2>"
-					dat += "<b>Быть жертвой антагониста:</b> <a href='?_src_=prefs;preference=be_victim;task=input'>[be_victim ? be_victim : BEVICTIM_ASK]</a><br>"
-					dat += "<b>Отключить курсор боевого режима:</b> <a href='?_src_=prefs;preference=disable_combat_cursor'>[disable_combat_cursor?"Да":"Нет"]</a><br>"
-					dat += "<b>Стиль панели игрока:</b> <a href='?_src_=prefs;preference=tg_playerpanel'>[(toggles & TG_PLAYER_PANEL)?"TG":"Old"]</a><br>"
-					dat += "<b>Стиль меню настройки персонажа:</b> <a href='?_src_=prefs;preference=charcreation_style'>[new_character_creator ? "Новый" : "Старый"]</a><br>"
+					dat += "<h2>S.P.L.U.R.T. Preferences</h2>"
+					dat += "<b>Be Antagonist Victim:</b> <a href='?_src_=prefs;preference=be_victim;task=input'>[be_victim ? be_victim : BEVICTIM_ASK]</a><br>"
+					dat += "<b>Disable combat mode cursor:</b> <a href='?_src_=prefs;preference=disable_combat_cursor'>[disable_combat_cursor?"Yes":"No"]</a><br>"
+					dat += "<b>Splashscreen Player Panel Style:</b> <a href='?_src_=prefs;preference=tg_playerpanel'>[(toggles & TG_PLAYER_PANEL)?"TG":"Old"]</a><br>"
+					dat += "<b>Character Creation Menu Style:</b> <a href='?_src_=prefs;preference=charcreation_style'>[new_character_creator ? "New" : "Old"]</a><br>"
 					//SPLURT Edit end
 
 					dat += "<br>"
@@ -1654,7 +1654,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(GHOST_ACCS_NONE)
 							button_name = GHOST_ACCS_NONE_NAME
 
-					dat += "<b>Аксессуары призрака:</b> <a href='?_src_=prefs;task=input;preference=ghostaccs'>[button_name]</a><br>"
+					dat += "<b>Ghost Accessories:</b> <a href='?_src_=prefs;task=input;preference=ghostaccs'>[button_name]</a><br>"
 					switch(ghost_others)
 						if(GHOST_OTHERS_THEIR_SETTING)
 							button_name = GHOST_OTHERS_THEIR_SETTING_NAME
@@ -1663,15 +1663,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(GHOST_OTHERS_SIMPLE)
 							button_name = GHOST_OTHERS_SIMPLE_NAME
 
-					dat += "<b>Призраки других людей:</b> <a href='?_src_=prefs;task=input;preference=ghostothers'>[button_name]</a><br>"
+					dat += "<b>Ghosts of Others:</b> <a href='?_src_=prefs;task=input;preference=ghostothers'>[button_name]</a><br>"
 					dat += "<br>"
 
 					dat += "<b>FPS:</b> <a href='?_src_=prefs;preference=clientfps;task=input'>[clientfps]</a><br>"
 
-					dat += "<b>Сообщение о поступлении обновлений:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Разрешить" : "Приглушить"]</a><br>"
+					dat += "<b>Income Updates:</b> <a href='?_src_=prefs;preference=income_pings'>[(chat_toggles & CHAT_BANKCARD) ? "Allowed" : "Muted"]</a><br>"
 					dat += "<br>"
 
-					dat += "<b>Параллакс (космос):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
+					dat += "<b>Parallax (Fancy Space):</b> <a href='?_src_=prefs;preference=parallaxdown' oncontextmenu='window.location.href=\"?_src_=prefs;preference=parallaxup\";return false;'>"
 					switch (parallax)
 						if (PARALLAX_LOW)
 							dat += "Низкий"
@@ -1684,10 +1684,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							dat += "Высокий"
 					dat += "</a><br>"
-					dat += "<b>Окружающее затемнение:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>Исправление вида:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Авто" : "Инструкция"]</a><br>"
-					dat += "<b>HUD мигание кнопок:</b> <a href='?_src_=prefs;preference=hud_toggle_flash'>[hud_toggle_flash ? "Вкл" : "Выкл"]</a><br>"
-					dat += "<b>HUD цвет мигающих кнопок:</b> <span style='border: 1px solid #161616; background-color: [hud_toggle_color];'><font color='[color_hex2num(hud_toggle_color) < 200 ? "FFFFFF" : "000000"]'>[hud_toggle_color]</font></span> <a href='?_src_=prefs;preference=hud_toggle_color;task=input'>Изменить</a><br>"
+					dat += "<b>Ambient Occlusion:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Fit Viewport:</b> <a href='?_src_=prefs;preference=auto_fit_viewport'>[auto_fit_viewport ? "Auto" : "Manual"]</a><br>"
+					dat += "<b>HUD Button Flashes:</b> <a href='?_src_=prefs;preference=hud_toggle_flash'>[hud_toggle_flash ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>HUD Button Flash Color:</b> <span style='border: 1px solid #161616; background-color: [hud_toggle_color];'><font color='[color_hex2num(hud_toggle_color) < 200 ? "FFFFFF" : "000000"]'>[hud_toggle_color]</font></span> <a href='?_src_=prefs;preference=hud_toggle_color;task=input'>Change</a><br>"
 
 
 					if (CONFIG_GET(flag/maprotation) && CONFIG_GET(flag/tgstyle_maprotation))

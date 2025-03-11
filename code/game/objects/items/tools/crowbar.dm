@@ -1,6 +1,6 @@
 /obj/item/crowbar
-	name = "pocket crowbar"
-	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
+	name = "лом"
+	desc = "Небольшой ломик. Этот удобный инструмент пригодится для многих целей, например, для поддевания плитки на полу или открывания дверей без электропитания."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -38,8 +38,8 @@
 	item_state = "crowbar_sec"
 
 /obj/item/crowbar/brass
-	name = "brass crowbar"
-	desc = "A brass crowbar. It feels faintly warm to the touch."
+	name = "латунный лом"
+	desc = "Латунный ломик. На ощупь он слегка теплый."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "crowbar_clock"
 	toolspeed = 0.5
@@ -48,29 +48,29 @@
 	toolspeed = 1
 
 /obj/item/crowbar/ashwalker
-	name = "bone crowbar"
-	desc = "A rudimentary crowbar made of bones."
+	name = "костяной лом"
+	desc = "Примитивный лом, сделанный из костей."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "crowbar_bone"
 	toolspeed = 0.75
 
 /obj/item/crowbar/bronze
-	name = "bronze plated crowbar"
-	desc = "A bronze plated crowbar."
+	name = "лом с бронзовым покрытием"
+	desc = "Просто лом, удобный ломик, но с бронзовым покрытием."
 	icon_state = "crowbar_brass"
 	toolspeed = 0.95
 
 /obj/item/crowbar/abductor
-	name = "alien crowbar"
-	desc = "A hard-light crowbar. It appears to pry by itself, without any effort required."
+	name = "инопланетный лом"
+	desc = "Очень легкий лом. Кажется, что он поддается сам по себе, без каких-либо усилий."
 	icon = 'icons/obj/abductor.dmi'
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.1
 
 /obj/item/crowbar/large
-	name = "crowbar"
-	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big."
+	name = "большой лом"
+	desc = "Это большой лом. Он не поместится в ваших карманах, потому что он большой."
 	force = 12
 	w_class = WEIGHT_CLASS_NORMAL
 	throw_speed = 3
@@ -81,14 +81,14 @@
 	toolspeed = 0.5
 
 /obj/item/crowbar/large/heavy
-	name = "heavy crowbar"
-	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big. It feels oddly heavy.."
+	name = "тяжелый лом"
+	desc = "Это большой лом. Он не помещается в ваших карманах, потому что он большой. На ощупь он странно тяжелый.."
 	force = 14 // BLUEMOON - HEAVY_CROWBAR_DAMAGE_CHANGE - EDIT (было 20)
 	icon_state = "crowbar_powergame"
 
 /obj/item/crowbar/cyborg
-	name = "hydraulic crowbar"
-	desc = "A hydraulic prying tool, compact but powerful. Designed to replace crowbar in construction cyborgs."
+	name = "гидравлический лом"
+	desc = "Гидравлический инструмент для вскрытия, компактный, но мощный. Предназначен для замены лома в конструкторах-киборгах."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "crowbar_cyborg"
 	usesound = 'sound/items/jaws_pry.ogg'
@@ -96,8 +96,8 @@
 	toolspeed = 0.5
 
 /obj/item/crowbar/power
-	name = "jaws of life"
-	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a prying head."
+	name = "челюсти жизни"
+	desc = "Челюсти жизни - это универсальный инструмент, что может использоваться как лом и как кусачки."
 	icon_state = "jaws_pry"
 	item_state = "jawsoflife"
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -110,8 +110,8 @@
 	can_force_powered = TRUE
 
 /obj/item/crowbar/power/syndicate
-	name = "Syndicate jaws of life"
-	desc = "A pocket sized re-engineered copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	name = "синдикатовские челюсти жизни"
+	desc = "Карманная модернизированная копия стандартной модели Челюсти жизни от Nanotrasen. Может использоваться для принудительного открытия воздушных шлюзов в конфигурации с ломом."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "jaws_syndie_pry"
 	item_state = "jawsoflife"
@@ -132,8 +132,8 @@
 	user.put_in_active_hand(cutjaws)
 
 /obj/item/crowbar/advanced
-	name = "advanced crowbar"
-	desc = "A scientist's almost successful reproduction of an abductor's crowbar, it uses the same technology combined with a handle that can't quite hold it."
+	name = "усовершенствованный лом"
+	desc = "Ученый почти успешно воспроизвел лом похитителя, в нем используется та же технология в сочетании с ручкой, которая не может его удержать."
 	icon = 'icons/obj/advancedtools.dmi'
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"

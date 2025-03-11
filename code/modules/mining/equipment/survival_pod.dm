@@ -112,7 +112,7 @@
 
 //Window
 /obj/structure/window/shuttle/survival_pod
-	name = "pod window"
+	name = "окно капсулы"
 	icon = 'icons/obj/smooth_structures/pod_window.dmi'
 	icon_state = "smooth"
 	smooth = SMOOTH_MORE
@@ -128,13 +128,13 @@
 	dir = WEST
 
 /obj/structure/window/reinforced/survival_pod
-	name = "pod window"
+	name = "окно капсулы"
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "pwindow"
 
 //Door
 /obj/machinery/door/airlock/survival_pod
-	name = "airlock"
+	name = "шлюз"
 	icon = 'icons/obj/doors/airlocks/survival/survival.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/survival/survival_overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_pod
@@ -294,8 +294,8 @@
 	return TRUE
 
 /obj/structure/fans/tiny
-	name = "tiny fan"
-	desc = "A tiny fan, releasing a thin gust of air."
+	name = "маленький вентилятор"
+	desc = "Крошечный вентилятор, выпускающий слабую струю воздуха."
 	layer = ABOVE_NORMAL_TURF_LAYER
 	density = FALSE
 	icon_state = "fan_tiny"

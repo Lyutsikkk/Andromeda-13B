@@ -102,7 +102,7 @@
 		generate_mobtype()
 		START_PROCESSING(SSobj, src)
 	if(choice == "Familiar Sentience")
-		to_chat(user, "<span class='notice'>You poke [src], and it lets out a glowing pulse.</span>")
+		to_chat(user, "<span class='notice'>Ты ткаешь [src], and it lets out a glowing pulse.</span>")
 		saved_mind = null
 		START_PROCESSING(SSobj, src)
 	if(choice == "Familiar Name")

@@ -1,6 +1,6 @@
 /obj/item/wirecutters
-	name = "wirecutters"
-	desc = "This cuts wires."
+	name = "кусачки"
+	desc = "Это перерезает провода и не только."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters_map"
 	item_state = "cutters"
@@ -80,8 +80,8 @@
 	return (BRUTELOSS)
 
 /obj/item/wirecutters/brass
-	name = "brass wirecutters"
-	desc = "A pair of eloquent wirecutters made of brass. The handle feels freezing cold to the touch."
+	name = "латунные кусачки"
+	desc = "Пара изящных кусачек для проволоки, но сделаны из латуни. Ручка на ощупь очень холодная."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "cutters_clock"
 	random_color = FALSE
@@ -91,39 +91,39 @@
 	toolspeed = 1
 
 /obj/item/wirecutters/ashwalker
-	name = "bone wirecutters"
-	desc = "Rudimentary wirecutters made out of sharpened bones and sinew."
+	name = "костяные кусачки"
+	desc = "Примитивные кусачки для проволоки, сделанные из заостренных костей и сухожилий."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "cutters_bone"
 	toolspeed = 0.75
 	random_color = FALSE
 
 /obj/item/wirecutters/bronze
-	name = "bronze plated wirecutters"
-	desc = "A pair of wirecutters plated with bronze."
+	name = "кусачки с бронзовым покрытием"
+	desc = "Просто кусачки, кусаются, но с бронзовым покрытием."
 	icon_state = "cutters_brass"
 	random_color = FALSE
 	toolspeed = 0.95 //Wire cutters have 0 time bars though
 
 /obj/item/wirecutters/abductor
-	name = "alien wirecutters"
-	desc = "Extremely sharp wirecutters, made out of a silvery-green metal."
+	name = "инопланетные кусачки"
+	desc = "Чрезвычайно острые кусачки для проволоки, изготовленные из серебристо-зеленого металла."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cutters"
 	toolspeed = 0.1
 	random_color = FALSE
 
 /obj/item/wirecutters/cyborg
-	name = "wirecutters"
-	desc = "This cuts wires."
+	name = "кусачки"
+	desc = "Это перерезает провода и не только."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "wirecutters_cyborg"
 	toolspeed = 0.5
 	random_color = FALSE
 
 /obj/item/wirecutters/power
-	name = "jaws of life"
-	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
+	name = "челюсти жизни"
+	desc = "Челюсти жизни - это универсальный инструмент, что может использоваться как лом и как кусачки."
 	icon_state = "jaws_cutter"
 	item_state = "jawsoflife"
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -135,8 +135,8 @@
 	random_color = FALSE
 
 /obj/item/wirecutters/power/syndicate
-	name = "Syndicate jaws of life"
-	desc = "A pocket sized re-engineered copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	name = "синдикатовские челюсти жизни"
+	desc = "Карманная модернизированная копия стандартной модели Челюсти жизни от Nanotrasen. Может использоваться для принудительного открытия воздушных шлюзов в конфигурации с ломом."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "jaws_syndie_cutter"
 	item_state = "jawsoflife"
@@ -179,8 +179,8 @@
 	..()
 
 /obj/item/wirecutters/advanced
-	name = "advanced wirecutters"
-	desc = "A set of reproduction alien wirecutters, they have a silver handle with an exceedingly sharp blade."
+	name = "продвинутые кусачки"
+	desc = "Набор копий инопланетных кусачек с серебряной ручкой и чрезвычайно острым лезвием."
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "cutters"
 	toolspeed = 0.2

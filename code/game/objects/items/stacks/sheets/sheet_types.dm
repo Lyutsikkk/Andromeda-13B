@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 ))
 
 /obj/item/stack/sheet/metal
-	name = "metal"
+	name = "сталь"
 	desc = "Sheets made out of metal."
 	singular_name = "metal sheet"
 	icon_state = "sheet-metal"
@@ -224,9 +224,9 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 ))
 
 /obj/item/stack/sheet/plasteel
-	name = "plasteel"
+	name = "пласталь"
 	singular_name = "plasteel sheet"
-	desc = "This sheet is an alloy of iron and plasma."
+	desc = "Этот лист представляет собой сплав железа и плазмы."
 	icon_state = "sheet-plasteel"
 	item_state = "sheet-metal"
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
@@ -308,8 +308,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	))
 
 /obj/item/stack/sheet/mineral/wood
-	name = "wooden plank"
-	desc = "One can only guess that this is a bunch of wood. You might be able to make a stake with this if you use something sharp on it"
+	name = "деревянная доска"
+	desc = "Можно только догадываться, что это доска. Возможно, из этого можно сделать колышек, если насадить на него что-нибудь острое."
 	singular_name = "wood plank"
 	icon_state = "sheet-wood"
 	item_state = "sheet-wood"
@@ -871,8 +871,8 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	new /datum/stack_recipe("micro bricks", /obj/item/stack/sheet/micro_bricks, 1, 5, 15,)))
 
 /obj/item/stack/sheet/plastic
-	name = "plastic"
-	desc = "Compress dinosaur over millions of years, then refine, split and mold, and voila! You have plastic."
+	name = "пластик"
+	desc = "Динозавры сжимались миллионы лет под породой, затем очищались, расщеплялись и формовались, и вуаля! У вас есть пластик."
 	singular_name = "plastic sheet"
 	icon_state = "sheet-plastic"
 	item_state = "sheet-plastic"

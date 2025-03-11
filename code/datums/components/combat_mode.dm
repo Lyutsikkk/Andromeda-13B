@@ -74,7 +74,7 @@
 	mode_flags &= ~COMBAT_MODE_INACTIVE
 	SEND_SIGNAL(source, COMSIG_LIVING_COMBAT_ENABLED, forced)
 	if(!silent)
-		var/self_message = forced? "<span class='warning'>Your muscles reflexively tighten!</span>" : "<span class='warning'>You drop into a combative stance!</span>"
+		var/self_message = forced? "<span class='warning'>Ваши мышцы рефлекторно напрягаются!</span>" : "<span class='warning'>Ты принимаешь боевую стойку!</span>"
 		if(visible && (forced || world.time >= combatmessagecooldown))
 			combatmessagecooldown = world.time + 10 SECONDS
 			if(!forced)
@@ -111,7 +111,7 @@
 	mode_flags |= COMBAT_MODE_INACTIVE
 	SEND_SIGNAL(source, COMSIG_LIVING_COMBAT_DISABLED, forced)
 	if(!silent)
-		var/self_message = forced? "<span class='warning'>Your muscles are forcibly relaxed!</span>" : "<span class='warning'>You relax your stance.</span>"
+		var/self_message = forced? "<span class='warning'>Ваши мышцы принудительно расслаблены!</span>" : "<span class='warning'>Вы расслабляете свою стойку.</span>"
 		if(visible)
 			source.visible_message("<span class='warning'>[source] relaxes [source.ru_ego()] stance.</span>", self_message)
 		else

@@ -1,37 +1,37 @@
 /client/proc/vpnbunker()
-	set category = "Server"
-	set name = "Toggle VPN Blocker"
+	set category = "Сервер"
+	set name = "Переключить блокиратор ВПН'а"
 
 	var/new_vpnbun = !CONFIG_GET(flag/kick_vpn)
 	CONFIG_SET(flag/kick_vpn, new_vpnbun)
 
-	log_admin("[key_name(usr)] has toggled the VPN Blocker, it is now [new_vpnbun ? "on" : "off"]")
-	message_admins("[key_name_admin(usr)] has toggled the VPN Blocker, it is now [new_vpnbun ? "enabled" : "disabled"].")
-	SSblackbox.record_feedback("nested tally", "vpn_toggle", 1, list("Toggle VPN Blocker", "[new_vpnbun ? "Enabled" : "Disabled"]"))
-	send2adminchat("VPN Blocker", "[key_name(usr)] has toggled the VPN Bunker, it is now [new_vpnbun ? "enabled" : "disabled"].")
+	log_admin("[key_name(usr)] переключил блокиратор ВПН'а, теперь он [new_vpnbun ? "Включен" : "Выключен"]")
+	message_admins("[key_name_admin(usr)] переключил блокиратор ВПН'а, теперь он [new_vpnbun ? "Включен" : "Выключен"].")
+	SSblackbox.record_feedback("nested tally", "vpn_toggle", 1, list("Переключить блокиратор ВПН'а", "[new_vpnbun ? "Включен" : "Выключен"]"))
+	send2adminchat("Блокировака ВПН'а", "[key_name(usr)] переключил блокиратор ВПН'а, теперь он [new_vpnbun ? "Включен" : "Выключен"].")
 
 /client/proc/addvpnbypass(ckeytobypass as text)
-	set category = "Special Verbs"
-	set name = "Add VPN Bypass"
-	set desc = "Allows a given ckey to connect through the VPN Blocker."
+	set category = "Специальные возможности"
+	set name = "Добавить в обход ВПН'а"
+	set desc = "Добавляет сикей в список обхода блокиратора ВПН'а."
 	if(!CONFIG_GET(flag/kick_vpn))
-		to_chat(usr, span_adminnotice("VPN Blocker is currently off!"))
+		to_chat(usr, span_adminnotice("Блокиратор ВПН'а выключен!"))
 
 	var/datum/config_entry/multi_keyed_flag/vpn_bypass/bypasses = CONFIG_GET_ENTRY(multi_keyed_flag/vpn_bypass)
 	bypasses.add_bypass(ckeytobypass)
-	log_admin("[key_name(usr)] has added [ckeytobypass] to the current round's VPN bypass list.")
-	message_admins("[key_name_admin(usr)] has added [ckeytobypass] to the current round's VPN bypass list.")
-	send2adminchat("VPN Blocker", "[key_name(usr)] has added [ckeytobypass] to the current round's VPN bypass list.")
+	log_admin("[key_name(usr)] добавил [ckeytobypass] в данный на этот раунд список обхода блокиратора ВПН'а.")
+	message_admins("[key_name_admin(usr)] добавил [ckeytobypass] в данный на этот раунд список обхода блокиратора ВПН'а.")
+	send2adminchat("Блокиратор ВПН'а", "[key_name(usr)] добавил [ckeytobypass] в данный на этот раунд список обхода блокиратора ВПН'а.")
 
 /client/proc/revokevpnbypass(ckeytobypass as text)
-	set category = "Special Verbs"
-	set name = "Revoke VPN Bypass"
-	set desc = "Removes a ckey from the VPN Blocker bypass list."
+	set category = "Специальные возможности"
+	set name = "Отозвать из обхода ВПН'а"
+	set desc = "Убирает сикей из списка для обхода ВПН блокиратор."
 	if(!CONFIG_GET(flag/kick_vpn))
-		to_chat(usr, span_adminnotice("VPN Blocker is currently off!"))
+		to_chat(usr, span_adminnotice("Блокиратор ВПН'а выключен!"))
 
 	var/datum/config_entry/multi_keyed_flag/vpn_bypass/bypasses = CONFIG_GET_ENTRY(multi_keyed_flag/vpn_bypass)
 	bypasses.rev_bypass(ckeytobypass)
-	log_admin("[key_name(usr)] has removed [ckeytobypass] from the current round's VPN bypass list.")
-	message_admins("[key_name_admin(usr)] has removed [ckeytobypass] from the current round's VPN bypass list.")
-	send2adminchat("VPN Blocker", "[key_name(usr)] has removed [ckeytobypass] from the current round's VPN bypass list.")
+	log_admin("[key_name(usr)] убрал [ckeytobypass] из данный на этот раунд списка обхода блокиратора ВПН'а.")
+	message_admins("[key_name_admin(usr)] убрал [ckeytobypass] из данный на этот раунд списка обхода блокиратора ВПН'а.")
+	send2adminchat("Блокиратор ВПН'а", "[key_name(usr)] убрал [ckeytobypass] из данный на этот раунд списка обхода блокиратора ВПН'а.")

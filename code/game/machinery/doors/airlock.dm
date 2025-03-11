@@ -53,7 +53,7 @@
 #define AI_ELECTRIFY_DOOR_TIME 30
 
 /obj/machinery/door/airlock
-	name = "airlock"
+	name = "шлюз"
 	icon = 'icons/obj/doors/airlocks/station/public.dmi'
 	icon_state = "closed"
 	max_integrity = 300
@@ -858,7 +858,7 @@
 		note = null
 		update_icon()
 		return
-	
+
 	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)

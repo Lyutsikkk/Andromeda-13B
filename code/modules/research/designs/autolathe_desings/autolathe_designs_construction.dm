@@ -8,7 +8,7 @@
 //////////////////
 
 /datum/design/rods
-	name = "Metal Rod"
+	name = "Металлический стержень"
 	id = "rods"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 1000)
@@ -17,7 +17,7 @@
 	maxstack = 50
 
 /datum/design/metal
-	name = "Metal"
+	name = "Сталь"
 	id = "metal"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
@@ -26,7 +26,7 @@
 	maxstack = 50
 
 /datum/design/glass
-	name = "Glass"
+	name = "Стеклол"
 	id = "glass"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
@@ -35,7 +35,7 @@
 	maxstack = 50
 
 /datum/design/rglass
-	name = "Reinforced Glass"
+	name = "Армированное стекло"
 	id = "rglass"
 	build_type = AUTOLATHE | SMELTER | PROTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = MINERAL_MATERIAL_AMOUNT)
