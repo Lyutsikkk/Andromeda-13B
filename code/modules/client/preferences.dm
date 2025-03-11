@@ -578,7 +578,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					chosen_gear = list()
 
 				dat += "<td width=65% style=\"line-height:10px\">"
-				dat += "<center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для лодаут[gear_points == 1 ? "" : "s"] вещей</center><br>"
+				dat += "<center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> Поинты для лодаут вещей</center><br>"
 				dat += "<center><a href='?_src_=prefs;preference=gear;clear_loadout=1'>Сбросить лодаут</a></b></center>"
 				dat += "</td>"
 			else
