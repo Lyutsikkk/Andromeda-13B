@@ -503,7 +503,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 //Manual loading of away missions.
 /client/proc/admin_away()
 	set name = "Load Away Mission / Virtual Reality"
-	set category = "Admin.Events"
+	set category = "Админ.Ивенты"
 
 	if(!holder ||!check_rights(R_FUN))
 		return

@@ -114,7 +114,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 /client/proc/set_ooc()
 	set name = "Set Player OOC Color"
 	set desc = "Modifies player OOC Color"
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	if(IsAdminAdvancedProcCall())
 		return
 	var/newColor = input(src, "Please select the new player OOC color.", "OOC color") as color|null
@@ -132,7 +132,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 /client/proc/reset_ooc()
 	set name = "Reset Player OOC Color"
 	set desc = "Returns player OOC Color to default"
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	if(IsAdminAdvancedProcCall())
 		return
 	if(alert(usr, "Are you sure you want to reset the OOC color of all players?", "Reset Player OOC Color", "Yes", "No") != "Yes")
@@ -176,7 +176,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 //Checks admin notice
 /client/verb/admin_notice()
 	set name = "Adminnotice"
-	set category = "Admin"
+	set category = "Админ"
 	set desc ="Check the admin notice if it has been set"
 
 	if(GLOB.admin_notice)

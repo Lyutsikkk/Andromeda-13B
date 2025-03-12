@@ -27,7 +27,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Air Status In Location") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_robotize(mob/M in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make Robot"
 
 	if(!SSticker.HasRoundStarted())
@@ -43,7 +43,7 @@
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_blobize(mob/M in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make Blob"
 
 	if(!SSticker.HasRoundStarted())
@@ -58,7 +58,7 @@
 
 
 /client/proc/cmd_admin_animalize(mob/M in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make Simple Animal"
 
 	if(!SSticker.HasRoundStarted())
@@ -79,7 +79,7 @@
 
 
 /client/proc/makepAI(turf/T in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make pAI"
 	set desc = "Specify a location to spawn a pAI device, then specify a key to play that pAI"
 
@@ -106,7 +106,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make pAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_alienize(mob/M in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make Alien"
 
 	if(!SSticker.HasRoundStarted())
@@ -121,7 +121,7 @@
 		alert("Invalid mob")
 
 /client/proc/cmd_admin_slimeize(mob/M in GLOB.mob_list)
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Make slime"
 
 	if(!SSticker.HasRoundStarted())
@@ -169,7 +169,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Powernets") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_grantfullaccess(mob/M in GLOB.mob_list)
-	set category = "Admin"
+	set category = "Админ"
 	set name = "Grant Full Access"
 
 	if(!SSticker.HasRoundStarted())
@@ -211,7 +211,7 @@
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
 
 /client/proc/cmd_assume_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -230,7 +230,7 @@
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Assume Direct Control") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_give_direct_control(mob/M in GLOB.mob_list)
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "Give direct control"
 
 	if(!M)

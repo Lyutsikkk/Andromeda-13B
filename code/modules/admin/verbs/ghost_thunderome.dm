@@ -3,14 +3,14 @@
 /client/proc/thunderome()
   set name = "Start Thunderome"
   set desc = "Start thunderome for ghosts"
-  set category = "Admin.Events"
+  set category = "Админ.Ивенты"
 
   var/datum/start_thunderome/ui = new(usr)
   ui.ui_interact(usr)
 
 /datum/start_thunderome
   var/client/user
-  
+
   var/datum/outfit/selected_outfit_1 = /datum/outfit
   var/datum/outfit/selected_outfit_2 = /datum/outfit
 
@@ -120,7 +120,7 @@
           chosen_candidate.transfer_ckey(thunderwarior)
           if(thunderwarior.dna.species.dangerous_existence) // Don't want any exploding plasmemes
             thunderwarior.set_species(/datum/species/human)
-          
+
           thunderwarior.equipOutfit(selected_outfit_1)
           thunderwarior.regenerate_icons()
           team_1_players_num--

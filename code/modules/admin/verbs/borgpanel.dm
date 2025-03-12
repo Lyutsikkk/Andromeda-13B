@@ -1,5 +1,5 @@
 /datum/admins/proc/open_borgopanel(borgo in GLOB.silicon_mobs)
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "Show Borg Panel"
 	set desc = "Show borg panel"
 
@@ -255,7 +255,7 @@
 	. = TRUE
 
 /datum/admins/proc/change_laws()
-	set category = "Admin.Player Interaction"
+	set category = "Админ.Взаимодействия с игроками"
 	set name = "Change Silicon Laws"
 	set desc = "Change Silicon Laws"
 

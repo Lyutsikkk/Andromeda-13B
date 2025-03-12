@@ -1,5 +1,5 @@
 /client/proc/admin_end_shift()
-	set category = "Admin.Events"
+	set category = "Админ.Ивенты"
 	set name = "End shift"
 	set desc = "Calls the shuttle as if a roundend vote passed."
 

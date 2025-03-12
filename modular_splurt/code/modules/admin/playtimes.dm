@@ -15,7 +15,7 @@
 //Most of this data is now unused except for the flags
 /*
 /client/proc/cmd_player_playtimes()
-	set category = "Admin"
+	set category = "Админ"
 	set name = "Player Playtimes"
 
 	if(!check_rights(R_ADMIN))

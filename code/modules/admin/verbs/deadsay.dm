@@ -1,5 +1,5 @@
 /client/proc/dsay(msg as text)
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "Dsay"
 	set hidden = 1
 	if(!holder)

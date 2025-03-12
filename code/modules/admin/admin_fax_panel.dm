@@ -2,7 +2,7 @@
  * If client have R_ADMIN flag, opens an admin fax panel.
  */
 /client/proc/fax_panel()
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "Fax Panel"
 
 	if(!check_rights(R_ADMIN))

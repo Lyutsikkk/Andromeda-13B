@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(who)
 	SSwho.who.ui_interact(src)
 
 /mob/verb/staffwho()
-	set category = "Admin"
+	set category = "Админ"
 	set name = "StaffWho"
 
 	SSwho.staff_who.ui_interact(src)

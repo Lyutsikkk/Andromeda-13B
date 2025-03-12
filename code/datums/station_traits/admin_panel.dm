@@ -1,7 +1,7 @@
 /// Opens the station traits admin panel
 /datum/admins/proc/station_traits_panel()
 	set name = "Modify Station Traits"
-	set category = "Admin.Events"
+	set category = "Админ.Ивенты"
 
 	var/static/datum/station_traits_panel/station_traits_panel = new
 	station_traits_panel.ui_interact(usr)
