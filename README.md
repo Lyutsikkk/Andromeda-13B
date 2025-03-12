@@ -1,19 +1,14 @@
-# BlueMoon Station
-[![CI Suite](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/workflows/CI%20Suite/badge.svg)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station//actions?query=workflow%3A%22CI+Suite%22) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/pulls) [![HitCount](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station.svg)](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station) [![Одумайся](https://camo.githubusercontent.com/557504a5326b02363676cd365a4ec29e50199149db8e9d5afed26e2b99c7dc26/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617274253230776974682d7768792533462d627269676874677265656e2e7376673f7374796c653d666c6174)](https://www.youtube.com/watch?v=doA9R9k4C9s)
+# Andromeda-13
 
-[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/e6pRWzMVMA) [![Boosty](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://boosty.to/bluemoon-ss13) [![Wiki](https://img.shields.io/badge/Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white)](https://wiki.ss13-bluemoon.ru/wiki/Заглавная_страница)
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/NxTZeUPtRf)
 
-[![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a) [![forthebadge](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
+**Andromeda** - русскоязычный сервер по игре **[Space Station 13](https://ru.wikipedia.org/wiki/Space_Station_13)**. Сервер, где примут любого сотрудника из галактики Андромеда.
 
-**BlueMoon** - русскоязычный сервер по нишевой игре **[Space Station 13](https://ru.wikipedia.org/wiki/Space_Station_13)**. Основное внимание на нашем сервере уделяется свободе самовыражения, а также веселой, расслабленной и дружелюбной атмосфере.
+Адмирал флота 13 сектора галактики Андромеда - **[Rewokin](https://github.com/Lyutsikkk)**.
 
-Лидер и главный мейнтейнер проекта - **[SmiLeY](https://github.com/SmiLeYre)**.
+**Andromeda** является форком **[BlueMoon](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station)**.
 
-**BlueMoon** является форком **[S.P.L.U.R.T. Station](https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13)**, который является форком **[Sandstorm Station](https://github.com/SandPoot/Sandstorm-Station-13)**, который является форком **[Citadel Station](https://github.com/Citadel-Station-13/Citadel-Station-13)**, который является форком **[/tg/station](https://tgstation13.org/phpBB/viewforum.php?f=60)**. Забавно, да?
-
-* **Наш Discord** - <https://discord.gg/e6pRWzMVMA>
-* **Наше Wiki** - <https://wiki.ss13-bluemoon.ru/wiki/Заглавная_страница>
-* **Поддержать Проект** - <https://boosty.to/bluemoon-ss13>
+* **Наш Discord** - <https://discord.gg/NxTZeUPtRf>
 
 > [!CAUTION]
 > Сервер, как и репозиторий, могут содержать материалы, не подходящие для всех возрастов. Просматривая любую часть репозитория, предлагая правки или заходя на наши веб-ресурсы, вы подтверждаете, что вам **минимум 18 лет**.
