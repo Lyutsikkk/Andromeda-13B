@@ -1,5 +1,5 @@
 /client/proc/override_sm_delam()
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Toggle SM delam"
 	set desc = "Toggles this round's SM delam mode."
 

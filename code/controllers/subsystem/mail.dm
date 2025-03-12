@@ -367,7 +367,7 @@ SUBSYSTEM_DEF(mail)
 /client/proc/mail_panel()
 	set name = "✉️ Почтовая Панель"
 	set desc = "Позволяет создавать письма и посылки для определённых игроков."
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	if(!check_rights(R_ADMIN))
 		return
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Mail Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

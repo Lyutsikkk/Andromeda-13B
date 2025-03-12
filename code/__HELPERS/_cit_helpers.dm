@@ -108,12 +108,6 @@ GLOBAL_LIST_INIT(meat_types, list(
 //Crew objective and miscreants stuff
 GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 
-/client/proc/reload_mentors()
-		set name = "Reload Mentors"
-		set category = "Admin"
-		if(!src.holder)	return
-		message_admins("[key_name_admin(usr)] manually reloaded mentors")
-
 /*pretty much everything got moved to modular_skyrat (interactions)
 /mob/living/carbon/has_penis() // Skyrat Change
 	var/obj/item/organ/genital/G = getorganslot(ORGAN_SLOT_PENIS)

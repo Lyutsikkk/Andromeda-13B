@@ -1,5 +1,5 @@
 /client/proc/roll_dices()
-	set category = "Admin.Fun"
+	set category = "Админ.Веселье"
 	set name = "Roll Dice"
 	if(!check_rights(R_FUN))
 		return

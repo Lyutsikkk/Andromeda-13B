@@ -1,7 +1,7 @@
 ///Allows an admin to force an event
 /client/proc/forceEvent()
 	set name = "Trigger Event"
-	set category = "Admin.Events"
+	set category = "Админ.Ивенты"
 
 	if(!holder || !check_rights(R_FUN))
 		return

@@ -59,7 +59,7 @@
 
 /// Display all of the tagged datums
 /datum/admins/proc/display_tags()
-	set category = "Admin.Game"
+	set category = "Админ.Игра"
 	set name = "View Tags"
 
 	if (!istype(src, /datum/admins))

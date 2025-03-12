@@ -5,11 +5,11 @@
 /datum/admins/proc/DB_ban_record(bantype, mob/banned_mob, duration = -1, reason, job = "", bankey = null, banip = null, bancid = null, forced_holder = FALSE)
 
 	if(!forced_holder && !check_rights(R_BAN))
-		return "Not enough rights"
+		return "Недостаточно прав"
 
 	if(!SSdbcore.Connect())
-		to_chat(src, "<span class='danger'>Failed to establish database connection.</span>")
-		return "DB Connect issue"
+		to_chat(src, "<span class='danger'>Не удалось установить соединение с базой данных.</span>")
+		return "Подключение с ДБ прервано"
 
 	var/bantype_pass = 0
 	var/bantype_str
@@ -55,11 +55,11 @@
 			bantype_str = "PACIFICATION_BAN"
 			bantype_pass = 1
 	if( !bantype_pass )
-		return "Wrong ban type"
+		return "Неправильный тип бана"
 	if( !istext(reason) )
-		return "Not given reason"
+		return "Не дана причина"
 	if( !isnum(duration) )
-		return "Not given duration"
+		return "Не дана длительность"
 
 	var/ckey
 	var/computerid
@@ -90,13 +90,13 @@
 		list("ckey" = ckey))
 	if(!query_add_ban_get_ckey.warn_execute())
 		qdel(query_add_ban_get_ckey)
-		return "Failed DB get key"
+		return "Не удалось получить ключ базы данных"
 	var/seen_before = query_add_ban_get_ckey.NextRow()
 	qdel(query_add_ban_get_ckey)
 	if(!seen_before)
 		if(!had_banned_mob || (had_banned_mob && !banned_mob_guest_key))
-			if(!forced_holder && alert(usr, "[bankey] has not been seen before, are you sure you want to create a ban for them?", "Unknown ckey", "Yes", "No", "Cancel") != "Yes")
-				return "Canceled"
+			if(!forced_holder && alert(usr, "[bankey] ранее не был замечен, вы уверены, что хотите создать для него бан?", "Неизвестный ckey", "Да", "Нет", "Отмена") != "Да")
+				return "Отмененно"
 
 	var/a_key
 	var/a_ckey
@@ -117,8 +117,8 @@
 
 	if(blockselfban)
 		if(a_ckey == ckey)
-			to_chat(usr, "<span class='danger'>You cannot apply this ban type on yourself.</span>")
-			return "Self ban restricted"
+			to_chat(usr, "<span class='danger'>Ты не можешь забанить сам себя.</span>")
+			return "Самоблокировка ограничена"
 
 	var/who
 	for(var/client/C in GLOB.clients)
@@ -148,9 +148,9 @@
 			if (check_rights(R_PERMISSIONS, FALSE))
 				max_bans = MAX_ADMIN_BANS_PER_HEADMIN
 			if(adm_bans >= max_bans)
-				to_chat(usr, "<span class='danger'>You already logged [max_bans] admin ban(s) or more. Do not abuse this function!</span>")
+				to_chat(usr, "<span class='danger'>Вы уже сделали [max_bans] админ банов или больше. Не злоупотребляйся этой функцией!</span>")
 				qdel(query_check_adminban_amt)
-				return "Overlimit admin bans"
+				return "Превышение лимита административных банов"
 		qdel(query_check_adminban_amt)
 	if(!computerid)
 		computerid = "0"
@@ -167,15 +167,15 @@
 		))
 	if(!query_add_ban.warn_execute())
 		qdel(query_add_ban)
-		return "Failed to add ban"
+		return "Не получилось выдать бан"
 	qdel(query_add_ban)
-	to_chat(usr, "<span class='adminnotice'>Ban saved to database.</span>")
-	var/msg = "[key_name_admin(usr)] has added a [bantype_str] for [bankey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] with the reason: \"[reason]\" to the ban database."
+	to_chat(usr, "<span class='adminnotice'>Бан сохранён в датабазу.</span>")
+	var/msg = "[key_name_admin(usr)] добавил [bantype_str] для [bankey] [(job)?"([job])":""] [(duration > 0)?"([duration] minutes)":""] по причине: \"[reason]\" В датабазу банов."
 	message_admins(msg,1)
 	var/datum/admin_help/AH = admin_ticket_log(ckey, msg)
 
 	if(announceinirc)
-		send2adminchat("BAN ALERT","[a_key] applied a [bantype_str] on [bankey]")
+		send2adminchat("BAN ALERT","[a_key] применил [bantype_str] к [bankey]")
 	//splurt edit
 	if(((bantype_str == "PACIFICATION_BAN") || (job == "pacifist")) && banned_client.mob)
 		ADD_TRAIT(banned_client.mob, TRAIT_PACIFISM, "pacification ban")
@@ -256,17 +256,17 @@
 	qdel(query_unban_get_id)
 
 	if(ban_number == 0)
-		to_chat(usr, "<span class='danger'>Database update failed due to no bans fitting the search criteria. If this is not a legacy ban you should contact the database admin.</span>")
+		to_chat(usr, "<span class='danger'>Обновление базы данных не удалось из-за отсутствия банов, соответствующих критериям поиска. Если это не устаревший бан, вам следует обратиться к администратору базы данных.</span>")
 		return
 
 	if(ban_number > 1)
-		to_chat(usr, "<span class='danger'>Database update failed due to multiple bans fitting the search criteria. Note down the ckey, job and current time and contact the database admin.</span>")
+		to_chat(usr, "<span class='danger'>Обновление базы данных не удалось из-за множественных банов, соответствующих критериям поиска. Запишите ключ, задание и текущее время и свяжитесь с администратором базы данных.</span>")
 		return
 
 	if(istext(ban_id))
 		ban_id = text2num(ban_id)
 	if(!isnum(ban_id))
-		to_chat(usr, "<span class='danger'>Database update failed due to a ban ID mismatch. Contact the database admin.</span>")
+		to_chat(usr, "<span class='danger'>Обновление базы данных не удалось из-за несоответствия идентификатора бана. Обратитесь к администратору базы данных.</span>")
 		return
 
 	DB_ban_unban_by_id(ban_id)
@@ -277,7 +277,7 @@
 		return
 
 	if(!isnum(banid) || !istext(param))
-		to_chat(usr, "Cancelled")
+		to_chat(usr, "Отмененно")
 		return
 
 	var/datum/db_query/query_edit_ban_get_details = SSdbcore.NewQuery("SELECT IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].ckey), ckey), duration, reason FROM [format_table_name("ban")] WHERE id = [banid]")
@@ -295,7 +295,7 @@
 		duration = query_edit_ban_get_details.item[2]
 		reason = query_edit_ban_get_details.item[3]
 	else
-		to_chat(usr, "Invalid ban id. Contact the database admin")
+		to_chat(usr, "Неверный идентификатор бана. Обратитесь к администратору базы данных.")
 		qdel(query_edit_ban_get_details)
 		return
 	qdel(query_edit_ban_get_details)
@@ -305,9 +305,9 @@
 	switch(param)
 		if("reason")
 			if(!value)
-				value = input("Insert the new reason for [p_key]'s ban", "New Reason", "[reason]", null) as null|text
+				value = input("Вставьте новую причину [p_key] бана", "Новая причина", "[reason]", null) as null|text
 				if(!value)
-					to_chat(usr, "Cancelled")
+					to_chat(usr, "Отменнено")
 					return
 
 			var/datum/db_query/query_edit_ban_reason = SSdbcore.NewQuery("UPDATE [format_table_name("ban")] SET reason = '[value]', edits = CONCAT(edits,'- [e_key] changed ban reason from <cite><b>\\\"[reason]\\\"</b></cite> to <cite><b>\\\"[value]\\\"</b></cite><BR>') WHERE id = [banid]")
@@ -315,12 +315,12 @@
 				qdel(query_edit_ban_reason)
 				return
 			qdel(query_edit_ban_reason)
-			message_admins("[key_name_admin(usr)] has edited a ban for [p_key]'s reason from [reason] to [value]")
-		if("duration")
+			message_admins("[key_name_admin(usr)] изменил причину бана [p_key] с [reason] на [value]")
+		if("Длительность")
 			if(!value)
-				value = input("Insert the new duration (in minutes) for [p_key]'s ban", "New Duration", "[duration]", null) as null|num
+				value = input("Введите новую длительность бана (в минутах) для [p_key] бана", "Новая длительность", "[duration]", null) as null|num
 				if(!isnum(value) || !value)
-					to_chat(usr, "Cancelled")
+					to_chat(usr, "Отменнено")
 					return
 
 			var/datum/db_query/query_edit_ban_duration = SSdbcore.NewQuery("UPDATE [format_table_name("ban")] SET duration = [value], edits = CONCAT(edits,'- [e_key] changed ban duration from [duration] to [value]<br>'), expiration_time = DATE_ADD(bantime, INTERVAL [value] MINUTE) WHERE id = [banid]")
@@ -328,16 +328,16 @@
 				qdel(query_edit_ban_duration)
 				return
 			qdel(query_edit_ban_duration)
-			message_admins("[key_name_admin(usr)] has edited a ban for [p_key]'s duration from [duration] to [value]")
-		if("unban")
-			if(alert("Unban [p_key]?", "Unban?", "Yes", "No") == "Yes")
+			message_admins("[key_name_admin(usr)] изменил длительность бана для [p_key] с [duration] на [value]")
+		if("Разбанить")
+			if(alert("Разбанить [p_key]?", "Разбанить?", "Да", "Нет") == "Да")
 				DB_ban_unban_by_id(banid)
 				return
 			else
-				to_chat(usr, "Cancelled")
+				to_chat(usr, "Отмененно")
 				return
 		else
-			to_chat(usr, "Cancelled")
+			to_chat(usr, "Отмененно")
 			return
 
 /datum/admins/proc/DB_ban_unban_by_id(id)
@@ -363,11 +363,11 @@
 	qdel(query_unban_get_ckey)
 
 	if(ban_number == 0)
-		to_chat(usr, "<span class='danger'>Database update failed due to a ban id not being present in the database.</span>")
+		to_chat(usr, "<span class='danger'>Обновление базы данных не удалось из-за отсутствия в ней идентификатора бана.</span>")
 		return
 
 	if(ban_number > 1)
-		to_chat(usr, "<span class='danger'>Database update failed due to multiple bans having the same ID. Contact the database admin.</span>")
+		to_chat(usr, "<span class='danger'>Обновление базы данных не удалось из-за множественных банов с одинаковым ID. Обратитесь к администратору базы данных.</span>")
 		return
 
 	if(!istype(owner))
@@ -394,9 +394,9 @@
 	))
 
 /client/proc/DB_ban_panel()
-	set category = "Admin"
-	set name = "Banning Panel"
-	set desc = "Edit admin permissions"
+	set category = "Админ"
+	set name = "Бан панель"
+	set desc = "Изменить разрешения администратора"
 
 	if(!holder)
 		return
@@ -412,30 +412,30 @@
 		return
 
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span class='danger'>Не удалось установить соединение с базой данных.</span>")
 		return
 
 	var/output = "<div align='center'><table width='90%'><tr>"
 
 	output += "<td width='35%' align='center'>"
-	output += "<h1>Banning panel</h1>"
+	output += "<h1>Бан панель</h1>"
 	output += "</td>"
 
 	output += "<td width='65%' align='center' bgcolor='#f9f9f9'>"
 
-	output += "<form method='GET' action='?src=[REF(src)]'><b>Add custom ban:</b> (ONLY use this if you can't ban through any other method)"
+	output += "<form method='GET' action='?src=[REF(src)]'><b>Add custom ban:</b> (Используйте это ТОЛЬКО если вы не можете забанить другим способом)"
 	output += "<input type='hidden' name='src' value='[REF(src)]'>"
 	output += HrefTokenFormField()
 	output += "<table width='100%'><tr>"
 	output += "<td><b>Ban type:</b><select name='dbbanaddtype'>"
 	output += "<option value=''>--</option>"
-	output += "<option value='[BANTYPE_PERMA]'>PERMABAN</option>"
-	output += "<option value='[BANTYPE_TEMP]'>TEMPBAN</option>"
-	output += "<option value='[BANTYPE_JOB_PERMA]'>JOB PERMABAN</option>"
-	output += "<option value='[BANTYPE_JOB_TEMP]'>JOB TEMPBAN</option>"
-	output += "<option value='[BANTYPE_ADMIN_PERMA]'>ADMIN PERMABAN</option>"
-	output += "<option value='[BANTYPE_ADMIN_TEMP]'>ADMIN TEMPBAN</option>"
-	output += "<option value='[BANTYPE_PACIFIST]'>PACIFICATION BAN</option>"
+	output += "<option value='[BANTYPE_PERMA]'>ПЕРМАБАН</option>"
+	output += "<option value='[BANTYPE_TEMP]'>ТЕМПАБАН</option>"
+	output += "<option value='[BANTYPE_JOB_PERMA]'>ДЖОБПЕРМАБАН</option>"
+	output += "<option value='[BANTYPE_JOB_TEMP]'>ДЖОБТЕМПБАН</option>"
+	output += "<option value='[BANTYPE_ADMIN_PERMA]'>АДМИН ПЕРМАБАН</option>"
+	output += "<option value='[BANTYPE_ADMIN_TEMP]'>АДМИН ТЕРМАБАН</option>"
+	output += "<option value='[BANTYPE_PACIFIST]'>ПАЦИФИКИЦАЯ</option>"
 	output += "</select></td>"
 	output += "<td><b>Key:</b> <input type='text' name='dbbanaddkey'></td></tr>"
 	output += "<tr><td><b>IP:</b> <input type='text' name='dbbanaddip'></td>"

@@ -12,7 +12,7 @@
 	default = "https://discord.gg/EaRzj2d9Cu"
 
 /datum/config_entry/string/rulesurl
-	default = "https://discord.com/channels/1347144227594833990/1347144227594833992"
+	default = "https://stihi.ru/pics/2022/11/29/7041.jpg"
 
 /datum/config_entry/string/githuburl
 	default = "https://github.com/Lyutsikkk/Andromeda-13"

@@ -300,7 +300,7 @@ modular_juicy/_storge_sounds
   // [JUICY-REMOVE] - SHUTTLE_TOGGLE - (Перемещено в /modular_juicy/shuttle_toggle/randomverbs.dm)
   /*
   /client/proc/admin_call_shuttle()
-    set category = "Admin - Events"
+    set category = "Админ - Events"
     set name = "Call Shuttle"
 
     if(EMERGENCY_AT_LEAST_DOCKED)

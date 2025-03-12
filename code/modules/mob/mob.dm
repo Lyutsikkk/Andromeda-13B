@@ -73,7 +73,7 @@
 				hud_list[hud] = I
 
 /mob/proc/Cell()
-	set category = "Admin"
+	set category = "Админ"
 	set hidden = 1
 
 	if(!loc)
