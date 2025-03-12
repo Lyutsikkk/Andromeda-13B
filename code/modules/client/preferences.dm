@@ -615,7 +615,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Рандомный ник</a><br>"
 					dat += "<a href='?_src_=prefs;preference=nameless'>Быть безымянным: [nameless ? "Да" : "Нет"]</a><BR>"
 					dat += "<b>Всегда случайное имя:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Да" : "Нет"]</a><BR>"
-					dat += "<b>Жесткий костюм с Хвостом:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit_with_tail'>[features["hardsuit_with_tail"] == TRUE ? "Да" : "Нет"]</a><BR>"
+					dat += "<b>Видимость хвоста с скафандром:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit_with_tail'>[features["hardsuit_with_tail"] == TRUE ? "Да" : "Нет"]</a><BR>"
 
 					dat += "<b>Сколько лет:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 					dat += "<b>Кастомный цвет крови:</b>"

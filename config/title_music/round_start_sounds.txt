@@ -13,3 +13,6 @@ sound/music/Star_Eater.ogg
 sound/music/Syndicate.ogg
 sound/music/Two_Of_Us.ogg
 sound/music/Your_House.ogg
+sound/music/Chris.ogg
+sound/music/Flip-flap.ogg
+sound/music/Portal.ogg
