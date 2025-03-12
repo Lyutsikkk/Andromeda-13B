@@ -5,14 +5,14 @@
 SERVERNAME Andromeda
 
 ## Community short-name: This appears in parentheses after the server's active station name
-COMMUNITYSHORTNAME A-13???
+COMMUNITYSHORTNAME Discord
 
 ## Community link: Requires a community short-name defined. Attaches a link to the community's shortname, and requires a short-name defined.
 ## You could alternatively just add raw HTML to the above, but this is more newbie-friendly
 COMMUNITYLINK byond://5.42.211.88:50527
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [+18, MRP, RUS] Проект созданный для андромедовских от Rewokin. Является форком Bluemoon.
+SERVERTAGLINE [+18, MRP, RUS] From Rewokin to Andromeda Players.
 
 ## Use tagline strings: Uncomment to have the server's tagline be randomly selected from taglines.txt
 # USETAGLINESTRINGS

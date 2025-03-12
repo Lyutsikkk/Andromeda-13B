@@ -9,3 +9,6 @@
 ###############################################################################################
 
 rewokin = Host
+POPik = Game Admin
+YanNikk = Game Admin
+NIKforest321 = Game Admin
