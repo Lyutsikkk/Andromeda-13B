@@ -18,7 +18,7 @@
 # +ADMIN = general admin tools, verbs etc
 # +FUN = events, other event-orientated actions. Access to the fun secrets in the secrets panel.
 # +BAN = the ability to ban, jobban and fullban
-# +STEALTH = the ability to stealthmin (make yourself appear with a fake name to everyone but other admins
+# +STEALTH = the ability to stealthmin (make yourself appear with a fake name to everyone but other admins)
 # +POSSESS = the ability to possess objects
 # +POLL (or +POLL) = the ability to create in game server polls (requires DB)
 # +BUILD (or +BUILDMODE) = the ability to use buildmode
