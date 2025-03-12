@@ -11,7 +11,7 @@ ADDRESS 127.0.0.1
 PORT 3306
 
 ## Database for all SQL functions, not just feedback.
-FEEDBACK_DATABASE tgstation_schema
+FEEDBACK_DATABASE andromeda_schema
 
 ## Prefix to be added to the name of every table, older databases will require this be set to erro_
 ## Note, this does not change the table names in the database, you will have to do that yourself.
@@ -19,7 +19,7 @@ FEEDBACK_DATABASE tgstation_schema
 ##	FEEDBACK_TABLEPREFIX
 ##	FEEDBACK_TABLEPREFIX SS13_
 ## Remove "SS13_" if you are using the standard schema file.
-FEEDBACK_TABLEPREFIX SS13_
+FEEDBACK_TABLEPREFIX
 
 ## Username/Login used to access the database.
 FEEDBACK_LOGIN root
