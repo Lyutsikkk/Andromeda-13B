@@ -37,8 +37,8 @@ TICKLAG 0.1
 ##Can also be set as per-second value, the following value is identical to the above.
 FPS 30
 
-## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
-USEWHITELIST
+## Вайтлист config/whitelist.txt and config/admins.txt from joining your server
+#USEWHITELIST
 
 ## set a hosted by name for unix platforms
 HOSTEDBY Rewokin
