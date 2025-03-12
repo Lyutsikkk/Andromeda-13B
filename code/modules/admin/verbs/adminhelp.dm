@@ -572,6 +572,12 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 // CLIENT PROCS
 //
 
+/client/proc/reload_mentors()
+		set name = "Перезагрузить менторов"
+		set category = "Админ"
+		if(!src.holder)	return
+		message_admins("[key_name_admin(usr)] manually reloaded mentors")
+
 /client/proc/giveadminhelpverb()
 	add_verb(src, /client/verb/adminhelp)
 	deltimer(adminhelptimerid)
