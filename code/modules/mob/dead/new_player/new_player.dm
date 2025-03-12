@@ -568,28 +568,28 @@
 			to_chat(src, "<span class='redtext'>На этот раунд, у вас отключена возможность стать антагонистом посреди раунда (её можно включить в Character Setup > Preferences).</span>")
 	// BLUEMOON ADD END
 
-	var/level = "green"
+	var/level = "Зелёный"
 	switch(GLOB.security_level)
 		if(SEC_LEVEL_GREEN)
-			level = "green"
+			level = "Зелёный"
 		if(SEC_LEVEL_BLUE)
-			level = "blue"
+			level = "Синий"
 		if(SEC_LEVEL_ORANGE)
-			level = "orange"
+			level = "Оранжевый"
 		if(SEC_LEVEL_VIOLET)
-			level = "violet"
+			level = "Фиолетовый"
 		if(SEC_LEVEL_AMBER)
-			level = "amber"
+			level = "Янтарный"
 		if(SEC_LEVEL_RED)
-			level = "red"
+			level = "Красный"
 		if(SEC_LEVEL_LAMBDA)
-			level = "lambda"
+			level = "Лямбада"
 		if(SEC_LEVEL_EPSILON)
-			level = "epsilon"
+			level = "Эпсилон"
 		if(SEC_LEVEL_DELTA)
-			level = "delta"
+			level = "Дельта"
 
-	var/dat = "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>Alert Level: [capitalize(level)]</div>"
+	var/dat = "<div class='notice'>Продолжительность Раунда: [DisplayTimeText(world.time - SSticker.round_start_time)]<br>Уровень Угрозы: [capitalize(level)]</div>"
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
 			if(SHUTTLE_ESCAPE)
@@ -686,7 +686,7 @@
 		dat += "</td></tr></table></center>"
 		dat += "</div></div>"
 
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 720, 600)
+	var/datum/browser/popup = new(src, "latechoices", "Выбор Профессии", 720, 600)
 	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
 	popup.set_content(jointext(dat, ""))
 	popup.open(FALSE) // FALSE is passed to open so that it doesn't use the onclose() proc
